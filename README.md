@@ -1,13 +1,14 @@
 # DanZla — starting reference clone
 
-This repository contains a full technical clone of the **homepage** of
+This repository contains a full technical clone of three pages of
 [eng.polene-paris.com](https://eng.polene-paris.com/) (Polène, a Parisian
-leather bags/accessories brand), pulled on **2026-09-25**.
+leather bags/accessories brand): the **homepage**, the **bestsellers
+collection** and the **handbags collection**, pulled on **2026-09-25**.
 
 It was made as a working static prototype / structural and visual reference
 for an alternative design concept for **DanZla** (bags/accessories brand).
-The clone includes the page's HTML, CSS, JavaScript, fonts and images with
-all references rewritten to local relative paths, so it can be opened
+Each page's HTML, CSS, JavaScript, fonts and images have been cloned with
+references rewritten to local relative paths, so the set can be opened
 directly or served with any static file server, e.g.:
 
 ```
@@ -18,11 +19,38 @@ python3 -m http.server 8000
 ## What's here
 
 - `index.html` — the cloned homepage markup.
+- `collections/bestsellers/index.html` — the cloned "Bestsellers" collection
+  page, mirroring the live site's `/collections/bestsellers` URL structure.
+- `collections/handbags/index.html` — the cloned "Handbags" collection page,
+  mirroring the live site's `/collections/handbags` URL structure.
 - `cdn/` — first-party assets originally served from
   `eng.polene-paris.com/cdn/...` (theme CSS/JS, product & marketing images,
-  webfonts).
+  webfonts). Shared across all three pages; the two collection pages added
+  159 new product/collection images plus two new theme scripts
+  (`include-collection.js`, `mtiFontTrackingCode.js`) that the homepage
+  didn't need, and reused everything else (CSS, JS, fonts, mega-menu images)
+  already fetched for the homepage.
 - `cdn-shopify-com/` — assets originally served from the separate
-  `cdn.shopify.com` host (Shopify platform scripts).
+  `cdn.shopify.com` host (Shopify platform scripts). Fully reused from the
+  homepage clone — the collection pages needed no new files here.
+
+### Local navigation between the three pages
+
+The header/logo links and the "Bestsellers" / "Handbags" mega-menu links on
+all three pages have been rewired to point at each other locally, so you can
+click all the way through home → Bestsellers → Handbags → home (and directly
+between Bestsellers and Handbags) without leaving the local file set:
+
+- `index.html`'s "Bestsellers" and "Handbags" menu links point to
+  `collections/bestsellers/index.html` and `collections/handbags/index.html`.
+- Each collection page's logo/"back to home" links point to `../../index.html`.
+- Each collection page's menu link to the *other* collection page points to
+  `../bestsellers/index.html` / `../handbags/index.html`.
+
+All other links on all three pages (other collections, product pages,
+account, cart, search, analytics/tracking scripts, social-share `og:image`
+meta tags, etc.) are left pointing at the live `eng.polene-paris.com` site
+unchanged — they were not cloned.
 
 Interactive/backend-dependent features (cart, checkout, live search, account
 login, newsletter signup, analytics) will **not** work — this is a visual and
