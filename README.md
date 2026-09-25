@@ -75,14 +75,15 @@ DanZla design:
   styled as a leather luggage tag, matching the brand book's cookie-consent
   mockup. It stores acceptance in `localStorage`.
 - **Live chat widget** — the Zendesk chat-launcher script was removed.
-- **"Materials" hover-video block** — the homepage's two-photo product
-  mosaic (Numero Dix / Béri) was replaced with the two-video hover block
-  ported from the first design version's "05. МАТЕРИАЛЫ" section
-  (`danzla-site-preview`), stripped of its static captions/titles/counts.
-  Mechanic preserved 1:1: hovering a panel plays its muted looping video
-  and pauses the other; a "Смотреть коллекцию" label follows the cursor
-  (desktop/≥1024px only, matching the original). Video/poster/mask/paper-
-  texture assets live in `assets-materials/`. The plain-text 3-tile
+- **Hover-play videos** — the homepage's two-photo product mosaic
+  (Numero Dix / Béri) had its two photos swapped for two videos, each in
+  its own separate slot (no shared torn-paper join/mask — just two plain
+  cards side by side, same as the photos they replaced). The only thing
+  carried over from the first design version's "05. МАТЕРИАЛЫ" section
+  (`danzla-site-preview`) is its cursor mechanic: hovering a card plays
+  its muted looping video and pauses the other, and a
+  "Смотреть коллекцию" label follows the cursor (desktop/≥1024px only).
+  Video/poster assets live in `assets-materials/`. The plain-text 3-tile
   `promoted-collections` section (Handbags / Jewellery / Small Leather
   Goods) further up the page was left as originally cloned.
 

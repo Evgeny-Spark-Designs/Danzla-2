@@ -3975,28 +3975,19 @@ hsl(var(--grey));">
 </section>
 <section class="best-section">
 	<style>
-	.best-section{background:#fff9f7;overflow:hidden;padding-bottom:12rem;position:relative}
-	.best-section__inner{cursor:none;height:70rem;position:relative;width:100%}
-	.best-section__paper{top:0;right:0;bottom:0;left:0;pointer-events:none;position:absolute;z-index:10}
-	.best-section__paper img{height:100%;object-fit:cover;object-position:center;width:100%}
-	.best-section__top,.best-section__bottom{height:100%;top:0;right:0;bottom:0;left:0;position:absolute;width:100%;z-index:1}
-	.best-section__top{-webkit-mask-image:url(assets-materials/mask-mob.webp);mask-image:url(assets-materials/mask-mob.webp);-webkit-mask-position:center center;mask-position:center center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:cover;mask-size:cover;pointer-events:none;z-index:3}
-	.best-section__bottom{align-items:flex-end;display:flex;z-index:1}
+	.best-section{background:#fff9f7;padding:2.4rem 0}
+	.best-section__inner{position:relative;display:grid;grid-template-columns:1fr;gap:1.2rem;padding:0 1.6rem}
+	.best-card{cursor:none;display:block;overflow:hidden;position:relative;aspect-ratio:1920/2688}
+	.best-card__video{display:block;height:100%;top:0;right:0;bottom:0;left:0;object-fit:cover;position:absolute;width:100%}
 	.best-section__cursor{display:none}
-	.best-card{background:#fff9f7;cursor:none;display:flex;height:35rem;pointer-events:auto;position:relative;width:100%;z-index:2}
-	.best-card__video{display:block;height:100%;top:0;right:0;bottom:0;left:0;object-fit:cover;position:absolute;width:100%;z-index:-1}
 	@media (min-width:768px){
-		.best-section{padding-bottom:14rem}
-		.best-section__inner{height:72rem}
-		.best-section__top{-webkit-mask-image:url(assets-materials/mask-tab.webp);mask-image:url(assets-materials/mask-tab.webp)}
-		.best-card{height:36rem}
+		.best-section{padding:3.6rem 0}
+		.best-section__inner{padding:0 3.1rem;gap:1.8rem}
 	}
 	@media (min-width:1024px){
-		.best-section{padding-bottom:18rem}
-		.best-section__inner{height:100vh;max-height:81rem;width:100%}
-		.best-section__top{-webkit-mask-image:url(assets-materials/mask-desk.webp);mask-image:url(assets-materials/mask-desk.webp)}
-		.best-section__bottom{justify-content:flex-end}
-		.best-card{height:100%;width:50%}
+		.best-section{padding:5rem 0}
+		.best-section__inner{grid-template-columns:1fr 1fr;padding:0 3.4rem;gap:2.4rem;cursor:none}
+		.best-card{aspect-ratio:3/4}
 		.best-section__cursor{display:block;height:1px;left:0;mix-blend-mode:difference;pointer-events:none;position:absolute;top:0;width:1px;z-index:10}
 		.best-section__cursor p{color:#fff;font-size:1.6rem;font-weight:500;left:50%;line-height:1.6rem;margin:0;opacity:0;position:absolute;text-align:center;text-transform:uppercase;white-space:nowrap;top:50%;transform:translate(-50%,-50%) rotate(15deg);transition:opacity .2s,transform .2s;font-family:Manrope,sans-serif}
 		.best-section__cursor.visible>p{opacity:1;transform:translate(-50%,-50%) rotate(0)}
@@ -4006,25 +3997,16 @@ hsl(var(--grey));">
 		<div class="best-section__cursor" data-ref="best-cursor">
 			<p>Смотреть коллекцию</p>
 		</div>
-		<picture class="best-section__paper">
-			<source media="(min-width: 1024px)" srcset="assets-materials/paper-desk.webp" type="image/webp">
-			<source media="(min-width: 768px)" srcset="assets-materials/paper-tablet.webp" type="image/webp">
-			<img src="assets-materials/paper-mob.webp" alt="">
-		</picture>
-		<div class="best-section__top">
-			<a href="collections/handbags/index.html" class="best-card">
-				<video loop muted playsinline poster="assets-materials/reskin-poster.jpg" class="best-card__video">
-					<source data-src="assets-materials/reskin-video.mp4" type="video/mp4">
-				</video>
-			</a>
-		</div>
-		<div class="best-section__bottom">
-			<a href="/collections/small-leather-goods" class="best-card">
-				<video loop muted playsinline poster="assets-materials/suede-poster.jpg" class="best-card__video">
-					<source data-src="assets-materials/suede-video.mp4" type="video/mp4">
-				</video>
-			</a>
-		</div>
+		<a href="collections/handbags/index.html" class="best-card">
+			<video loop muted playsinline poster="assets-materials/reskin-poster.jpg" class="best-card__video">
+				<source data-src="assets-materials/reskin-video.mp4" type="video/mp4">
+			</video>
+		</a>
+		<a href="/collections/small-leather-goods" class="best-card">
+			<video loop muted playsinline poster="assets-materials/suede-poster.jpg" class="best-card__video">
+				<source data-src="assets-materials/suede-video.mp4" type="video/mp4">
+			</video>
+		</a>
 	</div>
 </section>
 <script>
