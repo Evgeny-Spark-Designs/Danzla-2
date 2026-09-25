@@ -3923,57 +3923,133 @@ hsl(var(--grey));">
 </script>
 
 
-</section><section class="shopify-section section-promoted-collections" id="shopify-section-template--30031534752113__d2d39763-1601-4633-9265-c8be56be5620"><style data-shopify="">
-	#shopify-section-template--30031534752113__d2d39763-1601-4633-9265-c8be56be5620 {
-		.promoted-collections__item-title {
-			@media (max-width: 599px) {
-				font-size: clamp(15px, 11vw, 98px);
-				line-height: clamp(15px, 11vw, 90px);
-			}
-		}
-
-		@media (max-width: 599px) {
-			padding-top: 0px;
-			padding-bottom: 0px;
-		}
+</section><section class="best-section">
+	<style>
+	.best-section{background:#fff9f7;overflow:hidden;padding-bottom:12rem;position:relative}
+	.best-section__inner{cursor:none;height:70rem;position:relative;width:100%}
+	.best-section__paper{top:0;right:0;bottom:0;left:0;pointer-events:none;position:absolute;z-index:10}
+	.best-section__paper img{height:100%;object-fit:cover;object-position:center;width:100%}
+	.best-section__top,.best-section__bottom{height:100%;top:0;right:0;bottom:0;left:0;position:absolute;width:100%;z-index:1}
+	.best-section__top{-webkit-mask-image:url(assets-materials/mask-mob.webp);mask-image:url(assets-materials/mask-mob.webp);-webkit-mask-position:center center;mask-position:center center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:cover;mask-size:cover;pointer-events:none;z-index:3}
+	.best-section__bottom{align-items:flex-end;display:flex;z-index:1}
+	.best-section__cursor{display:none}
+	.best-card{background:#fff9f7;cursor:none;display:flex;height:35rem;pointer-events:auto;position:relative;width:100%;z-index:2}
+	.best-card__video{display:block;height:100%;top:0;right:0;bottom:0;left:0;object-fit:cover;position:absolute;width:100%;z-index:-1}
+	@media (min-width:768px){
+		.best-section{padding-bottom:14rem}
+		.best-section__inner{height:72rem}
+		.best-section__top{-webkit-mask-image:url(assets-materials/mask-tab.webp);mask-image:url(assets-materials/mask-tab.webp)}
+		.best-card{height:36rem}
 	}
-</style>
+	@media (min-width:1024px){
+		.best-section{padding-bottom:18rem}
+		.best-section__inner{height:100vh;max-height:81rem;width:100%}
+		.best-section__top{-webkit-mask-image:url(assets-materials/mask-desk.webp);mask-image:url(assets-materials/mask-desk.webp)}
+		.best-section__bottom{justify-content:flex-end}
+		.best-card{height:100%;width:50%}
+		.best-section__cursor{display:block;height:1px;left:0;mix-blend-mode:difference;pointer-events:none;position:absolute;top:0;width:1px;z-index:10}
+		.best-section__cursor p{color:#fff;font-size:1.6rem;font-weight:500;left:50%;line-height:1.6rem;margin:0;opacity:0;position:absolute;text-align:center;text-transform:uppercase;white-space:nowrap;top:50%;transform:translate(-50%,-50%) rotate(15deg);transition:opacity .2s,transform .2s;font-family:Manrope,sans-serif}
+		.best-section__cursor.visible>p{opacity:1;transform:translate(-50%,-50%) rotate(0)}
+	}
+	</style>
+	<div class="best-section__inner" data-ref="best-inner">
+		<div class="best-section__cursor" data-ref="best-cursor">
+			<p>Смотреть коллекцию</p>
+		</div>
+		<picture class="best-section__paper">
+			<source media="(min-width: 1024px)" srcset="assets-materials/paper-desk.webp" type="image/webp">
+			<source media="(min-width: 768px)" srcset="assets-materials/paper-tablet.webp" type="image/webp">
+			<img src="assets-materials/paper-mob.webp" alt="">
+		</picture>
+		<div class="best-section__top">
+			<a href="collections/handbags/index.html" class="best-card">
+				<video loop muted playsinline poster="assets-materials/reskin-poster.jpg" class="best-card__video">
+					<source data-src="assets-materials/reskin-video.mp4" type="video/mp4">
+				</video>
+			</a>
+		</div>
+		<div class="best-section__bottom">
+			<a href="/collections/small-leather-goods" class="best-card">
+				<video loop muted playsinline poster="assets-materials/suede-poster.jpg" class="best-card__video">
+					<source data-src="assets-materials/suede-video.mp4" type="video/mp4">
+				</video>
+			</a>
+		</div>
+	</div>
+</section>
+<script>
+(function(){
+	function init(){
+		var section = document.querySelector('.best-section');
+		if(!section) return;
+		var inner = section.querySelector('[data-ref="best-inner"]');
+		var cursor = section.querySelector('[data-ref="best-cursor"]');
+		var cards = section.querySelectorAll('.best-card');
+		if(!inner || !cursor || window.innerWidth < 1024) return;
 
-<div class="promoted-collections">
-	<ul class="promoted-collections__list">
-		
-			<li class="promoted-collections__item" data-index="0">
-				<a class="promoted-collections__item no-deco" href="collections/handbags/index.html">
-					<h2 class="promoted-collections__item-title ts-h2" style="color:#000000;">Handbags</h2>
-					<span class="promoted-collections__hover-img js-img">
-						
-					</span>
-				</a>
-			</li>
-		
-			<li class="promoted-collections__item" data-index="1">
-				<a class="promoted-collections__item no-deco" href="/collections/jewellery">
-					<h2 class="promoted-collections__item-title ts-h2" style="color:#000000;">Jewellery</h2>
-					<span class="promoted-collections__hover-img js-img">
-						
-					</span>
-				</a>
-			</li>
-		
-			<li class="promoted-collections__item" data-index="2">
-				<a class="promoted-collections__item no-deco" href="/collections/small-leather-goods">
-					<h2 class="promoted-collections__item-title ts-h2" style="color:#000000;">Small Leather Goods</h2>
-					<span class="promoted-collections__hover-img js-img">
-						
-					</span>
-				</a>
-			</li>
-		
-	</ul>
-</div>
+		var raf = 0, cx = 0, cy = 0, visible = false;
+		function setVisible(v){
+			if(visible === v) return;
+			visible = v;
+			cursor.classList.toggle('visible', v);
+		}
+		function place(){
+			raf = 0;
+			cursor.style.transform = 'translate(' + cx + 'px, ' + cy + 'px)';
+		}
+		function onMove(clientX, clientY){
+			var rect = inner.getBoundingClientRect();
+			var inside = clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
+			setVisible(inside);
+			cx = clientX - rect.left;
+			cy = clientY - rect.top;
+			if(!raf) raf = requestAnimationFrame(place);
+		}
+		inner.addEventListener('pointermove', function(e){ onMove(e.clientX, e.clientY); }, {passive:true});
+		inner.addEventListener('pointerleave', function(){ setVisible(false); }, {passive:true});
 
+		function primeVideo(video){
+			if(!video) return null;
+			video.muted = true;
+			video.playsInline = true;
+			var source = video.querySelector('source[data-src]');
+			if(source && !source.getAttribute('src')){
+				var src = source.getAttribute('data-src');
+				if(src){ source.setAttribute('src', src); try{ video.load(); }catch(e){} }
+			}
+			return video;
+		}
+		function playVideo(video){
+			var v = primeVideo(video);
+			if(!v) return;
+			var p = v.play();
+			if(p && typeof p.catch === 'function') p.catch(function(){});
+		}
+		function pauseVideo(video){
+			if(video){ try{ video.pause(); }catch(e){} }
+		}
 
-</section><section class="shopify-section mosaic" id="shopify-section-template--30031534752113__mosaic_UwHDbf">
+		var current = null;
+		cards.forEach(function(card){
+			var video = card.querySelector('.best-card__video');
+			card.addEventListener('pointerenter', function(){
+				if(current && current !== video) pauseVideo(current);
+				current = video;
+				playVideo(video);
+			}, {passive:true});
+			card.addEventListener('pointerleave', function(){
+				if(current === video){ pauseVideo(video); current = null; }
+			}, {passive:true});
+		});
+	}
+	if(document.readyState === 'loading'){
+		document.addEventListener('DOMContentLoaded', init, {once:true});
+	} else {
+		init();
+	}
+})();
+</script>
+<section class="shopify-section mosaic" id="shopify-section-template--30031534752113__mosaic_UwHDbf">
 
 
 

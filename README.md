@@ -76,6 +76,15 @@ DanZla design:
   styled as a leather luggage tag, matching the brand book's cookie-consent
   mockup. It stores acceptance in `localStorage`.
 - **Live chat widget** — the Zendesk chat-launcher script was removed.
+- **"Materials" hover-video block** — the homepage's plain-text 3-tile
+  `promoted-collections` section (Handbags / Jewellery / Small Leather
+  Goods) was replaced with the two-video hover block ported from the first
+  design version's "05. МАТЕРИАЛЫ" section (`danzla-site-preview`), stripped
+  of its static captions/titles/counts. Mechanic preserved 1:1: hovering a
+  panel plays its muted looping video and pauses the other; a
+  "Смотреть коллекцию" label follows the cursor (desktop/≥1024px only,
+  matching the original). Video/poster/mask/paper-texture assets live in
+  `assets-materials/`.
 
 Other third-party embeds tied to Polène's own live Shopify account
 (Instagram feed, country redirect, Klarna) were left untouched — out of
