@@ -62,9 +62,8 @@ The homepage has started diverging from the raw Polène clone toward the
 DanZla design:
 
 - **Logo** — the three Polène SVG logo instances (header, mobile menu,
-  country selector) were replaced with a hand-built inline SVG wordmark
-  matching DanZla's brand book cover logo (open "D", crossbar-less "A").
-  A standalone copy of the mark also lives at `img/danzla-logo.svg`.
+  country selector) were replaced with the real DanZla brand book logo
+  file (`img/danzla-logo.webp`, transparent background).
 - **Brand font** — `Thunder` (the brand book's display typeface, files in
   `fonts/`) is loaded via `@font-face` and applied to headings (`h1`–`h3`).
 - **Navigation** — top nav translated to Russian (Бестселлеры, Сумки,
