@@ -1,0 +1,10 @@
+<svg width="510" height="90" viewBox="0 0 510 90" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Danzla">
+	<g stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+		<path d="M25,10 L50,10 Q70,10 70,45 Q70,80 50,80 L25,80"/>
+		<path d="M95,80 L125,10 L155,80"/>
+		<path d="M180,80 L180,10 L240,80 L240,10"/>
+		<path d="M265,10 L325,10 L265,80 L325,80"/>
+		<path d="M350,10 L350,80 L405,80"/>
+		<path d="M435,80 L465,10 L495,80"/>
+	</g>
+</svg>

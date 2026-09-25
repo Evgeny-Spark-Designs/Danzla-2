@@ -56,6 +56,31 @@ Interactive/backend-dependent features (cart, checkout, live search, account
 login, newsletter signup, analytics) will **not** work — this is a visual and
 structural clone only, not a functional storefront clone.
 
+## Rebrand progress on the homepage (`index.html`)
+
+The homepage has started diverging from the raw Polène clone toward the
+DanZla design:
+
+- **Logo** — the three Polène SVG logo instances (header, mobile menu,
+  country selector) were replaced with a hand-built inline SVG wordmark
+  matching DanZla's brand book cover logo (open "D", crossbar-less "A").
+  A standalone copy of the mark also lives at `img/danzla-logo.svg`.
+- **Brand font** — `Thunder` (the brand book's display typeface, files in
+  `fonts/`) is loaded via `@font-face` and applied to headings (`h1`–`h3`).
+- **Navigation** — top nav translated to Russian (Бестселлеры, Сумки,
+  Клатчи, Кошельки); "Savoir-Faire" was removed entirely; all right-side
+  utility icons/buttons (search, account, wishlist, cart, country selector,
+  stores) were removed from the visible header, leaving the logo centered.
+- **Cookie banner** — Polène's third-party GDPR cookie-consent app script
+  was removed and replaced with a custom static banner (Russian copy)
+  styled as a leather luggage tag, matching the brand book's cookie-consent
+  mockup. It stores acceptance in `localStorage`.
+- **Live chat widget** — the Zendesk chat-launcher script was removed.
+
+Other third-party embeds tied to Polène's own live Shopify account
+(Instagram feed, country redirect, Klarna) were left untouched — out of
+scope for this pass.
+
 ## Important — before any public use
 
 All content, branding, product photography and copy in this clone belong to
