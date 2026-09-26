@@ -5358,62 +5358,166 @@ hsl(var(--grey));">
 
 <!-- Zendesk chat widget removed for Danzla -->
 
-<section class="story-section">
+<section class="motion-section">
 	<style>
-	.story-section{background:#fff9f7;padding:3.5rem 0}
-	.story-section__inner{max-width:640px;margin:0 auto 2.4rem;padding:0 1.6rem;text-align:center}
-	.story-section__eyebrow{font-family:"Prata",serif;font-size:1.15rem;font-weight:400;color:#1a1512;margin:0 0 1rem}
-	.story-section__text{font-family:"Prata",serif;font-size:.95rem;font-weight:300;line-height:1.6;color:#4a4038;margin:0}
-	.story-section__text strong{font-weight:500;color:#1a1512}
-	.story-section__media{position:relative;overflow:hidden;cursor:none;max-width:960px;margin:0 auto;padding:0 1.6rem}
-	.story-section__photo{display:block;width:100%;height:auto}
-	.story-section__cursor{display:none}
+	.motion-section{background:#fff9f7;height:calc(100vh*3);overflow:hidden;padding-top:5rem;position:relative;z-index:2}
+	.motion-section__top{text-align:center;margin-bottom:1.6rem;padding:0 1.6rem}
+	.motion-section__mid{display:flex;flex-direction:column;gap:1.2rem;text-align:center}
+	.motion-section__subtitle{font-family:"Prata",serif;font-size:2.2rem;font-weight:700;line-height:1.1;text-align:center;text-transform:uppercase;margin:0}
+	.motion-section__text{font-family:Manrope,sans-serif;font-size:.85rem;font-weight:600;letter-spacing:-.02rem;line-height:1.3;text-align:center;text-transform:uppercase;max-width:38rem;margin:0 auto;padding:0 1.6rem}
+	.motion-section__text strong{color:#ed3833}
+	.motion-section__pin{height:100vh;position:relative;width:100%}
+	.motion-section__bottom{align-items:center;display:flex;top:0;right:0;bottom:0;left:0;justify-content:center;-webkit-mask:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340.0' height='265.7' fill='none' viewBox='0 0 340.0 265.7'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' fill='%23000' d='M62.9 255.9 L27.6 255.9 L18.2 252.0 L14.1 244.8 L12.6 227.7 L16.5 166.8 L15.5 145.1 L23.9 131.4 L37.6 116.2 L38.1 99.0 L41.6 74.4 L46.0 59.7 L54.8 45.4 L70.8 33.4 L82.6 29.5 L103.2 26.0 L111.1 17.7 L118.4 13.8 L163.1 9.8 L199.5 9.8 L212.2 11.3 L220.6 14.3 L229.9 23.1 L256.4 26.5 L267.2 31.0 L276.1 36.9 L286.2 48.9 L292.0 62.6 L297.9 89.7 L300.4 116.7 L321.0 133.4 L325.4 143.2 L327.4 222.7 L326.4 247.8 L319.3 253.4 L311.0 254.9 L167.1 251.0 Z M172.2 70.0 L179.8 67.3 L187.2 62.4 L214.2 41.8 L217.4 38.6 L218.9 35.1 L218.4 30.2 L216.9 27.8 L210.8 24.6 L126.8 26.0 L120.4 27.0 L116.2 30.2 L114.7 33.7 L115.2 38.1 L122.9 45.7 L157.2 68.8 L162.1 70.3 Z'/%3E%3C/svg%3E") 50% 50%/var(--maskW,90%) no-repeat;mask:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340.0' height='265.7' fill='none' viewBox='0 0 340.0 265.7'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' fill='%23000' d='M62.9 255.9 L27.6 255.9 L18.2 252.0 L14.1 244.8 L12.6 227.7 L16.5 166.8 L15.5 145.1 L23.9 131.4 L37.6 116.2 L38.1 99.0 L41.6 74.4 L46.0 59.7 L54.8 45.4 L70.8 33.4 L82.6 29.5 L103.2 26.0 L111.1 17.7 L118.4 13.8 L163.1 9.8 L199.5 9.8 L212.2 11.3 L220.6 14.3 L229.9 23.1 L256.4 26.5 L267.2 31.0 L276.1 36.9 L286.2 48.9 L292.0 62.6 L297.9 89.7 L300.4 116.7 L321.0 133.4 L325.4 143.2 L327.4 222.7 L326.4 247.8 L319.3 253.4 L311.0 254.9 L167.1 251.0 Z M172.2 70.0 L179.8 67.3 L187.2 62.4 L214.2 41.8 L217.4 38.6 L218.9 35.1 L218.4 30.2 L216.9 27.8 L210.8 24.6 L126.8 26.0 L120.4 27.0 L116.2 30.2 L114.7 33.7 L115.2 38.1 L122.9 45.7 L157.2 68.8 L162.1 70.3 Z'/%3E%3C/svg%3E") 50% 50%/var(--maskW,90%) no-repeat;position:absolute;z-index:5}
+	.motion-section__cursor{color:#fff;font-size:1.3rem;font-weight:600;left:0;top:0;line-height:1.3rem;mix-blend-mode:difference;opacity:0;pointer-events:none;position:absolute;text-align:center;text-transform:uppercase;white-space:nowrap;transition:opacity .3s;z-index:2}
+	.motion-section__cursor strong{font-weight:100}
+	.motion-section__cursor.visible{opacity:1}
+	.motion-section__photo{display:block;height:100%;object-fit:cover;width:100%}
+	.motion-section__scroll{font-family:Manrope,sans-serif;font-size:.8rem;font-weight:600;left:50%;letter-spacing:-.02rem;line-height:.9rem;position:absolute;text-align:center;text-transform:uppercase;top:82%;transform:translate(-50%);z-index:1;color:#3a332c;white-space:nowrap}
+	.motion-section__scroll strong{color:#ed3833}
 	@media (min-width:768px){
-		.story-section{padding:5rem 0}
-		.story-section__eyebrow{font-size:1.35rem}
-		.story-section__text{font-size:1.05rem}
+		.motion-section{padding-top:7rem}
+		.motion-section__subtitle{font-size:3.2rem}
+		.motion-section__text{font-size:1rem}
 	}
 	@media (min-width:1024px){
-		.story-section__cursor{display:block;height:1px;left:0;mix-blend-mode:difference;pointer-events:none;position:absolute;top:0;width:1px;z-index:10}
-		.story-section__cursor p{color:#fff;font-size:1.4rem;font-weight:500;left:50%;line-height:1.4rem;margin:0;opacity:0;position:absolute;text-align:center;text-transform:uppercase;white-space:nowrap;top:50%;transform:translate(-50%,-50%) rotate(15deg);transition:opacity .2s,transform .2s;font-family:Manrope,sans-serif}
-		.story-section__cursor.visible>p{opacity:1;transform:translate(-50%,-50%) rotate(0)}
+		.motion-section{padding-top:9rem}
+		.motion-section__subtitle{font-size:4.2rem}
+		.motion-section__text{font-size:1.1rem}
 	}
 	</style>
-	<div class="story-section__inner">
-		<p class="story-section__eyebrow">Тихая роскошь</p>
-		<p class="story-section__text">Есть вещи, которые не нуждаются в представлении. Их замечают по <strong>силуэту</strong> и <strong>фактуре</strong>. В истории <strong>DanZla</strong> аксессуары становятся частью вашего образа — спокойно, уверенно и надолго.</p>
+	<div class="motion-section__top">
+		<div class="motion-section__mid">
+			<p class="motion-section__subtitle">Тихая роскошь</p>
+			<p class="motion-section__text">Есть вещи, которые не нуждаются в представлении. Их замечают по <strong>силуэту</strong> и <strong>фактуре</strong>. В истории <strong>DanZla</strong> аксессуары становятся частью вашего образа — спокойно, уверенно и надолго.</p>
+		</div>
 	</div>
-	<div class="story-section__media" data-ref="story-media">
-		<div class="story-section__cursor" data-ref="story-cursor"><p>Смотреть</p></div>
-		<img class="story-section__photo" src="img/danzla-story.webp" alt="DanZla — сумки в образе">
+	<div class="motion-section__pin" data-ref="motion-pin">
+		<div class="motion-section__bottom" data-ref="motion-mask">
+			<div class="motion-section__cursor" data-ref="motion-cursor"><strong>[ </strong>СМОТРЕТЬ<strong> ]</strong></div>
+			<img class="motion-section__photo" src="img/danzla-story.webp" alt="DanZla — сумки в образе">
+		</div>
+		<p class="motion-section__scroll"><strong>подсказка:</strong> листайте, чтобы рассмотреть детали</p>
 	</div>
 </section>
 <script>
 (function(){
 	function init(){
-		var media = document.querySelector('[data-ref="story-media"]');
-		var cursor = document.querySelector('[data-ref="story-cursor"]');
-		if(!media || !cursor || window.innerWidth < 1024) return;
-		var raf = 0, cx = 0, cy = 0, visible = false;
-		function setVisible(v){
-			if(visible === v) return;
-			visible = v;
-			cursor.classList.toggle('visible', v);
+		var pin = document.querySelector('[data-ref="motion-pin"]');
+		var maskEl = document.querySelector('[data-ref="motion-mask"]');
+		var cursor = document.querySelector('[data-ref="motion-cursor"]');
+		var footer = document.querySelector('footer');
+		var section = document.querySelector('.motion-section');
+		if(!pin || !maskEl || !footer || !section) return;
+
+		var ranges = {
+			mobile: {from:90, to:1000},
+			tablet: {from:60, to:500},
+			desktop: {from:30, to:440}
+		};
+		function getRange(){
+			var w = window.innerWidth;
+			if(w < 768) return ranges.mobile;
+			if(w < 1024) return ranges.tablet;
+			return ranges.desktop;
 		}
-		function place(){
-			raf = 0;
-			cursor.style.transform = 'translate(' + cx + 'px, ' + cy + 'px)';
+
+		var pinStart = 0, pinEnd = 0, sectionAbsTop = 0;
+		var state = 'before'; // before | pinned | after
+
+		function measure(){
+			// force natural (unpinned) state to measure true offsets
+			var prevPosition = pin.style.position;
+			pin.style.position = 'static';
+			var pinRect = pin.getBoundingClientRect();
+			pinStart = pinRect.top + window.scrollY;
+			var footerRect = footer.getBoundingClientRect();
+			var footerBottom = footerRect.bottom + window.scrollY;
+			pinEnd = footerBottom - window.innerHeight;
+			var sectionRect = section.getBoundingClientRect();
+			sectionAbsTop = sectionRect.top + window.scrollY;
+			pin.style.position = prevPosition;
 		}
-		function onMove(clientX, clientY){
-			var rect = media.getBoundingClientRect();
-			var inside = clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
-			setVisible(inside);
-			cx = clientX - rect.left;
-			cy = clientY - rect.top;
-			if(!raf) raf = requestAnimationFrame(place);
+
+		function setMask(progress){
+			var r = getRange();
+			var val = r.from + (r.to - r.from) * progress;
+			maskEl.style.setProperty('--maskW', val + '%');
 		}
-		media.addEventListener('pointermove', function(e){ onMove(e.clientX, e.clientY); }, {passive:true});
-		media.addEventListener('pointerleave', function(){ setVisible(false); }, {passive:true});
+
+		function apply(){
+			var y = window.scrollY;
+			if(y < pinStart){
+				if(state !== 'before'){
+					pin.style.position = '';
+					pin.style.top = '';
+					state = 'before';
+				}
+				setMask(0);
+				return;
+			}
+			if(y <= pinEnd){
+				if(state !== 'pinned'){
+					pin.style.position = 'fixed';
+					pin.style.top = '0';
+					pin.style.left = '0';
+					pin.style.width = '100%';
+					state = 'pinned';
+				}
+				var progress = pinEnd > pinStart ? (y - pinStart) / (pinEnd - pinStart) : 1;
+				setMask(Math.max(0, Math.min(1, progress)));
+				return;
+			}
+			if(state !== 'after'){
+				pin.style.position = 'absolute';
+				pin.style.left = '0';
+				pin.style.width = '100%';
+				pin.style.top = (pinEnd - sectionAbsTop) + 'px';
+				state = 'after';
+			}
+			setMask(1);
+		}
+
+		var raf = 0;
+		function onScroll(){
+			if(!raf) raf = requestAnimationFrame(function(){ raf = 0; apply(); });
+		}
+		function onResize(){
+			measure();
+			apply();
+		}
+
+		measure();
+		apply();
+		window.addEventListener('scroll', onScroll, {passive:true});
+		window.addEventListener('resize', onResize);
+
+		if(window.innerWidth >= 1024){
+			var A = 254/343;
+			function hit(clientX, clientY){
+				var rect = maskEl.getBoundingClientRect();
+				var w = window.innerWidth;
+				var range = getRange();
+				var val = parseFloat(getComputedStyle(maskEl).getPropertyValue('--maskW')) || range.from;
+				var maskW = rect.width * (val/100);
+				var maskH = maskW * A;
+				var left = (rect.width - maskW)/2;
+				var top = (rect.height - maskH)/2;
+				var x = clientX - rect.left;
+				var y = clientY - rect.top;
+				return x >= left && x <= left+maskW && y >= top && y <= top+maskH;
+			}
+			maskEl.addEventListener('mousemove', function(e){
+				var rect = maskEl.getBoundingClientRect();
+				cursor.style.transform = 'translate3d(' + (e.clientX - rect.left - cursor.offsetWidth/2) + 'px,' + (e.clientY - rect.top - cursor.offsetHeight/2) + 'px,0)';
+				var over = hit(e.clientX, e.clientY);
+				cursor.classList.toggle('visible', over);
+				maskEl.style.cursor = over ? 'none' : '';
+			}, {passive:true});
+			maskEl.addEventListener('mouseleave', function(){
+				cursor.classList.remove('visible');
+				maskEl.style.cursor = '';
+			});
+		}
 	}
 	if(document.readyState === 'loading'){
 		document.addEventListener('DOMContentLoaded', init, {once:true});
@@ -5423,8 +5527,8 @@ hsl(var(--grey));">
 })();
 </script>
 
-
-			<footer>
+		
+		<footer>
 				<!-- BEGIN sections: footer-group -->
 <div class="shopify-section shopify-section-group-footer-group" id="shopify-section-sections--30031520203121__footer">
 
