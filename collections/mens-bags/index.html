@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html class="no-js" data-template="index" dir="ltr" lang="ru"><head><script data-source-attribution="shopify.event_observer.bootstrap">
+<html class="no-js" data-template="index" dir="ltr" lang="ru"><head>
+<base href="../../"><script data-source-attribution="shopify.event_observer.bootstrap">
 (function(){let e=navigator,t=`prototype`,n=`sendBeacon`,r=e[n],i=fetch,a=XMLHttpRequest[t],{open:o,send:s}=a,c=`EventListener`,l=`add${c}`,u=`remove${c}`,d=EventTarget[t],f=d[l],p=d[u],m=e=>Error((e=document.currentScript)&&[e?.src,e?.id||e?.dataset?.sourceAttribution]),h=(e=[],t=0)=>(e.p=n=>e[t++%1e3]=n,[e,t=>(e.forEach(e.p=t),e.length=0)]),[g,_]=h(),[v,y]=h(),b,x=new WeakMap,S=e=>e&&g.p([e,b||[m()]]);d[l]=function(e,t,n){let r=this,i=t?.handleEvent||t,a=x.get(t),o=m();i?.call&&!a&&x.set(t,a=function(e){b=[o,e.type];try{i.call(t==i?this:t,e)}finally{b=null}}),v.p([e,o,a,r?.tagName||r+``,r?.id]),f.call(r,e,a||t,n)},d[u]=function(e,t,n){p.call(this,e,x.get(t)||t,n)},a.open=function(e,t){x.set(this,[t+``,e]),o.apply(this,arguments)},a.send=function(e){S(x.get(this)),s.call(this,e)},fetch=(e,t)=>(S([(e?.url||e)+``,t?.method]),i(e,t)),e[n]=(t,n)=>(S([t+``,``]),r.call(e,t,n)),setTimeout(()=>import("//eng.polene-paris.com/cdn/shopifycloud/storefront/assets/storefront/event_observer_reporter-ed358274.js").then(e=>e.$(_,y,f,i,`950632505`)))})();
 //# sourceURL=event-observer-collector.js
 </script>
@@ -13,7 +14,7 @@
 
 <script defer="" src="cdn/shop/t/61/assets/include-main.js"></script>
 		<script defer="" src="cdn/shop/t/61/assets/include-home.js"></script>
-	
+
 
 
 
@@ -26,16 +27,16 @@
 
 		<link href="https://evgeny-spark-designs.github.io/Danzla-2/" rel="canonical"/>
 
-		
 
 
-<link href="img/danzla-logo.webp" rel="icon" type="image/webp"/><title>DanZla — сумки с характером</title>
 
-		
+<link href="img/danzla-logo.webp" rel="icon" type="image/webp"/><title>Мужские сумки — DanZla</title>
+
+
 			<meta content="Сумки и аксессуары DanZla: выразительные силуэты, фактурные материалы и внимание к каждой детали." name="description"/>
-		
 
-		
+
+
 
 <meta content="DanZla" property="og:site_name"/>
 <meta content="https://evgeny-spark-designs.github.io/Danzla-2/" property="og:url"/>
@@ -164,7 +165,7 @@ Shopify.SignInWithShop.User.recognized = false;</script>
 <link href="cdn/shop/t/61/compiled_assets/styles.css" media="screen" rel="stylesheet"/>
 <script id="shopify-cfh-end">window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');</script>
 
-		
+
 			<style>
 		@font-face {
 		font-family: 'Primary';
@@ -215,7 +216,7 @@ Shopify.SignInWithShop.User.recognized = false;</script>
 					--tertiary: 'Tertiary', sans-serif;
 				}
 			</style>
-		
+
 
 		<script>
 			window.isTouch = !!('ontouchstart' in window);
@@ -241,7 +242,7 @@ Shopify.SignInWithShop.User.recognized = false;</script>
 			                                })();
 		</script>
 
-		
+
 
 
 
@@ -528,7 +529,7 @@ first.parentNode.insertBefore(script, first);
       var token = match? match[1]: undefined;
       if (!hasLoggedConversion(token)) {
         setCookieIfConversion(token);
-        
+
       }
     });
 
@@ -578,9 +579,30 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 .dz-cookie__hit--close{left:68.7%;top:22.6%;width:5.3%;height:14.6%}
 .dz-cookie__hit--accept{left:11.1%;top:65.1%;width:19.7%;height:9.8%;border-radius:999px}
 .dz-cookie__hit--settings{left:33.5%;top:65.1%;width:11.1%;height:9.8%}
-</style><script defer src="assets-materials/dz-bags-menu.js"></script></head>
+</style><style id="danzla-bestsellers-layout">
+.dz-catalog-page{background:#fff;color:#111}
+.dz-catalog-page .header{--header-menu-text-color:#111!important;background:rgba(246,243,239,.86)!important;border-bottom:1px solid rgba(18,18,18,.08);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.dz-catalog-page .header__menu-item__trigger,.dz-catalog-page .header__menu-item__trigger>*{color:#111!important}
+.dz-catalog-page .header__burger-open line,.dz-catalog-page .header .search-trigger circle,.dz-catalog-page .header .search-trigger line{stroke:#111!important}
+.dz-catalog-page .header .dz-logo-img{filter:none!important}
+.dz-catalog-page #main-content{padding-top:var(--header-height,52px)}
+.bestsellers{padding:20px 12px 0}
+.bestsellers__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:"one two feature feature" "three four feature feature";column-gap:12px;row-gap:36px;align-items:start}
+.product-card:nth-child(1){grid-area:one}.product-card:nth-child(2){grid-area:two}.product-card:nth-child(4){grid-area:three}.product-card:nth-child(5){grid-area:four}
+.product-card{color:#111;display:block;min-width:0;text-decoration:none}
+.product-card__media{position:relative;display:block;overflow:hidden;background:#f6f5f3;aspect-ratio:1920/2196}
+.product-card__media img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;transition:opacity .35s ease,transform .6s cubic-bezier(.2,.65,.3,1)}
+.product-card__media img:last-child{opacity:0}.product-card:hover .product-card__media img:first-child{opacity:0}.product-card:hover .product-card__media img:last-child{opacity:1;transform:scale(1.015)}
+.product-card__details{display:block;min-height:74px;padding:11px 0 0;font-family:var(--tertiary),Arial,sans-serif;text-transform:uppercase;letter-spacing:.025em;line-height:1.18}
+.product-card__title,.product-card__edition,.product-card__price{display:block}.product-card__title{font-size:10px;font-weight:500}.product-card__edition{margin:1px 0 10px;color:#666;font-size:10px}.product-card__price{font-size:10px;font-weight:500}
+.feature{grid-area:feature;display:block;overflow:hidden;background:#e8e5e1;line-height:0}.feature img{display:block;width:100%;height:auto;aspect-ratio:1920/2423;object-fit:cover}
+.dz-catalog-page .footer{margin-top:56px}
+@media(max-width:767px){.dz-catalog-page #main-content{padding-top:83px}.bestsellers{padding:10px 8px 0}.bestsellers__grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"one two" "feature feature" "three four";column-gap:8px;row-gap:24px}.product-card__details{min-height:70px;padding-top:9px}.product-card__title,.product-card__edition,.product-card__price{font-size:9px}.dz-catalog-page .footer{margin-top:32px}}
+</style>
+  <script defer src="assets-materials/dz-bags-menu.js"></script>
+</head>
 
-	<body class="store__en" data-barba="wrapper">
+	<body class="store__en dz-catalog-page" data-barba="wrapper">
 <div class="dz-transition" data-ref="dz-transition" aria-hidden="true">
 	<style>
 	.dz-transition{position:fixed;inset:0;z-index:99999;pointer-events:none;transform:translateY(-100%)}
@@ -680,7 +702,7 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 	<path d="M6.91278 1.08721L1 7" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
 </svg>
 </button>
-		
+
 <div class="bis-form js-bis-container" data-ref="bis" tabindex="-1">
 	<div class="bis-form__header sm-only">
 		<h3 class="ts-label-s">Out of stock</h3>
@@ -692,12 +714,12 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 
 	<component-bis-form data-market-id="1019117666">
 	<form action="" class="js-bis-form" data-ref="bis-form">
-		
-		
-		
+
+
+
 
 		<div class="bis-form__fields">
-			
+
 
 
 
@@ -706,7 +728,7 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 			<label class="visually-hidden" for="NotifyFormEmail-">email</label>
 			<input aria-describedby="bis-form-message-" aria-invalid="false" aria-label="" autocomplete="email" class="is-box" data-ref="bis-email" id="NotifyFormEmail-" name="email" placeholder="Your email" type="email"/>
 		</div>
-		
+
 
 
 
@@ -746,7 +768,7 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 
 
 
-		
+
 
 
 
@@ -764,8 +786,8 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 	<path d="M6.91278 1.08721L1 7" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
 </svg>
 </button>
-		
-	
+
+
 
 <coming-soon-form class="coming-soon-form">
 	<div class="coming-soon-form__header sm-only">
@@ -779,8 +801,8 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 
 	<form action="" data-ref="coming-soon-form">
 		<div class="coming-soon-form__fields">
-			
-			
+
+
 
 
 
@@ -789,7 +811,7 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 			<label class="visually-hidden" for="ComingSoonFormEmail">email</label>
 			<input aria-describedby="coming-soon-form-messages" aria-invalid="false" aria-label="" class="is-box" data-ref="coming-soon-form-email" id="ComingSoonFormEmail" name="email" placeholder="Your email" type="email"/>
 		</div>
-		
+
 
 
 
@@ -832,7 +854,7 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 	<path d="M6.91278 1.08721L1 7" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
 </svg>
 </button>
-	
+
 
 <search aria-label="Search for specific products" class="component-search-bar">
 	<form action="/search" class="component-search-bar__form" data-ref="search-form" data-source="header" method="get">
@@ -847,58 +869,58 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 
 </theme-search-overlay>
 
-		
+
 
 <div class="debug-grid hidden">
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 		<div class="debug-grid__column"></div>
-	
+
 </div>
 
 <script type="text/javascript">
@@ -917,7 +939,7 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 </script>
 
 
-		
+
 			<component-cart-notification aria-hidden="true" aria-live="polite" class="cart-notification" data-atc-source="cart_notification" data-ref="cart-notification" data-state="" role="status">
 	<span class="cart-notification__bg" data-ref="notification-bg"></span>
 
@@ -931,9 +953,9 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 
 
 <component-header-menu>
-	<header class="header has-custom-menu-text" data-ref="site-header" style="--header-menu-text-color: 
+	<header class="header has-custom-menu-text" data-ref="site-header" style="--header-menu-text-color:
 hsl(var(--rgba(0,0,0,0))); ">
-		
+
 		<div class="header__mobile-bar" data-ref="mobile-bar">
 			<button aria-controls="header-nav-panel" aria-expanded="false" aria-label="Open main menu" class="header__burger" data-label-close="Close main menu" data-label-open="Open main menu" data-ref="burger-toggle" type="button">
 				<span aria-hidden="true" class="header__burger-open"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 15 14" width="100%" xmlns="http://www.w3.org/2000/svg">
@@ -951,7 +973,7 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 			<div class="header__mobile-search">
 				<button aria-label="Search" class="header__menu-item__trigger search-trigger rtl-no-flip-svg ts-primary-item is-underlined" data-open="true" data-ref="search-trigger">
-	
+
 <svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 14 14" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<circle cx="5.83333" cy="5.83333" r="5.45833" stroke="black" stroke-width="0.75"></circle>
 	<line stroke="black" stroke-width="0.75" x1="9.59817" x2="13.0982" y1="10.2348" y2="13.7348"></line>
@@ -961,18 +983,18 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 			</div>
 
-			<a aria-label="Danzla logo - Back to home page" class="header__mobile-logo rtl-no-flip-svg" href="/"><img class="dz-logo-img" src="img/danzla-logo.webp" alt="Danzla"></a>
+			<a aria-label="Danzla logo - Back to home page" class="header__mobile-logo rtl-no-flip-svg" href="index.html"><img class="dz-logo-img" src="img/danzla-logo.webp" alt="Danzla"></a>
 
-			
+
 
 
 		</div>
 
-		
+
 		<nav aria-label="Main menu" class="header__nav__panel" data-ref="nav-panel" id="header-nav-panel">
-			
+
 			<div class="header__search-bar sm-only">
-				
+
 
 <search aria-label="Search for specific products" class="component-search-bar">
 	<form action="/search" class="component-search-bar__form" data-ref="search-form" data-source="burger-menu" method="get">
@@ -987,38 +1009,38 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 			</div>
 
-			
-			
+
+
 
 <li class="header-menu-layout">
 	<ul class="header-menu-layout__list" style="--layout-direction: row; --layout-wrap: wrap;">
 		<li class="shopify-block" id="shopify-block-AcGlLYmpCaW1tNWNWU__header_menu_spot_pFQYhE">
 
 
-	
+
 		<a class="navigation-spots__item" data-ref="highlight-category" href="/collections/new-bags">
-	
+
 
 	<div class="navigation-spots__item-image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="2643" loading="lazy" sizes="40vw" src="cdn/shop/files/MOBILE-Template_Visuel_Mega_Menu_Boky.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/MOBILE-Template_Visuel_Mega_Menu_Boky.jpg?v=1789458083&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/MOBILE-Template_Visuel_Mega_Menu_Boky.jpg?v=1789458083&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/MOBILE-Template_Visuel_Mega_Menu_Boky.jpg?v=1789458083&amp;width=1200 1200w, cdn/shop/files/MOBILE-Template_Visuel_Mega_Menu_Boky.jpg 1920w" width="1920"/>
-	
-	
 
 
-		
+
+
+
 				<p class="header__menu-panel__split__image-title ts-body-l ts-white ts-font-primary ts-thin ts-center" data-ref="highlight-category-label">New In</p>
-		
+
 	</div>
 
-	
+
 		</a>
-	
+
 
 
 
@@ -1026,28 +1048,28 @@ hsl(var(--rgba(0,0,0,0))); ">
 <li class="shopify-block" id="shopify-block-AYXF0YlNjNlpiQVRBU__header_menu_spot_FffbMy">
 
 
-	
+
 		<a class="navigation-spots__item" data-ref="highlight-category" href="/collections/boky">
-	
+
 
 	<div class="navigation-spots__item-image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="2643" loading="lazy" sizes="40vw" src="cdn/shop/files/MOBILE-Template_Visuel_Mega_Menu_Boky2.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/MOBILE-Template_Visuel_Mega_Menu_Boky2.jpg?v=1789458084&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/MOBILE-Template_Visuel_Mega_Menu_Boky2.jpg?v=1789458084&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/MOBILE-Template_Visuel_Mega_Menu_Boky2.jpg?v=1789458084&amp;width=1200 1200w, cdn/shop/files/MOBILE-Template_Visuel_Mega_Menu_Boky2.jpg 1920w" width="1920"/>
-	
-	
 
 
-		
+
+
+
 	</div>
 
-	
+
 		</a>
-	
+
 
 
 
@@ -1061,16 +1083,16 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 <div class="header-menu-zone header-menu-zone--both" style="--header-zone-width: 45%; --header-zone-justify: flex-start;">
 	<ul class="header__menu header-menu-zone__list" data-ref="menu-list">
-		
+
 
 
 
 <li class="header__menu-item header__menu-item--hide-mobile" data-level="1" data-ref="menu-item">
-	
-		
+
+
 		<a aria-controls="menu-panel-ARXRoaWQ1VlErWC9jb__header_menu_group_tPzd9F" aria-expanded="false" class="header__menu-item__trigger ts-primary-item is-underlined" data-header-category="true" data-ref="menu-trigger" href="collections/bestsellers/index.html">
 			<span>Бестселлеры</span>
-			
+
 				<span aria-hidden="true" class="menu-item__arrow sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -1078,9 +1100,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 	</g>
 </svg>
 </span>
-			
+
 		</a>
-	
+
 
 	<div aria-hidden="true" aria-label="Bestsellers" class="header__menu-panel" data-panel-layout="packshot" data-ref="menu-panel" id="menu-panel-ARXRoaWQ1VlErWC9jb__header_menu_group_tPzd9F" inert="" role="region">
 		<div class="header__menu-panel__header sm-only">
@@ -1097,7 +1119,7 @@ hsl(var(--rgba(0,0,0,0))); ">
 		<div aria-hidden="true" class="header__menu-panel__wrapper" data-ref="panel-wrapper" inert="">
 			<div class="header__menu-panel__inner">
 				<div class="header__menu-panel__categories">
-					
+
 				</div>
 			</div>
 		</div>
@@ -1110,11 +1132,11 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <li class="header__menu-item" data-level="1" data-ref="menu-item">
-	
-		
+
+
 		<a aria-controls="menu-panel-Ab0JmUUE4eGFUc0tkd__header_menu_group_qb3TCM" aria-expanded="false" class="header__menu-item__trigger ts-primary-item is-underlined" data-header-category="true" data-ref="menu-trigger" href="collections/handbags/index.html">
 			<span>Сумки</span>
-			
+
 				<span aria-hidden="true" class="menu-item__arrow sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -1122,9 +1144,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 	</g>
 </svg>
 </span>
-			
+
 		</a>
-	
+
 
 	<div aria-hidden="true" aria-label="Bags" class="header__menu-panel" data-panel-layout="packshot" data-ref="menu-panel" id="menu-panel-Ab0JmUUE4eGFUc0tkd__header_menu_group_qb3TCM" inert="" role="region">
 		<div class="header__menu-panel__header sm-only">
@@ -1146,8 +1168,8 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="header__menu-panel__column" data-submenu-layout="packshot">
-	
-	
+
+
 		<button aria-controls="submenu-panel-AM2puNzRJMWROaXJvS__header_menu_submenu_XMyKaQ" aria-expanded="false" class="header__menu-panel__trigger ts-body-m is-underlined sm-only" data-ref="panel-trigger" type="button">Bags by collection<span aria-hidden="true" class="menu-item__accordion-icon sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -1156,9 +1178,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 </svg>
 </span>
 		</button>
-	
 
-	
+
+
 	<div class="header__menu-panel__wrapper" data-ref="panel-wrapper" id="submenu-panel-AM2puNzRJMWROaXJvS__header_menu_submenu_XMyKaQ">
 		<div class="header__menu-panel__header sm-only">
 			<button aria-label="Back to Bags by collection" class="header__menu-panel__back" data-ref="panel-grid-back" type="button">
@@ -1171,51 +1193,51 @@ hsl(var(--rgba(0,0,0,0))); ">
 			</button>
 		</div>
 
-		
-			<div class="header__menu-panel__column-header">
-				
-					<p class="header__menu-panel__column-title ts-body-m">Bags by collection</p>
-				
 
-				
-				
+			<div class="header__menu-panel__column-header">
+
+					<p class="header__menu-panel__column-title ts-body-m">Bags by collection</p>
+
+
+
+
 					<a class="header__menu-panel__column-view-all ts-label-m ts-underline sm-only" data-ref="menu-link" data-sm-view-all="true" href="collections/handbags/index.html">
 						view all
 					</a>
-				
-			</div>
-		
 
-		
+			</div>
+
+
+
 		<div class="header__menu-panel__media">
 			<div class="shopify-block" id="shopify-block-ASkFSM3J4M3JDVWovW__header_menu_visual_card_eVx6Ay">
 
 
 
 
-	
+
 		<div class="menu-visual-card menu-visual-card--landscape menu-visual-card--hidden-mobile" data-ref="menu-visual" data-visual-text="">
-	
+
 
 	<div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/DESKTOP-Template_Visuel_Mega_Menu_Boky.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/DESKTOP-Template_Visuel_Mega_Menu_Boky.jpg?v=1789456863&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/DESKTOP-Template_Visuel_Mega_Menu_Boky.jpg?v=1789456863&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/DESKTOP-Template_Visuel_Mega_Menu_Boky.jpg?v=1789456863&amp;width=1200 1200w, cdn/shop/files/DESKTOP-Template_Visuel_Mega_Menu_Boky.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div>
 
-	
 
-	
+
+
 		</div>
-	
+
 
 
 
@@ -1223,407 +1245,407 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 		</div>
 
-		
-		
+
+
 			<ul class="header__menu-panel__links header__menu-panel__links--view-all-top">
-				
+
 					<li class="header__menu-panel__link-item header__menu-panel__view-all">
 						<a class="header__menu-panel__link ts-label-m is-underlined active" data-ref="menu-link" data-sm-view-all="true" href="collections/handbags/index.html">
 							view all
 						</a>
 					</li>
-				
 
-				
-	
+
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/boky">Boky</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/cyme">Cyme</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/numero-neuf">Numéro Neuf</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/mokki">Mokki</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/numero-dix">Numéro Dix</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/numero-un">Numéro Un</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/shuldo">Shuldo</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/tonca">Tonca</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/beri">Béri</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/nodde">Nodde</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/neyu">Neyu</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/osmo">Osmo</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/tsubi">Tsubi</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/sole">Solé</a>
 		</li>
-	
+
 
 
 			</ul>
-		
 
-		
-		
+
+
+
 			<ul aria-label="Bags by collection" class="header__menu-panel__packshot sm-only" data-ref="panel-grid">
-				
-	
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/boky">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_boki-camel.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_boki-camel.png?v=1787133297&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_boki-camel.png?v=1787133297&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_boki-camel.png?v=1787133297&amp;width=1200 1200w, cdn/shop/files/packshot-front_boki-camel.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Boky</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/cyme">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/products/packshot-front_cyme-camel-grain.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/products/packshot-front_cyme-camel-grain.png?v=1682350775&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/products/packshot-front_cyme-camel-grain.png?v=1682350775&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/products/packshot-front_cyme-camel-grain.png?v=1682350775&amp;width=1200 1200w, cdn/shop/products/packshot-front_cyme-camel-grain.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Cyme</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/numero-neuf">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/products/packshot-front_numero-neuf-mini-camel-grain.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/products/packshot-front_numero-neuf-mini-camel-grain.png?v=1682351415&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/products/packshot-front_numero-neuf-mini-camel-grain.png?v=1682351415&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/products/packshot-front_numero-neuf-mini-camel-grain.png?v=1682351415&amp;width=1200 1200w, cdn/shop/products/packshot-front_numero-neuf-mini-camel-grain.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Numéro Neuf</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/mokki">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_daily-bag-camel.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_daily-bag-camel.png?v=1709636407&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_daily-bag-camel.png?v=1709636407&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_daily-bag-camel.png?v=1709636407&amp;width=1200 1200w, cdn/shop/files/packshot-front_daily-bag-camel.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Mokki</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/numero-dix">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_numero-dix-camel-grain.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_numero-dix-camel-grain.png?v=1682518927&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_numero-dix-camel-grain.png?v=1682518927&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_numero-dix-camel-grain.png?v=1682518927&amp;width=1200 1200w, cdn/shop/files/packshot-front_numero-dix-camel-grain.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Numéro Dix</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/numero-un">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/products/packshot-front_numero-un-nano-trio-camel.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/products/packshot-front_numero-un-nano-trio-camel.png?v=1682351882&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/products/packshot-front_numero-un-nano-trio-camel.png?v=1682351882&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/products/packshot-front_numero-un-nano-trio-camel.png?v=1682351882&amp;width=1200 1200w, cdn/shop/products/packshot-front_numero-un-nano-trio-camel.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Numéro Un</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/shuldo">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_shuldo-brun.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_shuldo-brun.png?v=1783065949&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_shuldo-brun.png?v=1783065949&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_shuldo-brun.png?v=1783065949&amp;width=1200 1200w, cdn/shop/files/packshot-front_shuldo-brun.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Shuldo</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/tonca">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_tonca-duo-camel-grain_42cb5e94-22fe-488e-9252-0211a03c1ab5.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_tonca-duo-camel-grain_42cb5e94-22fe-488e-9252-0211a03c1ab5.png?v=1702973367&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_tonca-duo-camel-grain_42cb5e94-22fe-488e-9252-0211a03c1ab5.png?v=1702973367&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_tonca-duo-camel-grain_42cb5e94-22fe-488e-9252-0211a03c1ab5.png?v=1702973367&amp;width=1200 1200w, cdn/shop/files/packshot-front_tonca-duo-camel-grain_42cb5e94-22fe-488e-9252-0211a03c1ab5.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Tonca</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/beri">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/products/packshot-front_beri-bandouliere-camel-grain.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/products/packshot-front_beri-bandouliere-camel-grain.png?v=1682349881&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/products/packshot-front_beri-bandouliere-camel-grain.png?v=1682349881&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/products/packshot-front_beri-bandouliere-camel-grain.png?v=1682349881&amp;width=1200 1200w, cdn/shop/products/packshot-front_beri-bandouliere-camel-grain.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Béri</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/nodde">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_nodde-cognac.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_nodde-cognac.png?v=1687783338&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_nodde-cognac.png?v=1687783338&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_nodde-cognac.png?v=1687783338&amp;width=1200 1200w, cdn/shop/files/packshot-front_nodde-cognac.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Nodde</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/neyu">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_neyu-cognac.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_neyu-cognac.png?v=1752849655&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_neyu-cognac.png?v=1752849655&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_neyu-cognac.png?v=1752849655&amp;width=1200 1200w, cdn/shop/files/packshot-front_neyu-cognac.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Neyu</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/osmo">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_osmo-cognac.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_osmo-cognac.png?v=1738667029&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_osmo-cognac.png?v=1738667029&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_osmo-cognac.png?v=1738667029&amp;width=1200 1200w, cdn/shop/files/packshot-front_osmo-cognac.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Osmo</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/tsubi">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_tsubi-cognac.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_tsubi-cognac.png?v=1778592892&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_tsubi-cognac.png?v=1778592892&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_tsubi-cognac.png?v=1778592892&amp;width=1200 1200w, cdn/shop/files/packshot-front_tsubi-cognac.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Tsubi</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/sole">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_sole-tan.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_sole-tan.png?v=1714480020&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_sole-tan.png?v=1714480020&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_sole-tan.png?v=1714480020&amp;width=1200 1200w, cdn/shop/files/packshot-front_sole-tan.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Solé</span>
 				</a>
 			</li>
-		
-	
+
+
 
 
 			</ul>
-		
+
 	</div>
 </div>
 
@@ -1634,8 +1656,8 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="header__menu-panel__column" data-submenu-layout="links_images">
-	
-	
+
+
 		<button aria-controls="submenu-panel-AN2tyNjhFZGlrdGNiT__header_menu_submenu_nBfmcT" aria-expanded="false" class="header__menu-panel__trigger ts-body-m is-underlined sm-only" data-ref="panel-trigger" type="button">Bags by category<span aria-hidden="true" class="menu-item__accordion-icon sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -1644,9 +1666,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 </svg>
 </span>
 		</button>
-	
 
-	
+
+
 	<div class="header__menu-panel__wrapper" data-ref="panel-wrapper" id="submenu-panel-AN2tyNjhFZGlrdGNiT__header_menu_submenu_nBfmcT">
 		<div class="header__menu-panel__header sm-only">
 			<button aria-label="Back to Bags by category" class="header__menu-panel__back" data-ref="panel-grid-back" type="button">
@@ -1659,51 +1681,51 @@ hsl(var(--rgba(0,0,0,0))); ">
 			</button>
 		</div>
 
-		
-			<div class="header__menu-panel__column-header">
-				
-					<p class="header__menu-panel__column-title ts-body-m">Bags by category</p>
-				
 
-				
-				
+			<div class="header__menu-panel__column-header">
+
+					<p class="header__menu-panel__column-title ts-body-m">Bags by category</p>
+
+
+
+
 					<a class="header__menu-panel__column-view-all ts-label-m ts-underline sm-only" data-ref="menu-link" data-sm-view-all="true" href="collections/handbags/index.html">
 						view all
 					</a>
-				
-			</div>
-		
 
-		
+			</div>
+
+
+
 		<div class="header__menu-panel__media">
 			<div class="shopify-block" id="shopify-block-AV3VpRVU4QmNRSENYV__header_menu_visual_card_mg7gGy">
 
 
 
 
-	
+
 		<div class="menu-visual-card menu-visual-card--landscape menu-visual-card--hidden-mobile" data-ref="menu-visual" data-visual-text="">
-	
+
 
 	<div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/DESKTOP-Template_Visuel_Mega_Menu_Boky2.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/DESKTOP-Template_Visuel_Mega_Menu_Boky2.jpg?v=1789456863&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/DESKTOP-Template_Visuel_Mega_Menu_Boky2.jpg?v=1789456863&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/DESKTOP-Template_Visuel_Mega_Menu_Boky2.jpg?v=1789456863&amp;width=1200 1200w, cdn/shop/files/DESKTOP-Template_Visuel_Mega_Menu_Boky2.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div>
 
-	
 
-	
+
+
 		</div>
-	
+
 
 
 
@@ -1711,78 +1733,78 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 		</div>
 
-		
-		
+
+
 			<ul class="header__menu-panel__links header__menu-panel__links--view-all-top">
-				
+
 					<li class="header__menu-panel__link-item header__menu-panel__view-all">
 						<a class="header__menu-panel__link ts-label-m is-underlined active" data-ref="menu-link" data-sm-view-all="true" href="collections/handbags/index.html">
 							view all
 						</a>
 					</li>
-				
 
-				
-	
+
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/new-bags">New in</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/summer-bags">Summer bags</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/belt-bags">Belt bags</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/category-handbags">Handbags</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/crossbody">Crossbody</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/shoulder-bags">Shoulder bags</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/tote-bags">Tote bags</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/mini-bags">Mini bags</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/category-pouch">Pouch</a>
 		</li>
-	
+
 
 
 			</ul>
-		
 
-		
-		
+
+
+
 	</div>
 </div>
 
@@ -1793,8 +1815,8 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="header__menu-panel__column" data-submenu-layout="links_images">
-	
-	
+
+
 		<button aria-controls="submenu-panel-AcTNLRzNxbFBaOGU0M__header_menu_submenu_y3rcEr" aria-expanded="false" class="header__menu-panel__trigger ts-body-m is-underlined sm-only" data-ref="panel-trigger" type="button">Limited Edition<span aria-hidden="true" class="menu-item__accordion-icon sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -1803,9 +1825,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 </svg>
 </span>
 		</button>
-	
 
-	
+
+
 	<div class="header__menu-panel__wrapper" data-ref="panel-wrapper" id="submenu-panel-AcTNLRzNxbFBaOGU0M__header_menu_submenu_y3rcEr">
 		<div class="header__menu-panel__header sm-only">
 			<button aria-label="Back to Limited Edition" class="header__menu-panel__back" data-ref="panel-grid-back" type="button">
@@ -1818,47 +1840,47 @@ hsl(var(--rgba(0,0,0,0))); ">
 			</button>
 		</div>
 
-		
+
 			<div class="header__menu-panel__column-header">
-				
+
 					<p class="header__menu-panel__column-title ts-body-m">Limited Edition</p>
-				
 
-				
-				
+
+
+
 			</div>
-		
 
-		
+
+
 		<div class="header__menu-panel__media">
 			<div class="shopify-block" id="shopify-block-AU3ZtUG1haGY4SEJnO__header_menu_visual_card_HHJ766">
 
 
 
 
-	
+
 		<div class="menu-visual-card menu-visual-card--landscape menu-visual-card--hidden-mobile" data-ref="menu-visual" data-visual-text="">
-	
+
 
 	<div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="1079" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/03_POLENE_STILL-LIFE_BERI-LIF_EBENE_15.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/03_POLENE_STILL-LIFE_BERI-LIF_EBENE_15.jpg?v=1784626764&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/03_POLENE_STILL-LIFE_BERI-LIF_EBENE_15.jpg?v=1784626764&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/03_POLENE_STILL-LIFE_BERI-LIF_EBENE_15.jpg?v=1784626764&amp;width=1200 1200w, cdn/shop/files/03_POLENE_STILL-LIFE_BERI-LIF_EBENE_15.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div>
 
-	
 
-	
+
+
 		</div>
-	
+
 
 
 
@@ -1868,29 +1890,29 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 
-	
+
 		<div class="menu-visual-card menu-visual-card--landscape menu-visual-card--hidden-mobile" data-ref="menu-visual" data-visual-text="">
-	
+
 
 	<div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/POLENE_STILL-LIFE_BERI-LIF_IVOIRE_08.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/POLENE_STILL-LIFE_BERI-LIF_IVOIRE_08.jpg?v=1788862084&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/POLENE_STILL-LIFE_BERI-LIF_IVOIRE_08.jpg?v=1788862084&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/POLENE_STILL-LIFE_BERI-LIF_IVOIRE_08.jpg?v=1788862084&amp;width=1200 1200w, cdn/shop/files/POLENE_STILL-LIFE_BERI-LIF_IVOIRE_08.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div>
 
-	
 
-	
+
+
 		</div>
-	
+
 
 
 
@@ -1898,29 +1920,29 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 		</div>
 
-		
-		
+
+
 			<ul class="header__menu-panel__links header__menu-panel__links--view-all-top">
-				
-					
+
+
 					<li aria-hidden="true" class="header__menu-panel__link-item header__menu-panel__view-all">
 						<span class="header__menu-panel__link ts-label-m"> </span>
 					</li>
-				
 
-				
-	
+
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/beri-lif">Béri Lif</a>
 		</li>
-	
+
 
 
 			</ul>
-		
 
-		
-		
+
+
+
 	</div>
 </div>
 
@@ -1939,11 +1961,11 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <li class="header__menu-item" data-level="1" data-ref="menu-item">
-	
-		
+
+
 		<a aria-controls="menu-panel-ASGVicEN2YSszazRJV__header_menu_group_U6BQrL" aria-expanded="false" class="header__menu-item__trigger ts-primary-item is-underlined" data-header-category="true" data-ref="menu-trigger" href="/collections/jewellery">
 			<span>Клатчи</span>
-			
+
 				<span aria-hidden="true" class="menu-item__arrow sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -1951,9 +1973,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 	</g>
 </svg>
 </span>
-			
+
 		</a>
-	
+
 
 	<div aria-hidden="true" aria-label="Jewellery" class="header__menu-panel" data-panel-layout="packshot" data-ref="menu-panel" id="menu-panel-ASGVicEN2YSszazRJV__header_menu_group_U6BQrL" inert="" role="region">
 		<div class="header__menu-panel__header sm-only">
@@ -1975,8 +1997,8 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="header__menu-panel__column" data-submenu-layout="packshot">
-	
-	
+
+
 		<button aria-controls="submenu-panel-AcHBmekV6WHZ4V2t4c__header_menu_submenu_d7Xx8q" aria-expanded="false" class="header__menu-panel__trigger ts-body-m is-underlined sm-only" data-ref="panel-trigger" type="button">Jewellery by collection<span aria-hidden="true" class="menu-item__accordion-icon sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -1985,9 +2007,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 </svg>
 </span>
 		</button>
-	
 
-	
+
+
 	<div class="header__menu-panel__wrapper" data-ref="panel-wrapper" id="submenu-panel-AcHBmekV6WHZ4V2t4c__header_menu_submenu_d7Xx8q">
 		<div class="header__menu-panel__header sm-only">
 			<button aria-label="Back to Jewellery by collection" class="header__menu-panel__back" data-ref="panel-grid-back" type="button">
@@ -2000,51 +2022,51 @@ hsl(var(--rgba(0,0,0,0))); ">
 			</button>
 		</div>
 
-		
-			<div class="header__menu-panel__column-header">
-				
-					<p class="header__menu-panel__column-title ts-body-m">Jewellery by collection</p>
-				
 
-				
-				
+			<div class="header__menu-panel__column-header">
+
+					<p class="header__menu-panel__column-title ts-body-m">Jewellery by collection</p>
+
+
+
+
 					<a class="header__menu-panel__column-view-all ts-label-m ts-underline sm-only" data-ref="menu-link" data-sm-view-all="true" href="/collections/jewellery">
 						view all
 					</a>
-				
-			</div>
-		
 
-		
+			</div>
+
+
+
 		<div class="header__menu-panel__media">
 			<div class="shopify-block" id="shopify-block-AbjdDdDBtN3dKVHNsU__header_menu_visual_card_mckfPD">
 
 
 
 
-	
+
 		<div class="menu-visual-card menu-visual-card--landscape menu-visual-card--hidden-mobile" data-ref="menu-visual" data-visual-text="">
-	
+
 
 	<div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/01_Visuel_Mega_Menu_20266.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/01_Visuel_Mega_Menu_20266.jpg?v=1783586582&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/01_Visuel_Mega_Menu_20266.jpg?v=1783586582&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/01_Visuel_Mega_Menu_20266.jpg?v=1783586582&amp;width=1200 1200w, cdn/shop/files/01_Visuel_Mega_Menu_20266.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div>
 
-	
 
-	
+
+
 		</div>
-	
+
 
 
 
@@ -2052,191 +2074,191 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 		</div>
 
-		
-		
+
+
 			<ul class="header__menu-panel__links header__menu-panel__links--view-all-top">
-				
+
 					<li class="header__menu-panel__link-item header__menu-panel__view-all">
 						<a class="header__menu-panel__link ts-label-m is-underlined active" data-ref="menu-link" data-sm-view-all="true" href="/collections/jewellery">
 							view all
 						</a>
 					</li>
-				
 
-				
-	
+
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/rozo">Rozo</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/eole">Éole</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/eroz">Eroz</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/orme">Ormé</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/nae">Naé</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/tere">Téré</a>
 		</li>
-	
+
 
 
 			</ul>
-		
 
-		
-		
+
+
+
 			<ul aria-label="Jewellery by collection" class="header__menu-panel__packshot sm-only" data-ref="panel-grid">
-				
-	
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/rozo">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_collier-rotin.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_collier-rotin.png?v=1781514999&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_collier-rotin.png?v=1781514999&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_collier-rotin.png?v=1781514999&amp;width=1200 1200w, cdn/shop/files/packshot-front_collier-rotin.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Rozo</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/eole">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_boucles_creoles_eole_slim_ddb6b123-b20c-49ca-814d-81ca6fea5b05.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_boucles_creoles_eole_slim_ddb6b123-b20c-49ca-814d-81ca6fea5b05.png?v=1709117591&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_boucles_creoles_eole_slim_ddb6b123-b20c-49ca-814d-81ca6fea5b05.png?v=1709117591&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_boucles_creoles_eole_slim_ddb6b123-b20c-49ca-814d-81ca6fea5b05.png?v=1709117591&amp;width=1200 1200w, cdn/shop/files/packshot-front_boucles_creoles_eole_slim_ddb6b123-b20c-49ca-814d-81ca6fea5b05.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Éole</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/eroz">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_bague-chaine-eroz.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_bague-chaine-eroz.png?v=1730381750&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_bague-chaine-eroz.png?v=1730381750&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_bague-chaine-eroz.png?v=1730381750&amp;width=1200 1200w, cdn/shop/files/packshot-front_bague-chaine-eroz.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Eroz</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/orme">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_jonc-orme-argent-cuir-taupe.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_jonc-orme-argent-cuir-taupe.png?v=1763028093&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_jonc-orme-argent-cuir-taupe.png?v=1763028093&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_jonc-orme-argent-cuir-taupe.png?v=1763028093&amp;width=1200 1200w, cdn/shop/files/packshot-front_jonc-orme-argent-cuir-taupe.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Ormé</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/nae">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_boucles_pendantes-nae.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_boucles_pendantes-nae.png?v=1718805368&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_boucles_pendantes-nae.png?v=1718805368&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_boucles_pendantes-nae.png?v=1718805368&amp;width=1200 1200w, cdn/shop/files/packshot-front_boucles_pendantes-nae.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Naé</span>
 				</a>
 			</li>
-		
-	
 
-	
+
+
+
 
 			<li class="header__menu-panel__packshot__item">
 				<a class="header__menu-panel__packshot__item__link ts-tertiary-item" data-menu-collection="true" data-ref="menu-link" href="/collections/tere">
-					
 
 
 
 
-	
+
+
 <img alt="" class="" height="2196" loading="lazy" sizes="100px" src="cdn/shop/files/packshot-front_boucles-puces-tere_5553440c-97b8-4926-a3e4-71e82c3edacb.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_boucles-puces-tere_5553440c-97b8-4926-a3e4-71e82c3edacb.png?v=1748335104&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_boucles-puces-tere_5553440c-97b8-4926-a3e4-71e82c3edacb.png?v=1748335104&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_boucles-puces-tere_5553440c-97b8-4926-a3e4-71e82c3edacb.png?v=1748335104&amp;width=1200 1200w, cdn/shop/files/packshot-front_boucles-puces-tere_5553440c-97b8-4926-a3e4-71e82c3edacb.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 					<span class="ts-font-primary">Téré</span>
 				</a>
 			</li>
-		
-	
+
+
 
 
 			</ul>
-		
+
 	</div>
 </div>
 
@@ -2247,8 +2269,8 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="header__menu-panel__column" data-submenu-layout="links_images">
-	
-	
+
+
 		<button aria-controls="submenu-panel-AUEJnQllYOW10Q2c2U__header_menu_submenu_nAP8jG" aria-expanded="false" class="header__menu-panel__trigger ts-body-m is-underlined sm-only" data-ref="panel-trigger" type="button">Jewellery by category<span aria-hidden="true" class="menu-item__accordion-icon sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -2257,9 +2279,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 </svg>
 </span>
 		</button>
-	
 
-	
+
+
 	<div class="header__menu-panel__wrapper" data-ref="panel-wrapper" id="submenu-panel-AUEJnQllYOW10Q2c2U__header_menu_submenu_nAP8jG">
 		<div class="header__menu-panel__header sm-only">
 			<button aria-label="Back to Jewellery by category" class="header__menu-panel__back" data-ref="panel-grid-back" type="button">
@@ -2272,51 +2294,51 @@ hsl(var(--rgba(0,0,0,0))); ">
 			</button>
 		</div>
 
-		
-			<div class="header__menu-panel__column-header">
-				
-					<p class="header__menu-panel__column-title ts-body-m">Jewellery by category</p>
-				
 
-				
-				
+			<div class="header__menu-panel__column-header">
+
+					<p class="header__menu-panel__column-title ts-body-m">Jewellery by category</p>
+
+
+
+
 					<a class="header__menu-panel__column-view-all ts-label-m ts-underline sm-only" data-ref="menu-link" data-sm-view-all="true" href="/collections/jewellery">
 						view all
 					</a>
-				
-			</div>
-		
 
-		
+			</div>
+
+
+
 		<div class="header__menu-panel__media">
 			<div class="shopify-block" id="shopify-block-AbktjV0VTUE9pY2ZKO__header_menu_visual_card_bxzG6t">
 
 
 
 
-	
+
 		<div class="menu-visual-card menu-visual-card--landscape menu-visual-card--hidden-mobile" data-ref="menu-visual" data-visual-text="">
-	
+
 
 	<div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/02_Visuel_Mega_Menu_20265.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/02_Visuel_Mega_Menu_20265.jpg?v=1783586582&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/02_Visuel_Mega_Menu_20265.jpg?v=1783586582&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/02_Visuel_Mega_Menu_20265.jpg?v=1783586582&amp;width=1200 1200w, cdn/shop/files/02_Visuel_Mega_Menu_20265.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div>
 
-	
 
-	
+
+
 		</div>
-	
+
 
 
 
@@ -2326,29 +2348,29 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 
-	
+
 		<div class="menu-visual-card menu-visual-card--landscape menu-visual-card--hidden-mobile" data-ref="menu-visual" data-visual-text="">
-	
+
 
 	<div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/03_Visuel_Mega_Menu_20267.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/03_Visuel_Mega_Menu_20267.jpg?v=1783586582&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/03_Visuel_Mega_Menu_20267.jpg?v=1783586582&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/03_Visuel_Mega_Menu_20267.jpg?v=1783586582&amp;width=1200 1200w, cdn/shop/files/03_Visuel_Mega_Menu_20267.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div>
 
-	
 
-	
+
+
 		</div>
-	
+
 
 
 
@@ -2358,29 +2380,29 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 
-	
+
 		<div class="menu-visual-card menu-visual-card--landscape menu-visual-card--hidden-mobile" data-ref="menu-visual" data-visual-text="">
-	
+
 
 	<div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/04_Visuel_Mega_Menu_20268.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/04_Visuel_Mega_Menu_20268.jpg?v=1783586582&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/04_Visuel_Mega_Menu_20268.jpg?v=1783586582&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/04_Visuel_Mega_Menu_20268.jpg?v=1783586582&amp;width=1200 1200w, cdn/shop/files/04_Visuel_Mega_Menu_20268.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div>
 
-	
 
-	
+
+
 		</div>
-	
+
 
 
 
@@ -2388,54 +2410,54 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 		</div>
 
-		
-		
+
+
 			<ul class="header__menu-panel__links header__menu-panel__links--view-all-top">
-				
+
 					<li class="header__menu-panel__link-item header__menu-panel__view-all">
 						<a class="header__menu-panel__link ts-label-m is-underlined active" data-ref="menu-link" data-sm-view-all="true" href="/collections/jewellery">
 							view all
 						</a>
 					</li>
-				
 
-				
-	
+
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/new-jewellery">New in</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/earrings">Earrings</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/bracelets">Bracelets</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/rings">Rings</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/necklaces">Necklaces</a>
 		</li>
-	
+
 
 
 			</ul>
-		
 
-		
-		
+
+
+
 	</div>
 </div>
 
@@ -2454,11 +2476,11 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <li class="header__menu-item" data-level="1" data-ref="menu-item">
-	
-		
+
+
 		<a aria-controls="menu-panel-AOHhHRS9jblVwQ0ZNU__header_menu_group_qgXqBQ" aria-expanded="false" class="header__menu-item__trigger ts-primary-item is-underlined" data-header-category="true" data-ref="menu-trigger" href="/collections/small-leather-goods">
 			<span>Кошельки</span>
-			
+
 				<span aria-hidden="true" class="menu-item__arrow sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -2466,9 +2488,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 	</g>
 </svg>
 </span>
-			
+
 		</a>
-	
+
 
 	<div aria-hidden="true" aria-label="Accessories" class="header__menu-panel" data-panel-layout="packshot" data-ref="menu-panel" id="menu-panel-AOHhHRS9jblVwQ0ZNU__header_menu_group_qgXqBQ" inert="" role="region">
 		<div class="header__menu-panel__header sm-only">
@@ -2490,8 +2512,8 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="header__menu-panel__column" data-submenu-layout="links_images">
-	
-	
+
+
 		<button aria-controls="submenu-panel-AWlRhdkhrU05odEF5b__header_menu_submenu_TtQfJB" aria-expanded="false" class="header__menu-panel__trigger ts-body-m is-underlined sm-only" data-ref="panel-trigger" type="button">Small leather goods<span aria-hidden="true" class="menu-item__accordion-icon sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -2500,9 +2522,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 </svg>
 </span>
 		</button>
-	
 
-	
+
+
 	<div class="header__menu-panel__wrapper" data-ref="panel-wrapper" id="submenu-panel-AWlRhdkhrU05odEF5b__header_menu_submenu_TtQfJB">
 		<div class="header__menu-panel__header sm-only">
 			<button aria-label="Back to Small leather goods" class="header__menu-panel__back" data-ref="panel-grid-back" type="button">
@@ -2515,51 +2537,51 @@ hsl(var(--rgba(0,0,0,0))); ">
 			</button>
 		</div>
 
-		
-			<div class="header__menu-panel__column-header">
-				
-					<p class="header__menu-panel__column-title ts-body-m">Small leather goods</p>
-				
 
-				
-				
+			<div class="header__menu-panel__column-header">
+
+					<p class="header__menu-panel__column-title ts-body-m">Small leather goods</p>
+
+
+
+
 					<a class="header__menu-panel__column-view-all ts-label-m ts-underline sm-only" data-ref="menu-link" data-sm-view-all="true" href="/collections/small-leather-goods">
 						view all
 					</a>
-				
-			</div>
-		
 
-		
+			</div>
+
+
+
 		<div class="header__menu-panel__media">
 			<div class="shopify-block" id="shopify-block-AQnloNVVsak1yL1BEN__header_menu_visual_card_9FcpgP">
 
 
 
 
-	
+
 		<div class="menu-visual-card menu-visual-card--landscape menu-visual-card--hidden-mobile" data-ref="menu-visual" data-visual-text="">
-	
+
 
 	<div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/20260715-polene-megamenu-website-plei.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/20260715-polene-megamenu-website-plei.jpg?v=1784626780&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/20260715-polene-megamenu-website-plei.jpg?v=1784626780&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/20260715-polene-megamenu-website-plei.jpg?v=1784626780&amp;width=1200 1200w, cdn/shop/files/20260715-polene-megamenu-website-plei.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div>
 
-	
 
-	
+
+
 		</div>
-	
+
 
 
 
@@ -2567,54 +2589,54 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 		</div>
 
-		
-		
+
+
 			<ul class="header__menu-panel__links header__menu-panel__links--view-all-top">
-				
+
 					<li class="header__menu-panel__link-item header__menu-panel__view-all">
 						<a class="header__menu-panel__link ts-label-m is-underlined active" data-ref="menu-link" data-sm-view-all="true" href="/collections/small-leather-goods">
 							view all
 						</a>
 					</li>
-				
 
-				
-	
+
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/new-accessories">New in</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/wallets">Wallets</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/card-holder-and-purse">Card holder &amp; purse</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/pouch">Pouch</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/keyrings-jewellery-bags">Keyrings &amp; jewellery bags</a>
 		</li>
-	
+
 
 
 			</ul>
-		
 
-		
-		
+
+
+
 	</div>
 </div>
 
@@ -2625,8 +2647,8 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="header__menu-panel__column" data-submenu-layout="links_images">
-	
-	
+
+
 		<button aria-controls="submenu-panel-AQVVKbWJrN0xGUTRqY__header_menu_submenu_JAMbif" aria-expanded="false" class="header__menu-panel__trigger ts-body-m is-underlined sm-only" data-ref="panel-trigger" type="button">Interior decorations<span aria-hidden="true" class="menu-item__accordion-icon sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -2635,9 +2657,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 </svg>
 </span>
 		</button>
-	
 
-	
+
+
 	<div class="header__menu-panel__wrapper" data-ref="panel-wrapper" id="submenu-panel-AQVVKbWJrN0xGUTRqY__header_menu_submenu_JAMbif">
 		<div class="header__menu-panel__header sm-only">
 			<button aria-label="Back to Interior decorations" class="header__menu-panel__back" data-ref="panel-grid-back" type="button">
@@ -2650,51 +2672,51 @@ hsl(var(--rgba(0,0,0,0))); ">
 			</button>
 		</div>
 
-		
-			<div class="header__menu-panel__column-header">
-				
-					<p class="header__menu-panel__column-title ts-body-m">Interior decorations</p>
-				
 
-				
-				
+			<div class="header__menu-panel__column-header">
+
+					<p class="header__menu-panel__column-title ts-body-m">Interior decorations</p>
+
+
+
+
 					<a class="header__menu-panel__column-view-all ts-label-m ts-underline sm-only" data-ref="menu-link" data-sm-view-all="true" href="/collections/interior-decorations">
 						view all
 					</a>
-				
-			</div>
-		
 
-		
+			</div>
+
+
+
 		<div class="header__menu-panel__media">
 			<div class="shopify-block" id="shopify-block-AUzNFS2huQTBkeDMya__header_menu_visual_card_wAVfYP">
 
 
 
 
-	
+
 		<div class="menu-visual-card menu-visual-card--landscape menu-visual-card--hidden-mobile" data-ref="menu-visual" data-visual-text="">
-	
+
 
 	<div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/20260715-polene-megamenu-website-plei.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/20260715-polene-megamenu-website-plei.png?v=1784626780&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/20260715-polene-megamenu-website-plei.png?v=1784626780&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/20260715-polene-megamenu-website-plei.png?v=1784626780&amp;width=1200 1200w, cdn/shop/files/20260715-polene-megamenu-website-plei.png 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div>
 
-	
 
-	
+
+
 		</div>
-	
+
 
 
 
@@ -2702,36 +2724,36 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 		</div>
 
-		
-		
+
+
 			<ul class="header__menu-panel__links header__menu-panel__links--view-all-top">
-				
+
 					<li class="header__menu-panel__link-item header__menu-panel__view-all">
 						<a class="header__menu-panel__link ts-label-m is-underlined active" data-ref="menu-link" data-sm-view-all="true" href="/collections/interior-decorations">
 							view all
 						</a>
 					</li>
-				
 
-				
-	
+
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/sculpture">Sculptures</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/leather-flowers">Leather flowers</a>
 		</li>
-	
+
 
 
 			</ul>
-		
 
-		
-		
+
+
+
 	</div>
 </div>
 
@@ -2742,8 +2764,8 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="header__menu-panel__column" data-submenu-layout="links_images">
-	
-	
+
+
 		<button aria-controls="submenu-panel-AVkgvT21vbEJHNTAzc__header_menu_submenu_jzUBQr" aria-expanded="false" class="header__menu-panel__trigger ts-body-m is-underlined sm-only" data-ref="panel-trigger" type="button">Collaboration<span aria-hidden="true" class="menu-item__accordion-icon sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -2752,9 +2774,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 </svg>
 </span>
 		</button>
-	
 
-	
+
+
 	<div class="header__menu-panel__wrapper" data-ref="panel-wrapper" id="submenu-panel-AVkgvT21vbEJHNTAzc__header_menu_submenu_jzUBQr">
 		<div class="header__menu-panel__header sm-only">
 			<button aria-label="Back to Collaboration" class="header__menu-panel__back" data-ref="panel-grid-back" type="button">
@@ -2767,47 +2789,47 @@ hsl(var(--rgba(0,0,0,0))); ">
 			</button>
 		</div>
 
-		
+
 			<div class="header__menu-panel__column-header">
-				
+
 					<p class="header__menu-panel__column-title ts-body-m">Collaboration</p>
-				
 
-				
-				
+
+
+
 			</div>
-		
 
-		
+
+
 		<div class="header__menu-panel__media">
 			<div class="shopify-block" id="shopify-block-AazlYdlFnb29pYVViV__header_menu_visual_card_RGDGhk">
 
 
 
 
-	
+
 		<div class="menu-visual-card menu-visual-card--landscape menu-visual-card--hidden-mobile" data-ref="menu-visual" data-visual-text="">
-	
+
 
 	<div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/03_POLENE_STILL-LIFE_JINYA-ZAHO_ORANGE_0477.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/03_POLENE_STILL-LIFE_JINYA-ZAHO_ORANGE_0477.jpg?v=1784626780&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/03_POLENE_STILL-LIFE_JINYA-ZAHO_ORANGE_0477.jpg?v=1784626780&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/03_POLENE_STILL-LIFE_JINYA-ZAHO_ORANGE_0477.jpg?v=1784626780&amp;width=1200 1200w, cdn/shop/files/03_POLENE_STILL-LIFE_JINYA-ZAHO_ORANGE_0477.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div>
 
-	
 
-	
+
+
 		</div>
-	
+
 
 
 
@@ -2815,35 +2837,35 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 		</div>
 
-		
-		
+
+
 			<ul class="header__menu-panel__links header__menu-panel__links--view-all-top">
-				
-					
+
+
 					<li aria-hidden="true" class="header__menu-panel__link-item header__menu-panel__view-all">
 						<span class="header__menu-panel__link ts-label-m"> </span>
 					</li>
-				
 
-				
-	
+
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/yni-sia-hurtigkarl">Sia Hurtigkarl</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/uzlo-jinya-zhao">Jinya Zhao</a>
 		</li>
-	
+
 
 
 			</ul>
-		
 
-		
-		
+
+
+
 	</div>
 </div>
 
@@ -2854,8 +2876,8 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="header__menu-panel__column" data-submenu-layout="links_images">
-	
-	
+
+
 		<button aria-controls="submenu-panel-AU3pGTWs2ZklGTGRRY__header_menu_submenu_EeecMG" aria-expanded="false" class="header__menu-panel__trigger ts-body-m is-underlined sm-only" data-ref="panel-trigger" type="button">Leather Stationery<span aria-hidden="true" class="menu-item__accordion-icon sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -2864,9 +2886,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 </svg>
 </span>
 		</button>
-	
 
-	
+
+
 	<div class="header__menu-panel__wrapper" data-ref="panel-wrapper" id="submenu-panel-AU3pGTWs2ZklGTGRRY__header_menu_submenu_EeecMG">
 		<div class="header__menu-panel__header sm-only">
 			<button aria-label="Back to Leather Stationery" class="header__menu-panel__back" data-ref="panel-grid-back" type="button">
@@ -2879,47 +2901,47 @@ hsl(var(--rgba(0,0,0,0))); ">
 			</button>
 		</div>
 
-		
+
 			<div class="header__menu-panel__column-header">
-				
+
 					<p class="header__menu-panel__column-title ts-body-m">Leather Stationery</p>
-				
 
-				
-				
+
+
+
 			</div>
-		
 
-		
+
+
 		<div class="header__menu-panel__media">
 			<div class="shopify-block" id="shopify-block-ASmZkRm5uUjZCSFB2a__header_menu_visual_card_aVt4MA">
 
 
 
 
-	
+
 		<div class="menu-visual-card menu-visual-card--landscape menu-visual-card--hidden-mobile" data-ref="menu-visual" data-visual-text="">
-	
+
 
 	<div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/04_POLENE_LONGUE-VUE_STILL-LIFE_PETIT-COUVRE-CARNET-NEITI-CAMEL_03.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/04_POLENE_LONGUE-VUE_STILL-LIFE_PETIT-COUVRE-CARNET-NEITI-CAMEL_03.jpg?v=1784626780&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/04_POLENE_LONGUE-VUE_STILL-LIFE_PETIT-COUVRE-CARNET-NEITI-CAMEL_03.jpg?v=1784626780&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/04_POLENE_LONGUE-VUE_STILL-LIFE_PETIT-COUVRE-CARNET-NEITI-CAMEL_03.jpg?v=1784626780&amp;width=1200 1200w, cdn/shop/files/04_POLENE_LONGUE-VUE_STILL-LIFE_PETIT-COUVRE-CARNET-NEITI-CAMEL_03.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div>
 
-	
 
-	
+
+
 		</div>
-	
+
 
 
 
@@ -2927,29 +2949,29 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 		</div>
 
-		
-		
+
+
 			<ul class="header__menu-panel__links header__menu-panel__links--view-all-top">
-				
-					
+
+
 					<li aria-hidden="true" class="header__menu-panel__link-item header__menu-panel__view-all">
 						<span class="header__menu-panel__link ts-label-m"> </span>
 					</li>
-				
 
-				
-	
+
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="/collections/leather-stationery">Leather Stationery</a>
 		</li>
-	
+
 
 
 			</ul>
-		
 
-		
-		
+
+
+
 	</div>
 </div>
 
@@ -2980,7 +3002,7 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 
-<a aria-label="Danzla logo - Back to home page" class="header__logo header-logo rtl-no-flip-svg" href="/" style="--header-logo-width: 10%;"><img class="dz-logo-img" src="img/danzla-logo.webp" alt="Danzla"></a>
+<a aria-label="Danzla logo - Back to home page" class="header__logo header-logo rtl-no-flip-svg" href="index.html" style="--header-logo-width: 10%;"><img class="dz-logo-img" src="img/danzla-logo.webp" alt="Danzla"></a>
 
 
 </div>
@@ -2989,7 +3011,7 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 <div class="header-menu-zone header-menu-zone--mobile" style="--header-zone-width: 45%; --header-zone-justify: flex-start;">
 	<ul class="header__menu header-menu-zone__list" data-ref="menu-list">
-		
+
 
 <li aria-hidden="true" class="header-menu-separator" role="separator" style="--header-menu-separator-margin-top: 10px; --header-menu-separator-margin-bottom: 10px;"></li>
 
@@ -3001,7 +3023,7 @@ hsl(var(--rgba(0,0,0,0))); ">
 <li class="header__menu-item" data-level="1" data-ref="menu-item">
 	<button aria-controls="menu-panel-ASGxHT2wyZVJsY0l1c__header_menu_stores_AWVcV8" aria-expanded="false" class="header__menu-item__trigger ts-primary-item" data-header-category="true" data-ref="menu-trigger" tabindex="0">
 		<span class="is-underlined">Stores</span>
-		
+
 			<span aria-hidden="true" class="menu-item__arrow sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -3009,8 +3031,8 @@ hsl(var(--rgba(0,0,0,0))); ">
 	</g>
 </svg>
 </span>
-		
-		
+
+
 	</button>
 
 	<div aria-hidden="true" aria-label="Stores" class="header__menu-panel" data-panel-layout="packshot" data-ref="menu-panel" id="menu-panel-ASGxHT2wyZVJsY0l1c__header_menu_stores_AWVcV8" inert="" role="region">
@@ -3033,15 +3055,15 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="menu-visual-card" data-ref="menu-visual" data-visual-position="" data-visual-text=""><div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="Paris, Champs-Elysées" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/01_Visuel_Mega_Menu_20269.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/01_Visuel_Mega_Menu_20269.jpg?v=1783586588&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/01_Visuel_Mega_Menu_20269.jpg?v=1783586588&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/01_Visuel_Mega_Menu_20269.jpg?v=1783586588&amp;width=1200 1200w, cdn/shop/files/01_Visuel_Mega_Menu_20269.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div><div class="menu-visual-card__info"><p class="menu-visual-card__name ts-label-s ts-bold">
@@ -3064,15 +3086,15 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="menu-visual-card" data-ref="menu-visual" data-visual-position="" data-visual-text=""><div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="Milan" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/02_Visuel_Mega_Menu_202611.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/02_Visuel_Mega_Menu_202611.jpg?v=1783586588&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/02_Visuel_Mega_Menu_202611.jpg?v=1783586588&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/02_Visuel_Mega_Menu_202611.jpg?v=1783586588&amp;width=1200 1200w, cdn/shop/files/02_Visuel_Mega_Menu_202611.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div><div class="menu-visual-card__info"><p class="menu-visual-card__name ts-label-s ts-bold">
@@ -3097,15 +3119,15 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="menu-visual-card" data-ref="menu-visual" data-visual-position="" data-visual-text=""><div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="Tokyo, Ginza Six" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/04_Visuel_Mega_Menu_202612.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/04_Visuel_Mega_Menu_202612.jpg?v=1783586588&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/04_Visuel_Mega_Menu_202612.jpg?v=1783586588&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/04_Visuel_Mega_Menu_202612.jpg?v=1783586588&amp;width=1200 1200w, cdn/shop/files/04_Visuel_Mega_Menu_202612.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div><div class="menu-visual-card__info"><p class="menu-visual-card__name ts-label-s ts-bold">
@@ -3134,15 +3156,15 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="menu-visual-card" data-ref="menu-visual" data-visual-position="" data-visual-text=""><div class="menu-visual-card__image">
-		
 
 
 
 
-	
+
+
 <img alt="New York" class="" height="1080" loading="lazy" sizes="(min-width: 1024px) 25vw, 50vw" src="cdn/shop/files/03_Visuel_Mega_Menu_202610.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/03_Visuel_Mega_Menu_202610.jpg?v=1783586588&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/03_Visuel_Mega_Menu_202610.jpg?v=1783586588&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/03_Visuel_Mega_Menu_202610.jpg?v=1783586588&amp;width=1200 1200w, cdn/shop/files/03_Visuel_Mega_Menu_202610.jpg 1920w" width="1920"/>
-	
-	
+
+
 
 
 	</div><div class="menu-visual-card__info"><p class="menu-visual-card__name ts-label-s ts-bold">
@@ -3276,11 +3298,11 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <li class="header__menu-item" data-level="1" data-ref="menu-item">
-	
-		
+
+
 		<button aria-controls="menu-panel-AaDVzOHRKd2Z2MzdNY__header_menu_group_xYHtVx" aria-expanded="false" class="header__menu-item__trigger ts-primary-item is-underlined" data-header-category="true" data-ref="menu-trigger" type="button">
 			<span>Customer service</span>
-			
+
 				<span aria-hidden="true" class="menu-item__arrow sm-only"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 9 7" width="100%" xmlns="http://www.w3.org/2000/svg">
 	<g>
 	  <path d="M-0.00256518 3.5L8.35938 3.5" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
@@ -3288,9 +3310,9 @@ hsl(var(--rgba(0,0,0,0))); ">
 	</g>
 </svg>
 </span>
-			
+
 		</button>
-	
+
 
 	<div aria-hidden="true" aria-label="Customer service" class="header__menu-panel" data-panel-layout="packshot" data-ref="menu-panel" id="menu-panel-AaDVzOHRKd2Z2MzdNY__header_menu_group_xYHtVx" inert="" role="region">
 		<div class="header__menu-panel__header sm-only">
@@ -3312,10 +3334,10 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <div class="header__menu-panel__column" data-submenu-layout="links_images">
-	
-	
 
-	
+
+
+
 	<div class="header__menu-panel__wrapper" data-ref="panel-wrapper" id="submenu-panel-AOVI3T3hzcXVNYjg0d__header_menu_submenu_7mHPBN">
 		<div class="header__menu-panel__header sm-only">
 			<button aria-label="Back to " class="header__menu-panel__back" data-ref="panel-grid-back" type="button">
@@ -3328,37 +3350,37 @@ hsl(var(--rgba(0,0,0,0))); ">
 			</button>
 		</div>
 
-		
 
-		
+
+
 		<div class="header__menu-panel__media">
-			
+
 		</div>
 
-		
-		
-			<ul class="header__menu-panel__links header__menu-panel__links--view-all-top">
-				
 
-				
-	
+
+			<ul class="header__menu-panel__links header__menu-panel__links--view-all-top">
+
+
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="https://support.polene-paris.com/hc/en-us/articles/360010107620-What-are-the-delivery-fees-and-times">Shipping &amp; taxes</a>
 		</li>
-	
 
-	
+
+
 		<li class="header__menu-panel__link-item">
 			<a class="header__menu-panel__link ts-tertiary-item is-underlined" data-ref="menu-link" data-sm-category="true" href="https://support.polene-paris.com/hc/en-au">Help &amp; questions</a>
 		</li>
-	
+
 
 
 			</ul>
-		
 
-		
-		
+
+
+
 	</div>
 </div>
 
@@ -3379,7 +3401,7 @@ hsl(var(--rgba(0,0,0,0))); ">
 
 
 <li class="header__menu-item header-menu-wishlist sm-only"><wishlist-counter class="wishlist-counter">
-			<a aria-label="Wishlist" class="header__menu-item__trigger header-menu-wishlist__link is-underlined ts-primary-item header__menu-item__trigger--mobile-font-secondary" href="/pages/wishlist" style="color: 
+			<a aria-label="Wishlist" class="header__menu-item__trigger header-menu-wishlist__link is-underlined ts-primary-item header__menu-item__trigger--mobile-font-secondary" href="/pages/wishlist" style="color:
 hsl(var(--grey));">
 				<span class="header-menu-wishlist__label">Wishlist</span>
 				<span aria-hidden="true" class="header-menu-wishlist__count ts-number-label" data-ref="wishlist-counter">0</span>
@@ -3388,7 +3410,7 @@ hsl(var(--grey));">
 
 
 
-<li class="header__menu-item header-menu-cart sm-only"><a aria-live="polite" class="header__menu-item__trigger header-menu-cart__link is-underlined ts-primary-item header__menu-item__trigger--mobile-font-secondary" href="/cart" style="color: 
+<li class="header__menu-item header-menu-cart sm-only"><a aria-live="polite" class="header__menu-item__trigger header-menu-cart__link is-underlined ts-primary-item header__menu-item__trigger--mobile-font-secondary" href="/cart" style="color:
 hsl(var(--grey));">
 			<span class="header-menu-cart__label">Cart</span>
 			<span class="header-menu-cart__count ts-number-label">
@@ -3405,7 +3427,7 @@ hsl(var(--grey));">
 
 
 
-	<li class="header-menu-link" style="--header-menu-link-color: 
+	<li class="header-menu-link" style="--header-menu-link-color:
 hsl(var(--grey));">
 		<a class="header-menu-link__link ts-tertiary-item is-underlined" data-ref="menu-link" href="/account">Account</a>
 	</li>
@@ -3422,14 +3444,14 @@ hsl(var(--grey));">
 
 
 
-	
 
-	
-		
-		
-			<li aria-expanded="false" class="header__menu-item header__menu-item--l1 header-menu-locale-selector__mobile-item sm-only" data-children="1" data-level="1" data-ref="menu-item" style="--header-menu-locale-selector-color: 
+
+
+
+
+			<li aria-expanded="false" class="header__menu-item header__menu-item--l1 header-menu-locale-selector__mobile-item sm-only" data-children="1" data-level="1" data-ref="menu-item" style="--header-menu-locale-selector-color:
 hsl(var(--grey));">
-				
+
 				<button aria-controls="menu-panel-country-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr" aria-expanded="false" class="ts-tertiary-item ts-body-m header-menu-locale-selector__mobile-trigger" data-ref="menu-trigger">
 					<span class="sr-only">Country/Currency</span>
 					United States
@@ -3449,9 +3471,9 @@ hsl(var(--grey));">
 						<div class="menu-list__sub-nav-container" data-ref="nav-containers">
 	<div class="menu-list--level-2">
 		<ul class="menu-list__list country_list">
-			
-				
-				
+
+
+
 				<li class="menu-list__list-item -secondary">
 					<component-accordion class="menu-list__item-link -secondary accordion" data-auto-set-hidden-attribute="true">
 						<button aria-controls="section-mobileEurope-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr" aria-expanded="false" id="accordion-mobileEurope-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr">
@@ -3471,43 +3493,43 @@ hsl(var(--grey));">
 						</button>
 
 						<ul aria-labelledby="accordion-mobileEurope-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr" class="region__countries" data-ref="accordion-content" hidden="" id="section-mobileEurope-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr">
-							
+
 								<li class="region__countries__single"><a aria-label="France" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="FR" href="https://www.polene-paris.com?country=FR">France</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="United Kingdom" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="GB" href="https://uk.polene-paris.com?country=GB">United Kingdom</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Germany" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="DE" href="https://de.polene-paris.com?country=DE">Germany</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Netherlands" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="NL" href="https://nl.polene-paris.com?country=NL">Netherlands</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Spain" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="ES" href="https://es.polene-paris.com?country=ES">Spain</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Italy" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="IT" href="https://it.polene-paris.com?country=IT">Italy</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Denmark" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="DK" href="https://dk.polene-paris.com?country=DK">Denmark</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Sweden" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="SE" href="https://euro.polene-paris.com?country=SE">Sweden</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Belgium" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="BE" href="https://euro.polene-paris.com?country=BE">Belgium</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Poland" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="PL" href="https://euro.polene-paris.com?country=PL">Poland</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Switzerland" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="CH" href="https://euro.polene-paris.com?country=CH">Switzerland</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Rest of Europe" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="IE" href="https://euro.polene-paris.com?country=IE">Rest of Europe</a></li>
-							
+
 						</ul>
 					</component-accordion>
 				</li>
-				
-					
+
+
 
 <span aria-hidden="true" class="line"></span>
 
-				
-			
-				
-				
+
+
+
+
 				<li class="menu-list__list-item -secondary">
 					<component-accordion class="menu-list__item-link -secondary accordion" data-auto-set-hidden-attribute="true">
 						<button aria-controls="section-mobileAmericas-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr" aria-expanded="true" id="accordion-mobileAmericas-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr">
@@ -3527,23 +3549,23 @@ hsl(var(--grey));">
 						</button>
 
 						<ul aria-labelledby="accordion-mobileAmericas-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr" class="region__countries" data-ref="accordion-content" id="section-mobileAmericas-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr">
-							
+
 								<li class="region__countries__single"><a aria-label="United States" class="ts-tertiary-item is-underlined countryLink region__country__link current_country" data-country-code="US" href="https://eng.polene-paris.com/?country=US">United States</a><span class="current_country">(Selected)</span></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Canada" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="CA" href="https://ca.polene-paris.com?country=CA">Canada</a></li>
-							
+
 						</ul>
 					</component-accordion>
 				</li>
-				
-					
+
+
 
 <span aria-hidden="true" class="line"></span>
 
-				
-			
-				
-				
+
+
+
+
 				<li class="menu-list__list-item -secondary">
 					<component-accordion class="menu-list__item-link -secondary accordion" data-auto-set-hidden-attribute="true">
 						<button aria-controls="section-mobileMiddleEast-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr" aria-expanded="false" id="accordion-mobileMiddleEast-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr">
@@ -3563,21 +3585,21 @@ hsl(var(--grey));">
 						</button>
 
 						<ul aria-labelledby="accordion-mobileMiddleEast-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr" class="region__countries" data-ref="accordion-content" hidden="" id="section-mobileMiddleEast-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr">
-							
+
 								<li class="region__countries__single"><a aria-label="United Arab Emirates" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="AE" href="https://eng.polene-paris.com/?country=AE">United Arab Emirates</a></li>
-							
+
 						</ul>
 					</component-accordion>
 				</li>
-				
-					
+
+
 
 <span aria-hidden="true" class="line"></span>
 
-				
-			
-				
-				
+
+
+
+
 				<li class="menu-list__list-item -secondary">
 					<component-accordion class="menu-list__item-link -secondary accordion" data-auto-set-hidden-attribute="true">
 						<button aria-controls="section-mobileAsia&amp;Oceania-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr" aria-expanded="false" id="accordion-mobileAsia&amp;Oceania-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr">
@@ -3597,35 +3619,35 @@ hsl(var(--grey));">
 						</button>
 
 						<ul aria-labelledby="accordion-mobileAsia&amp;Oceania-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr" class="region__countries" data-ref="accordion-content" hidden="" id="section-mobileAsia&amp;Oceania-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr">
-							
+
 								<li class="region__countries__single"><a aria-label="Australia" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="AU" href="https://au.polene-paris.com?country=AU">Australia</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="South Korea" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="KR" href="https://kr.polene-paris.com?country=KR">South Korea</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Japan" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="JP" href="https://jp.polene-paris.com?country=JP">Japan</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Hong Kong SAR" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="HK" href="https://eng.polene-paris.com/?country=HK">Hong Kong SAR</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Singapore" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="SG" href="https://sg.polene-paris.com?country=SG">Singapore</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Taiwan Region" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="TW" href="https://eng.polene-paris.com/?country=TW">Taiwan Region</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="Malaysia" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="MY" href="https://eng.polene-paris.com/?country=MY">Malaysia</a></li>
-							
+
 								<li class="region__countries__single"><a aria-label="China Mainland" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="CN" href="https://www.polene-paris.com.cn?country=CN">China Mainland</a></li>
-							
+
 						</ul>
 					</component-accordion>
 				</li>
-				
-					
+
+
 
 <span aria-hidden="true" class="line"></span>
 
-				
-			
-				
-				
+
+
+
+
 				<li class="menu-list__list-item -secondary">
 					<component-accordion class="menu-list__item-link -secondary accordion" data-auto-set-hidden-attribute="true">
 						<button aria-controls="section-mobileInternational-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr" aria-expanded="false" id="accordion-mobileInternational-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr">
@@ -3645,14 +3667,14 @@ hsl(var(--grey));">
 						</button>
 
 						<ul aria-labelledby="accordion-mobileInternational-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr" class="region__countries" data-ref="accordion-content" hidden="" id="section-mobileInternational-AeFZlUUlrcUlwN0ZsQ__header_menu_locale_selector_kXHyTr">
-							
+
 								<li class="region__countries__single"><a aria-label="International" class="ts-tertiary-item is-underlined countryLink region__country__link" data-country-code="AR" href="https:///eng.polene-paris.com?country=AR">International</a></li>
-							
+
 						</ul>
 					</component-accordion>
 				</li>
-				
-			
+
+
 		</ul>
 	</div>
 </div>
@@ -3660,10 +3682,10 @@ hsl(var(--grey));">
 					</div>
 				</div>
 			</li>
-		
 
-		
-	
+
+
+
 
 
 
@@ -3675,16 +3697,16 @@ hsl(var(--grey));">
 </div>
 
 
-			
-			
+
+
 				<div class="header__mobile-links sm-only">
 					<ul class="header__mobile-links-list">
-						
+
 					</ul>
 				</div>
-			
+
 		</nav>
-		
+
 
 <span aria-hidden="true" class="line main-header-line"></span>
 
@@ -3743,15 +3765,15 @@ hsl(var(--grey));">
 		  "@type": "Organization",
 		  "name": "Polène US",
 		  "email": "contact@polene-paris.com",
-		  
+
 		    "logo": "https:\/\/eng.polene-paris.com\/cdn\/shop\/t\/61\/assets\/icon-logo.svg?v=123645462252169871871790252447",
-		  
+
 		  "sameAs": [
-		   
+
 		       "https:\/\/www.facebook.com\/poleneparis",
-		   
+
 		       "https:\/\/www.instagram.com\/polene_paris"
-		   
+
 		  ],
 		  "url": "https:\/\/eng.polene-paris.com"
 		}
@@ -3776,1828 +3798,18 @@ hsl(var(--grey));">
 
 </div>
 <!-- END sections: header-group -->
-		
 
-		<main data-barba="container" data-barba-namespace="main" id="main-content" role="main" tabindex="-1">
-			
-				<h1 class="visually-hidden">Polène US</h1>
-			
-
-			
-
-
-
-<component-snackbar class="component-snackbar" data-display-duration="3000">
-	
-</component-snackbar>
-
-
-
-
-
-
-
-<component-snackbar class="component-snackbar" data-display-duration="3000" id="snackbar-add-to-wishlist">
-	
-	<span class="component-snackbar__diamond wishlist-pos"></span>
-	<p class="ts-body-s">The product has been added to your favorites.</p>
-
-</component-snackbar>
-
-
-
-
-
-
-
-<component-snackbar class="component-snackbar" data-display-duration="3000" id="snackbar-remove-from-wishlist">
-	
-	<span class="component-snackbar__diamond wishlist-pos"></span>
-	<p class="ts-body-s">The product has been removed from your favorites.</p>
-
-</component-snackbar>
-
-
-
-
-
-
-
-<component-snackbar class="component-snackbar" data-display-duration="3000" id="snackbar-error">
-	
-	<p class="ts-body-s">An error occurred</p>
-
-</component-snackbar>
-
-
-			<div aria-hidden="true" class="component-zoomable-image__theme-container" data-ref="theme-zoomable-image"></div>
-
-<!-- End Google Tag Manager (noscript) -->
-			<div class="cursor" data-ref="cursor" data-type="default">
-	<span class="state state--close"><svg aria-hidden="true" height="100%" viewBox="0 0 52.74 52.74" width="100%">
-	<defs><style>.cls-1{opacity:.1;}</style></defs><polygon points="29.27 22.77 26.37 25.67 23.47 22.77 22.77 23.48 25.66 26.37 22.77 29.27 23.47 29.98 26.37 27.08 29.27 29.98 29.98 29.27 27.08 26.37 29.98 23.48 29.27 22.77"></polygon><path class="cls-1" d="m26.37,0C11.83,0,0,11.83,0,26.37s11.83,26.37,26.37,26.37,26.37-11.83,26.37-26.37S40.91,0,26.37,0Zm0,51.74c-13.99,0-25.37-11.38-25.37-25.37S12.38,1,26.37,1s25.37,11.38,25.37,25.37-11.38,25.37-25.37,25.37Z"></path>
-</svg>
-</span>
-	<span class="state state--zoom"><svg aria-hidden="true" viewBox="0 0 52.75 52.74" xmlns="http://www.w3.org/2000/svg">
-	<defs><style>.cls-1{opacity:.1;}</style></defs><path class="cls-1" d="m26.37,0C11.83,0,0,11.83,0,26.37s11.83,26.37,26.37,26.37,26.37-11.83,26.37-26.37S40.92,0,26.37,0Zm0,51.74c-13.99,0-25.37-11.38-25.37-25.37S12.38,1,26.37,1s25.37,11.38,25.37,25.37-11.38,25.37-25.37,25.37Z"></path><polygon points="29.32 16.29 29.31 17.29 35.28 17.34 35.32 23.3 36.32 23.29 36.27 16.34 29.32 16.29"></polygon><polygon points="17.42 29.44 16.42 29.45 16.47 36.4 23.42 36.45 23.43 35.45 17.46 35.41 17.42 29.44"></polygon>
-</svg>
-</span>
-	<span class="state state--prev"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 53 53" width="100%" xmlns="http://www.w3.org/2000/svg">
-	<path d="M26.3683 0C40.9083 0 52.7383 11.83 52.7383 26.37C52.7383 40.91 40.9083 52.74 26.3683 52.74C11.8283 52.74 -0.00172043 40.91 -0.00172043 26.37C-0.00172043 11.83 11.8283 0 26.3683 0ZM26.3683 51.74C40.3583 51.74 51.7383 40.36 51.7383 26.37C51.7383 12.38 40.3583 1 26.3683 1C12.3783 1 0.99828 12.38 0.99828 26.37C0.99828 40.36 12.3783 51.74 26.3683 51.74Z" opacity="0.1"></path>
-	<path d="M26.3391 22.12L22.6391 25.87H31.2891V26.87H22.6391L26.3391 30.62L25.6191 31.32L20.7391 26.37L25.6191 21.42L26.3391 22.12Z" fill="currentColor"></path>
-</svg>
-</span>
-	<span class="state state--next"><svg aria-hidden="true" fill="none" height="100%" viewBox="0 0 53 53" width="100%" xmlns="http://www.w3.org/2000/svg">
-	<path d="M26.37 0C11.83 0 0 11.83 0 26.37C0 40.91 11.83 52.74 26.37 52.74C40.91 52.74 52.74 40.91 52.74 26.37C52.74 11.83 40.91 0 26.37 0ZM26.37 51.74C12.38 51.74 1 40.36 1 26.37C1 12.38 12.38 1 26.37 1C40.36 1 51.74 12.38 51.74 26.37C51.74 40.36 40.36 51.74 26.37 51.74Z" opacity="0.1"></path>
-	<path d="M26.3992 22.12L30.0992 25.87H21.4492V26.87H30.0992L26.3992 30.62L27.1192 31.32L31.9992 26.37L27.1192 21.42L26.3992 22.12Z" fill="black"></path>
-</svg>
-</span>
-	<span class="state state--play"><svg aria-hidden="true" height="100%" viewBox="0 0 52.74 52.74" width="100%">
-	<defs><style>.cls-1{opacity:.1;}</style></defs><path class="cls-1" d="m26.37,0C11.83,0,0,11.83,0,26.37s11.83,26.37,26.37,26.37,26.37-11.83,26.37-26.37S40.91,0,26.37,0Zm0,51.74c-13.99,0-25.37-11.38-25.37-25.37S12.38,1,26.37,1s25.37,11.38,25.37,25.37-11.38,25.37-25.37,25.37Z"></path>
-	<path d="M29.327 26.37L23.62 32.077V20.663L29.327 26.37Z" stroke="black"></path>
-</svg>
-</span>
-	<span class="state state--pause"><svg aria-hidden="true" height="100%" viewBox="0 0 52.74 52.74" width="100%">
-	<defs><style>.cls-1{opacity:.1;}</style></defs><path class="cls-1" d="m26.37,0C11.83,0,0,11.83,0,26.37s11.83,26.37,26.37,26.37,26.37-11.83,26.37-26.37S40.91,0,26.37,0Zm0,51.74c-13.99,0-25.37-11.38-25.37-25.37S12.38,1,26.37,1s25.37,11.38,25.37,25.37-11.38,25.37-25.37,25.37Z"></path>
-	<rect fill="black" height="11" width="3" x="22" y="21"></rect>
-	<rect fill="black" height="11" width="3" x="28" y="21"></rect>
-</svg>
-</span>
-</div>
-
-
-				<section class="shopify-section hero" id="shopify-section-template--30031534752113__hero_e6md8q">
-
-
-
-
-	<link as="fetch" crossorigin="anonymous" href="https://shopstream.me/eng-polene-paris-com.myshopify.com/videos/6ab3c090069b676d0e335a5b/hls/master.m3u8" rel="preload"/>
-
-
-
-	<link as="fetch" crossorigin="anonymous" href="https://shopstream.me/eng-polene-paris-com.myshopify.com/videos/6ab3c0ea069b676d0e335cf5/hls/master.m3u8" rel="preload"/>
-
-
-
-
-
-
-<section class="hero" data-ref="hero">
-	<div class="hero__image-container">
-		
-			
-
-
-
-
-
-
-	<picture>
-		
-			<source height="938" media="(max-width: 1023px)" sizes="100vw" src="img/hero-a4-landscape.png" width="1672"/>
-
-		
-		<source height="938" media="(min-width: 1024px)" sizes="100vw" src="img/hero-a4-landscape.png" width="1672"/>
-
-<img alt="Девушка с сумкой A4 в пейзаже" fetchpriority="high" height="938" sizes="100vw" src="img/hero-a4-landscape.png" width="1672"/>
-</picture>
-
-
-
-	
-
-	
-
-
-
-
-	
-		
-
-<component-video-toggle class="component-video-toggle hero__video-toggle" hidden style="display:none!important">
-	<button aria-label="Pause video" class="component-video-toggle__button" data-aria-label-pause="Pause video" data-aria-label-play="Play video" data-ref="video-toggle-button" type="button">
-		<span aria-hidden="true" class="component-video-toggle__icon component-video-toggle__play-icon rtl-no-flip-svg"><svg fill="none" height="14" viewBox="0 0 13 14" width="13" xmlns="http://www.w3.org/2000/svg">
-  <path d="M8.95703 7L3.25 12.707V1.29297L8.95703 7Z" stroke="black"></path>
-</svg></span>
-		<span aria-hidden="true" class="component-video-toggle__icon component-video-toggle__pause-icon rtl-no-flip-svg"><svg fill="none" height="13" viewBox="0 0 13 13" width="13" xmlns="http://www.w3.org/2000/svg">
-  <rect height="10.25" stroke="white" stroke-width="0.75" width="3.25" x="2.375" y="1.375"></rect>
-  <rect height="10.25" stroke="white" stroke-width="0.75" width="3.25" x="7.375" y="1.375"></rect>
-</svg></span>
-	</button>
-</component-video-toggle>
-
-	
-
-
-		
-	</div>
-	
-		<div class="hero__product-card" data-ref="card">
-			
-
-
-
-
-
-
-
-
-<article class="hero-product" data-parallax="-100" data-ref="parallax-el">
-	<a class="hero-product__inner" href="#">
-		<div class="hero-product__details">
-			<h3 class="ts-h3">A4</h3>
-			<span class="hero-product__price ts-label-m">
-
-
-	
-			4250 ₽
-	
-
-</span>
-		</div>
-		<div class="hero-product__image-container">
-			<div class="hero-product__media is-default">
-				
-
-
-
-
-	
-<img alt="Сумка A4" class="" height="1024" sizes="(min-width: 1024px) 16vw, 100vw" src="img/hero-a4-product.png" style="height:100%;object-fit:contain;object-position:center;width:100%" width="1536"/>
-	
-	
-
-
-			</div>
-
-			
-		</div>
-	</a>
-</article>
-
-		</div>
-	
-</section>
-<script>
-	Shopify.analytics.publish('gtm_home_data', {
-		home: {
-			video: {
-				id: 'VideoDrop',
-			},
-			product: {
-				id: '14903054893425',
-			},
-		},
-	});
-</script>
-
-
-</section><section class="shopify-section section-promoted-collections" id="shopify-section-template--30031534752113__d2d39763-1601-4633-9265-c8be56be5620"><style data-shopify="">
-	#shopify-section-template--30031534752113__d2d39763-1601-4633-9265-c8be56be5620 {
-		.promoted-collections__item-title {
-			@media (max-width: 599px) {
-				font-size: clamp(15px, 11vw, 98px);
-				line-height: clamp(15px, 11vw, 90px);
-			}
-		}
-
-		@media (max-width: 599px) {
-			padding-top: 0px;
-			padding-bottom: 0px;
-		}
-	}
-</style>
-<style>
-.promoted-collections__item-title{font-family:"Prata",serif!important;font-size:15px!important;line-height:1.5!important;font-weight:400!important;letter-spacing:.02em}
-@media (min-width:768px){.promoted-collections__item-title{font-size:18px!important}}
-@media (min-width:1024px){.promoted-collections__item-title{font-size:21px!important}}
-</style>
-
-<div class="promoted-collections">
-	<ul class="promoted-collections__list">
-		
-			<li class="promoted-collections__item" data-index="0">
-				<a class="promoted-collections__item no-deco" href="collections/handbags/index.html">
-					<h2 class="promoted-collections__item-title ts-h2" style="color:#000000;">Аксессуары с характером.</h2>
-					<span class="promoted-collections__hover-img js-img">
-						
-					</span>
-				</a>
-			</li>
-		
-			<li class="promoted-collections__item" data-index="1">
-				<a class="promoted-collections__item no-deco" href="/collections/jewellery">
-					<h2 class="promoted-collections__item-title ts-h2" style="color:#000000;">Женская и мужская линии</h2>
-					<span class="promoted-collections__hover-img js-img">
-						
-					</span>
-				</a>
-			</li>
-		
-			<li class="promoted-collections__item" data-index="2">
-				<a class="promoted-collections__item no-deco" href="/collections/small-leather-goods">
-					<h2 class="promoted-collections__item-title ts-h2" style="color:#000000;">с вниманием к каждой детали.</h2>
-					<span class="promoted-collections__hover-img js-img">
-						
-					</span>
-				</a>
-			</li>
-		
-	</ul>
-</div>
-
-
-</section>
-<section class="best-section">
-	<style>
-	.best-section{background:#ffffff;padding:2.4rem 0}
-	.best-section__inner{position:relative;display:grid;grid-template-columns:1fr;gap:1.2rem;padding:0 1.6rem}
-	.best-card{cursor:none;display:block;overflow:hidden;position:relative;aspect-ratio:1920/2688}
-	.best-card__video{display:block;height:100%;top:0;right:0;bottom:0;left:0;object-fit:cover;position:absolute;width:100%}
-	.best-card::after{content:'';position:absolute;left:0;right:0;bottom:0;height:28%;background:linear-gradient(to top, rgba(0,0,0,.32), transparent);pointer-events:none}
-	.best-card__label{position:absolute;left:1rem;bottom:1rem;z-index:1;margin:0;color:#fff;font-family:Manrope,sans-serif;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;pointer-events:none}
-	.best-section__cursor{display:none}
-	@media (min-width:768px){
-		.best-section{padding:3.6rem 0}
-		.best-section__inner{padding:0 3.1rem;gap:1.8rem}
-	}
-	@media (min-width:1024px){
-		.best-section{padding:5rem 0}
-		.best-section__inner{grid-template-columns:1fr 1fr;padding:0 3.4rem;gap:2.4rem;cursor:none}
-		.best-card{aspect-ratio:3/4}
-		.best-section__cursor{display:block;height:1px;left:0;mix-blend-mode:difference;pointer-events:none;position:absolute;top:0;width:1px;z-index:10}
-		.best-section__cursor p{color:#fff;font-size:1.6rem;font-weight:500;left:50%;line-height:1.6rem;margin:0;opacity:0;position:absolute;text-align:center;text-transform:uppercase;white-space:nowrap;top:50%;transform:translate(-50%,-50%) rotate(15deg);transition:opacity .2s,transform .2s;font-family:Manrope,sans-serif}
-		.best-section__cursor.visible>p{opacity:1;transform:translate(-50%,-50%) rotate(0)}
-	}
-	</style>
-	<div class="best-section__inner" data-ref="best-inner">
-		<div class="best-section__cursor" data-ref="best-cursor">
-			<p>Смотреть коллекцию</p>
-		</div>
-		<a href="collections/handbags/index.html" class="best-card">
-			<video loop muted playsinline poster="assets-materials/reskin-poster.jpg" class="best-card__video">
-				<source data-src="assets-materials/reskin-video.mp4" type="video/mp4">
-			</video>
-			<p class="best-card__label">Кожа</p>
-		</a>
-		<a href="/collections/small-leather-goods" class="best-card">
-			<video loop muted playsinline poster="assets-materials/suede-poster.jpg" class="best-card__video">
-				<source data-src="assets-materials/suede-video.mp4" type="video/mp4">
-			</video>
-			<p class="best-card__label">Замша</p>
-		</a>
-	</div>
-</section>
-<script>
-(function(){
-	function init(){
-		var section = document.querySelector('.best-section');
-		if(!section) return;
-		var inner = section.querySelector('[data-ref="best-inner"]');
-		var cursor = section.querySelector('[data-ref="best-cursor"]');
-		var cards = section.querySelectorAll('.best-card');
-		if(!inner || !cursor || window.innerWidth < 1024) return;
-
-		var raf = 0, cx = 0, cy = 0, visible = false;
-		function setVisible(v){
-			if(visible === v) return;
-			visible = v;
-			cursor.classList.toggle('visible', v);
-		}
-		function place(){
-			raf = 0;
-			cursor.style.transform = 'translate(' + cx + 'px, ' + cy + 'px)';
-		}
-		function onMove(clientX, clientY){
-			var rect = inner.getBoundingClientRect();
-			var inside = clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
-			setVisible(inside);
-			cx = clientX - rect.left;
-			cy = clientY - rect.top;
-			if(!raf) raf = requestAnimationFrame(place);
-		}
-		inner.addEventListener('pointermove', function(e){ onMove(e.clientX, e.clientY); }, {passive:true});
-		inner.addEventListener('pointerleave', function(){ setVisible(false); }, {passive:true});
-
-		function primeVideo(video){
-			if(!video) return null;
-			video.muted = true;
-			video.playsInline = true;
-			var source = video.querySelector('source[data-src]');
-			if(source && !source.getAttribute('src')){
-				var src = source.getAttribute('data-src');
-				if(src){ source.setAttribute('src', src); try{ video.load(); }catch(e){} }
-			}
-			return video;
-		}
-		function playVideo(video){
-			var v = primeVideo(video);
-			if(!v) return;
-			var p = v.play();
-			if(p && typeof p.catch === 'function') p.catch(function(){});
-		}
-		function pauseVideo(video){
-			if(video){ try{ video.pause(); }catch(e){} }
-		}
-
-		var current = null;
-		cards.forEach(function(card){
-			var video = card.querySelector('.best-card__video');
-			card.addEventListener('pointerenter', function(){
-				if(current && current !== video) pauseVideo(current);
-				current = video;
-				playVideo(video);
-			}, {passive:true});
-			card.addEventListener('pointerleave', function(){
-				if(current === video){ pauseVideo(video); current = null; }
-			}, {passive:true});
-		});
-	}
-	if(document.readyState === 'loading'){
-		document.addEventListener('DOMContentLoaded', init, {once:true});
-	} else {
-		init();
-	}
-})();
-</script><section class="shopify-section section-product-banner" id="shopify-section-template--30031534752113__product_banner_dNjcmp">
-
-
-<style data-shopify="">#shopify-section-template--30031534752113__product_banner_dNjcmp {
-	  	padding-top: 50px;
-	  	padding-bottom: 50px;
-	  	padding-inline-start: 0px;
-	  	padding-inline-end: 0px;
-
-		
-
-		
-	}
-
-	#shopify-section-template--30031534752113__product_banner_dNjcmp .image_title {
-		margin-top: 0px;
-		margin-bottom: 0px;
-	}
-
-	@media (min-width: 1024px) {
-	  	#shopify-section-template--30031534752113__product_banner_dNjcmp {
-			padding-top: 50px;
-			padding-bottom: 50px;
-			padding-inline-start: 0px;
-			padding-inline-end: 0px;
-	  	}
-	}</style>
-
-<style data-shopify="">
-	#shopify-section-template--30031534752113__product_banner_dNjcmp .product-banner__content {
-		h2,p,a {
-			color: #ffffff;
-		}
-	}
-</style>
-
-<div class="product-banner">
-	<div class="product-banner__image">
-		<img alt="Mira" class="" height="843" loading="lazy" sizes="100vw" src="img/mira-banner.webp" width="1866"/>
-	</div>
-	<div class="product-banner__content">
-		<h2 class="product-banner__content__title ts-title-m ts-capitalize">
-			Mira
-		</h2>
-		<p class="product-banner__content__description ts-body-m md-lg-only">DanZla представляет Mira – новую сумку, в которой лаконичная форма встречается с характером.</p>
-		<p class="product-banner__content__description ts-body-m sm-only">
-			DanZla представляет Mira – новую сумку, в которой лаконичная форма встречается с характером.
-		</p>
-		<a aria-label="Смотреть коллекцию - Mira" class="product-banner__content__link ts-label-m ts-underline">
-			Смотреть коллекцию
-		</a>
-	</div>
-</div>
-
-
-</section><section class="shopify-section section-carousel" id="shopify-section-template--30031534752113__carousel_8M63xz">
-
-
-<style data-shopify="">#shopify-section-template--30031534752113__carousel_8M63xz {
-	  	padding-top: 0px;
-	  	padding-bottom: 0px;
-	  	padding-inline-start: 0px;
-	  	padding-inline-end: 0px;
-
-		
-
-		
-	}
-
-	#shopify-section-template--30031534752113__carousel_8M63xz .image_title {
-		margin-top: 0px;
-		margin-bottom: 0px;
-	}
-
-	@media (min-width: 1024px) {
-	  	#shopify-section-template--30031534752113__carousel_8M63xz {
-			padding-top: 0px;
-			padding-bottom: 0px;
-			padding-inline-start: 0px;
-			padding-inline-end: 0px;
-	  	}
-	}</style>
-
-
-
-<div class="section-carousel">
-	
-<style data-shopify="">
-	#carousel-template--30031534752113__carousel_8M63xz .component-carousel__slides {
-		gap: 16px;
-		padding: 0 1px;
-
-		@media (min-width: 1024px) {
-			padding: 0 1px;
-		}
-	}
-
-	
-		#carousel-template--30031534752113__carousel_8M63xz .component-carousel__slide {
-			flex: 0 0 calc(20% - 13px);
-		}
-	
-
-	
-		@media (max-width: 1023px) {
-			#carousel-template--30031534752113__carousel_8M63xz .component-carousel__slide {
-				flex: 0 0 calc(25.0% - 12px);
-			}
-		}
-	
-
-	
-		#carousel-template--30031534752113__carousel_8M63xz .component-carousel__slide:last-child {
-			margin-inline-end: 16px;
-		}
-	
-</style>
-
-<component-carousel class="component-carousel" data-auto-save-scroll="false" data-autoscroll="true" data-autoscroll-direction="1" data-autoscroll-speed="5" data-centered="false" data-centered-mobile="false" data-custom-next-btns-selector="" data-custom-prev-btns-selector="" data-disable-scroll="false" data-disable-transform="false" data-drag-free="false" data-gap="16" data-initial-snap-index="" data-loop="true" data-owner-selector="" data-show-dots="false" data-skip-snap="true" data-slide-full-page="true" data-slides-per-view="5" data-slides-per-view-mobile="4" data-slides-to-scroll="1" data-t-go-to-slide="Go to slide %i%" data-t-slide-position="Slide %i% of %n%" data-t-slide-range="Slides %i% to %j% of %n%" data-type="" id="carousel-template--30031534752113__carousel_8M63xz">
-	<button aria-controls="slides-container-carousel-template--30031534752113__carousel_8M63xz" aria-label="Previous" class="component-carousel__arrow component-carousel__arrow--prev sr-only" data-ref="carousel-prev" type="button"><svg fill="none" height="20" viewBox="0 0 12 20" width="12" xmlns="http://www.w3.org/2000/svg">
-<path d="M9.73088 19.4618L0 9.73088L9.73088 0L11.0284 1.29754L2.59508 9.73088L11.0284 18.1642L9.73088 19.4618Z" fill="#1F1F1F"></path>
-</svg>
-</button><div aria-roledescription="carousel" class="component-carousel__container" role="group">
-		<div class="component-carousel__viewport" data-ref="carousel-slides-viewport">
-			
-				
-				<ul class="component-carousel__slides" data-ref="carousel-slides-container" id="slides-container-carousel-template--30031534752113__carousel_8M63xz" role="list">
-	<li aria-label="1 of 5" aria-roledescription="slide" class="component-carousel__slide" tabindex="-1">
-	<component-product-card class="component-product-card component-product-card--mini" data-flip="grid" data-product-id="mira-choco" data-ref="product-card">
-		<a aria-label="Mira - Шоколад" class="" data-tracking-state="active">
-	<div class="component-product-card__media-container">
-		<div class="component-product-card__media-container__packshot">
-			<div class="component-product-card__media-container__packshot--default">
-<img alt="Mira - Шоколад" class="" height="1448" loading="lazy" sizes="(min-width: 1024px) 20vw, 50vw" src="img/mira-colors/choco.webp" width="1086"/>
-			</div>
-		</div>
-	</div>
-			<div class="component-product-card__footer">
-				<h3 class="ts-label-s ts-center">Mira</h3>
-				<span class="ts-label-s price-label">Шоколад</span>
-			</div>
-		</a>
-	</component-product-card>
-	</li>
-
-	<li aria-label="2 of 5" aria-roledescription="slide" class="component-carousel__slide" tabindex="-1">
-	<component-product-card class="component-product-card component-product-card--mini" data-flip="grid" data-product-id="mira-cream" data-ref="product-card">
-		<a aria-label="Mira - Крем" class="" data-tracking-state="active">
-	<div class="component-product-card__media-container">
-		<div class="component-product-card__media-container__packshot">
-			<div class="component-product-card__media-container__packshot--default">
-<img alt="Mira - Крем" class="" height="1448" loading="lazy" sizes="(min-width: 1024px) 20vw, 50vw" src="img/mira-colors/cream.webp" width="1086"/>
-			</div>
-		</div>
-	</div>
-			<div class="component-product-card__footer">
-				<h3 class="ts-label-s ts-center">Mira</h3>
-				<span class="ts-label-s price-label">Крем</span>
-			</div>
-		</a>
-	</component-product-card>
-	</li>
-
-	<li aria-label="3 of 5" aria-roledescription="slide" class="component-carousel__slide" tabindex="-1">
-	<component-product-card class="component-product-card component-product-card--mini" data-flip="grid" data-product-id="mira-cappuccino" data-ref="product-card">
-		<a aria-label="Mira - Капучино" class="" data-tracking-state="active">
-	<div class="component-product-card__media-container">
-		<div class="component-product-card__media-container__packshot">
-			<div class="component-product-card__media-container__packshot--default">
-<img alt="Mira - Капучино" class="" height="1448" loading="lazy" sizes="(min-width: 1024px) 20vw, 50vw" src="img/mira-colors/cappuccino.webp" width="1086"/>
-			</div>
-		</div>
-	</div>
-			<div class="component-product-card__footer">
-				<h3 class="ts-label-s ts-center">Mira</h3>
-				<span class="ts-label-s price-label">Капучино</span>
-			</div>
-		</a>
-	</component-product-card>
-	</li>
-
-	<li aria-label="4 of 5" aria-roledescription="slide" class="component-carousel__slide" tabindex="-1">
-	<component-product-card class="component-product-card component-product-card--mini" data-flip="grid" data-product-id="mira-black" data-ref="product-card">
-		<a aria-label="Mira - Чёрный" class="" data-tracking-state="active">
-	<div class="component-product-card__media-container">
-		<div class="component-product-card__media-container__packshot">
-			<div class="component-product-card__media-container__packshot--default">
-<img alt="Mira - Чёрный" class="" height="1448" loading="lazy" sizes="(min-width: 1024px) 20vw, 50vw" src="img/mira-colors/black.webp" width="1086"/>
-			</div>
-		</div>
-	</div>
-			<div class="component-product-card__footer">
-				<h3 class="ts-label-s ts-center">Mira</h3>
-				<span class="ts-label-s price-label">Чёрный</span>
-			</div>
-		</a>
-	</component-product-card>
-	</li>
-
-	<li aria-label="5 of 5" aria-roledescription="slide" class="component-carousel__slide" tabindex="-1">
-	<component-product-card class="component-product-card component-product-card--mini" data-flip="grid" data-product-id="mira-olive" data-ref="product-card">
-		<a aria-label="Mira - Олива" class="" data-tracking-state="active">
-	<div class="component-product-card__media-container">
-		<div class="component-product-card__media-container__packshot">
-			<div class="component-product-card__media-container__packshot--default">
-<img alt="Mira - Олива" class="" height="1448" loading="lazy" sizes="(min-width: 1024px) 20vw, 50vw" src="img/mira-colors/olive.webp" width="1086"/>
-			</div>
-		</div>
-	</div>
-			<div class="component-product-card__footer">
-				<h3 class="ts-label-s ts-center">Mira</h3>
-				<span class="ts-label-s price-label">Олива</span>
-			</div>
-		</a>
-	</component-product-card>
-	</li>
-</ul>
-			
-		</div>
-	</div>
-	<button aria-controls="slides-container-carousel-template--30031534752113__carousel_8M63xz" aria-label="Next" class="component-carousel__arrow component-carousel__arrow--next sr-only" data-ref="carousel-next" type="button"><svg fill="none" height="20" viewBox="0 0 12 20" width="12" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.43333 9.73088L0 1.29754L1.29754 0L11.0284 9.73088L1.29754 19.4618L0 18.1642L8.43333 9.73088Z" fill="#1F1F1F"></path>
-</svg>
-</button>
-
-	
-
-	
-		<button aria-label="Stop automatic slide rotation" class="component-carousel__autoplay sr-only" data-ref="carousel-autoplay-toggle" data-t-pause="Stop automatic slide rotation" data-t-play="Start automatic slide rotation" type="button">
-			<span aria-hidden="true" class="component-carousel__autoplay-icon" data-ref="carousel-autoplay-pause-icon"><svg fill="none" height="13" viewBox="0 0 13 13" width="13" xmlns="http://www.w3.org/2000/svg">
-  <rect height="10.25" stroke="white" stroke-width="0.75" width="3.25" x="2.375" y="1.375"></rect>
-  <rect height="10.25" stroke="white" stroke-width="0.75" width="3.25" x="7.375" y="1.375"></rect>
-</svg></span>
-			<span aria-hidden="true" class="component-carousel__autoplay-icon hidden" data-ref="carousel-autoplay-play-icon"><svg fill="none" height="14" viewBox="0 0 13 14" width="13" xmlns="http://www.w3.org/2000/svg">
-  <path d="M8.95703 7L3.25 12.707V1.29297L8.95703 7Z" stroke="black"></path>
-</svg></span>
-		</button>
-	
-<span aria-live="polite" class="sr-only" data-ref="carousel-status" role="status"></span>
-</component-carousel>
-
-</div>
-
-
-</section><section class="shopify-section mosaic" id="shopify-section-template--30031534752113__mosaic_bLpiVY">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<ul class="mosaic__grid-gap mosaic__grid-margin" style="--mobile-items: 3; --desktop-items: 3">
-	<li class="mosaic__has-link">
-		<a aria-label="Discover" href="#">
-			<img alt="DanZla — сумка Taupe" height="1484" loading="lazy" sizes="33vw" src="img/mosaic/look-taupe.webp" width="1060"/>
-		</a>
-	</li>
-	<li class="mosaic__has-link">
-		<a aria-label="Discover" href="#">
-			<img alt="DanZla — сумка Black" height="1484" loading="lazy" sizes="33vw" src="img/mosaic/look-black.webp" width="1060"/>
-		</a>
-	</li>
-	<li class="mosaic__has-link">
-		<a aria-label="Discover" href="#">
-			<img alt="DanZla — сумка Olive" height="1484" loading="lazy" sizes="33vw" src="img/mosaic/look-olive.webp" width="1060"/>
-		</a>
-	</li>
-</ul>
-
-
-</section><section class="shopify-section blog-space" id="shopify-section-template--30031534752113__blog_space_4nEtJt"><style data-shopify="">
-	#shopify-section-template--30031534752113__blog_space_4nEtJt {
-		height: 80px;
-	}
-
-	@media (min-width: 1024px) {
-	  #shopify-section-template--30031534752113__blog_space_4nEtJt {
-	    height: 80px;
-	  }
-	}
-</style>
-
-
-</section><section class="shopify-section section-instgram" id="shopify-section-template--30031534752113__a82782d8-1d27-4d56-8795-76b259c6bd05"><div class="instagram">
-	<div class="instagram__float-container">
-		<div class="instagram__grid-container grid-1">
-			
-				<div class="grid" data-ref="grids">
-					
-					<img alt="" class="image no-lazy-load" data-index="0" data-ref="image" sizes="20vw" srcset=""/>
-
-					<img alt="" class="image no-lazy-load" data-index="1" data-ref="image" sizes="20vw" srcset=""/>
-				</div>
-			
-				<div class="grid" data-ref="grids">
-					
-					<img alt="" class="image no-lazy-load" data-index="0" data-ref="image" sizes="20vw" srcset=""/>
-
-					<img alt="" class="image no-lazy-load" data-index="1" data-ref="image" sizes="20vw" srcset=""/>
-				</div>
-			
-				<div class="grid" data-ref="grids">
-					
-					<img alt="" class="image no-lazy-load" data-index="0" data-ref="image" sizes="20vw" srcset=""/>
-
-					<img alt="" class="image no-lazy-load" data-index="1" data-ref="image" sizes="20vw" srcset=""/>
-				</div>
-			
-		</div>
-	</div>
-
-	<div class="instagram__float-container">
-		<div class="instagram__grid-container grid-2">
-			
-				<div class="grid" data-ref="grids">
-					<img alt="" class="image no-lazy-load" data-index="2" data-ref="image" sizes="20vw" srcset=""/>
-
-					<img alt="" class="image no-lazy-load" data-index="3" data-ref="image" sizes="20vw" srcset=""/>
-				</div>
-			
-				<div class="grid" data-ref="grids">
-					<img alt="" class="image no-lazy-load" data-index="2" data-ref="image" sizes="20vw" srcset=""/>
-
-					<img alt="" class="image no-lazy-load" data-index="3" data-ref="image" sizes="20vw" srcset=""/>
-				</div>
-			
-				<div class="grid" data-ref="grids">
-					<img alt="" class="image no-lazy-load" data-index="2" data-ref="image" sizes="20vw" srcset=""/>
-
-					<img alt="" class="image no-lazy-load" data-index="3" data-ref="image" sizes="20vw" srcset=""/>
-				</div>
-			
-		</div>
-	</div>
-
-	<div class="instagram__float-container">
-		<div class="instagram__grid-container grid-3">
-			
-				<div class="grid" data-ref="grids">
-					<img alt="" class="image no-lazy-load" data-index="4" data-ref="image" sizes="20vw" srcset=""/>
-
-					<img alt="" class="image no-lazy-load" data-index="5" data-ref="image" sizes="20vw" srcset=""/>
-				</div>
-			
-				<div class="grid" data-ref="grids">
-					<img alt="" class="image no-lazy-load" data-index="4" data-ref="image" sizes="20vw" srcset=""/>
-
-					<img alt="" class="image no-lazy-load" data-index="5" data-ref="image" sizes="20vw" srcset=""/>
-				</div>
-			
-				<div class="grid" data-ref="grids">
-					<img alt="" class="image no-lazy-load" data-index="4" data-ref="image" sizes="20vw" srcset=""/>
-
-					<img alt="" class="image no-lazy-load" data-index="5" data-ref="image" sizes="20vw" srcset=""/>
-				</div>
-			
-		</div>
-	</div>
-	<div class="instagram__inner">
-		<h2 class="ts-h3">Подписывайтесь на нас в Instagram</h2>
-
-			<a class="instagram__cta ts-label-m">
-				<span>НАШ АККАУНТ</span>
-			</a>
-
-	</div>
-</div>
-
-
-</section>
-	<style>
-	.instagram img.image[data-index]{opacity:1!important}
-	</style>
-	<script>
-	(function(){
-		var photos=[
-			'img/instagram-01.png',
-			'img/instagram-02.png',
-			'img/instagram-03.png',
-			'img/instagram-04.png',
-			'img/instagram-05.png',
-			'img/instagram-06.png'
-		];
-		document.querySelectorAll('.instagram img[data-index]').forEach(function(image){
-			var index=Number(image.getAttribute('data-index'));
-			if(!photos[index])return;
-			image.src=photos[index];
-			image.srcset=photos[index];
-			image.alt='DanZla в Instagram — образ '+(index+1);
-		});
-	})();
-	</script>
-			
-
-			
-				<div class="search-overlay md-lg-only" data-overlay="search" data-ref="search-overlay">
-	
-
-	<header>
-		<h2 class="search-overlay__title ts-h3" id="-search-overlay-title">Search for specific products</h2>
-		<button aria-label="Close" class="search-overlay__close" data-ref="search-trigger" type="button"><svg aria-hidden="true" fill="none" focusable="false" height="100%" viewBox="0 0 8 8" width="100%" xmlns="http://www.w3.org/2000/svg">
-	<path d="M6.91278 6.91278L1 1" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
-	<path d="M6.91278 1.08721L1 7" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
-</svg>
-</button>
-	</header>
-
-	<form action="/search" aria-labelledby="-search-overlay-title" class="search-overlay__form search" data-ref="search-form" data-source="header" method="get" role="search">
-		<div class="search-overlay__input-wrapper">
-			<input aria-label="Type to search" autocomplete="off" class="ts-body-s" data-ref="search-input" id="SearchInput-overlay" name="q" placeholder="Type to search" type="search" value=""/>
-
-			<button class="ts-label-s ts-underline ts-green" type="submit">Search</button>
-		</div>
-
-		<input name="type" type="hidden" value="product"/>
-	</form>
-
-	<div class="search-overlay__footer">
-		<div class="sm-only"><!-- Asset size is too large. This leads to poor performance on the storefront. Instead of outputting content inline use a different filter such as asset_url or reduce the file size. Size limit: 15360 bytes. --></div>
-		<div class="md-lg-only"><!-- Asset size is too large. This leads to poor performance on the storefront. Instead of outputting content inline use a different filter such as asset_url or reduce the file size. Size limit: 15360 bytes. --></div>
-	</div>
-</div>
-<div class="search-overlay__backdrop md-lg-only" data-ref="search-overlay-backdrop"></div>
-
-			
-		</main>
-
-		
-			
-	<div aria-labelledby="dialog_country_selector_label" aria-modal="true" class="country-selector__popup selector_popup" id="dialog_country_selector" role="dialog">
-	<div class="country-selector__popup__header site-header">
-	<div class="site-header__inner" data-ref="reveal-element">
-		<div class="site-header__content">
-			<h2 class="ts-label-m" id="dialog_country_selector_label">Country or Region Selector</h2>
-			<a aria-label="Danzla logo - Back to home page" class="site-header__logo rtl-no-flip-svg" href="/"><img class="dz-logo-img" src="img/danzla-logo.webp" alt="Danzla"></a>
-			<button aria-label="Close" class="btn-close icon-close country-selector__popup__header__close" type="button">
-				<p class="ts-label-m">
-					Close
-				</p><svg aria-hidden="true" fill="none" focusable="false" height="100%" viewBox="0 0 8 8" width="100%" xmlns="http://www.w3.org/2000/svg">
-	<path d="M6.91278 6.91278L1 1" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
-	<path d="M6.91278 1.08721L1 7" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.5"></path>
-</svg>
-</button>
-		</div>
-		
-
-<span aria-hidden="true" class="line"></span>
-
-	</div>
-</div>
-
-
-	<div class="country-selector__popup__content">
-		<div class="regions">
-			
-	
-		
-
-		<div class="region">
-			<h3 class="region__title ts-body-m ts-grey" id="accordionEurope">
-				Europe
-			</h3>
-			
-
-<span aria-hidden="true" class="line"></span>
-
-
-			<div aria-labelledby="accordionEurope" class="countries__container" id="sectEurope" role="region">
-	<ul class="region__countries">
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="FR" href="https://www.polene-paris.com?country=FR">France</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="GB" href="https://uk.polene-paris.com?country=GB">United Kingdom</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="DE" href="https://de.polene-paris.com?country=DE">Germany</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="NL" href="https://nl.polene-paris.com?country=NL">Netherlands</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="ES" href="https://es.polene-paris.com?country=ES">Spain</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="IT" href="https://it.polene-paris.com?country=IT">Italy</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="DK" href="https://dk.polene-paris.com?country=DK">Denmark</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="SE" href="https://euro.polene-paris.com?country=SE">Sweden</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="BE" href="https://euro.polene-paris.com?country=BE">Belgium</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="PL" href="https://euro.polene-paris.com?country=PL">Poland</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="CH" href="https://euro.polene-paris.com?country=CH">Switzerland</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="IE" href="https://euro.polene-paris.com?country=IE">Rest of Europe</a></li>
-			
-		
-	</ul>
-</div>
-
-		</div>
-	
-
-	
-		
-
-		<div class="region">
-			<h3 class="region__title ts-body-m ts-grey" id="accordionAmericas">
-				Americas
-			</h3>
-			
-
-<span aria-hidden="true" class="line"></span>
-
-
-			<div aria-labelledby="accordionAmericas" class="countries__container" id="sectAmericas" role="region">
-	<ul class="region__countries">
-		
-			
-				<li class="region__countries__single current_country">
-					<a class="countryLink ts-body-s ts-underline current_country" data-country-code="US" href="https://eng.polene-paris.com/?country=US">United States</a><span class="current_country ts-body-m ts-grey"> (Selected)</span></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="CA" href="https://ca.polene-paris.com?country=CA">Canada</a></li>
-			
-		
-	</ul>
-</div>
-
-		</div>
-	
-
-	
-		
-
-		<div class="region">
-			<h3 class="region__title ts-body-m ts-grey" id="accordionMiddleEast">
-				Middle East
-			</h3>
-			
-
-<span aria-hidden="true" class="line"></span>
-
-
-			<div aria-labelledby="accordionMiddleEast" class="countries__container" id="sectMiddleEast" role="region">
-	<ul class="region__countries">
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="AE" href="https://eng.polene-paris.com/?country=AE">United Arab Emirates</a></li>
-			
-		
-	</ul>
-</div>
-
-		</div>
-	
-
-	
-		
-
-		<div class="region">
-			<h3 class="region__title ts-body-m ts-grey" id="accordionAsia&amp;Oceania">
-				Asia &amp; Oceania
-			</h3>
-			
-
-<span aria-hidden="true" class="line"></span>
-
-
-			<div aria-labelledby="accordionAsia&amp;Oceania" class="countries__container" id="sectAsia&amp;Oceania" role="region">
-	<ul class="region__countries">
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="AU" href="https://au.polene-paris.com?country=AU">Australia</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="KR" href="https://kr.polene-paris.com?country=KR">South Korea</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="JP" href="https://jp.polene-paris.com?country=JP">Japan</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="HK" href="https://eng.polene-paris.com/?country=HK">Hong Kong SAR</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="SG" href="https://sg.polene-paris.com?country=SG">Singapore</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="TW" href="https://eng.polene-paris.com/?country=TW">Taiwan Region</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="MY" href="https://eng.polene-paris.com/?country=MY">Malaysia</a></li>
-			
-		
-			
-				<li class="region__countries__single">
-					<a class="countryLink ts-body-s is-underlined" data-country-code="CN" href="https://www.polene-paris.com.cn?country=CN">China Mainland</a></li>
-			
-		
-	</ul>
-</div>
-
-		</div>
-	
-
-	
-
-
-		</div>
-
-		
-			<div class="regions__international">
-				
-
-<span aria-hidden="true" class="line"></span>
-
-				<a class="countryLink ts-body-m is-underlined" data-country-code="AR" href="https:///eng.polene-paris.com?country=AR">International</a></div>
-		
-	</div>
-</div>
-
-
-
-		
-
-		<script>
-			window.shopUrl = 'https://eng.polene-paris.com';
-			window.routes = {
-				cart_add_url: '/cart/add',
-				cart_change_url: '/cart/change',
-				cart_update_url: '/cart/update',
-				cart_url: '/cart',
-				predictive_search_url: '/search/suggest',
-			};
-
-			window.translations = {
-				select_size: `Select size`,
-				sold_out: `Out of stock`,
-				add_to_cart: `Add to cart`,
-				added_to_cart: `Added to cart`,
-				notify_me: `Notify me`,
-				preorder: `Pre-order`,
-				preorder_cta: `Preorder now`,
-				preorder_shipping_on: `Shipping on {{ preorder_date }}`,
-				title_edition: `Edition {{ edition }}`,
-				preorder_subtitle: `This product is a preorder product. {{ shippingInfo }}. Do you want to add it to your cart?`,
-				animation: `Add`,
-			};
-		</script>
-
-		
-
-		
-		<script type="text/javascript">
-			document.addEventListener('DOMContentLoaded', () => {
-				Shopify.analytics.publish('gtm_shop_data', {
-					shop: {
-						language: {
-							name: 'English',
-						},
-					},
-				});
-			});
-		</script><script id="56294158418e" type="text/javascript">
-	(function () {
-		var merchantConfig = {
-			csp: false,
-		};
-
-		var siteId = '56294158418e';
-		function t(t, n) {
-			for (var e = t.split(''), r = 0; r < e.length; ++r) e[r] = String.fromCharCode(e[r].charCodeAt(0) + n);
-			return e.join('');
-		}
-		function n(n) {
-			return t(n, -L).replace(/%SN%/g, siteId);
-		}
-		function e() {
-			var t = 'no' + 'op' + 'fn',
-				n = 'g' + 'a',
-				e = 'n' + 'ame';
-			return window[n] && window[n][e] === t;
-		}
-		function r() {
-			return !(!navigator.brave || 'function' != typeof navigator.brave.isBrave);
-		}
-		function o() {
-			return document.currentScript && document.currentScript.src;
-		}
-		function i(t) {
-			try {
-				if ('number' == typeof t && window.location && window.location.pathname) {
-					for (
-						var n = window.location.pathname.split('/'), e = [], r = 0;
-						r <= Math.min(n.length - 1, Math.abs(t));
-						r++
-					)
-						e.push(n[r]);
-					return e.join('/') || '/';
-				}
-			} catch (t) {}
-			return '/';
-		}
-		function c(t) {
-			try {
-				((G.ex = t),
-					e() && -1 === G.ex.indexOf(B.uB) && (G.ex += B.uB),
-					r() && -1 === G.ex.indexOf(B.uBr) && (G.ex += B.uBr),
-					o() && -1 === G.ex.indexOf(B.nIL) && (G.ex += B.nIL),
-					window.ftr__snp_cwc || (G.ex += B.s),
-					M(G));
-			} catch (t) {}
-		}
-		function a(t, n) {
-			function e(o) {
-				try {
-					o.blockedURI === t && (n(), document.removeEventListener(r, e));
-				} catch (t) {
-					document.removeEventListener(r, e);
-				}
-			}
-			var r = 'securitypolicyviolation';
-			(document.addEventListener(r, e),
-				setTimeout(
-					function () {
-						document.removeEventListener(r, e);
-					},
-					2 * 60 * 1e3
-				));
-		}
-		function u(t, n, e, r) {
-			var o = !1;
-			((t = 'https://' + t),
-				a(t, function () {
-					(r(!0), (o = !0));
-				}));
-			var i = document.createElement('script');
-			((i.onerror = function () {
-				if (!o)
-					try {
-						(r(!1), (o = !0));
-					} catch (t) {}
-			}),
-				(i.onload = e),
-				(i.type = 'text/javascript'),
-				(i.id = 'ftr__script'),
-				(i.async = !0),
-				(i.src = t));
-			var c = document.getElementsByTagName('script')[0];
-			c.parentNode.insertBefore(i, c);
-		}
-		function f() {
-			(J(B.uDF), setTimeout(h, I, B.uDF));
-		}
-		function d(t, n, e, r) {
-			var o = !1,
-				i = new XMLHttpRequest();
-			if (
-				(a('https:' + t, function () {
-					(e(new Error('CSP Violation'), !0), (o = !0));
-				}),
-				'//' === t.slice(0, 2) && (t = 'https:' + t),
-				'withCredentials' in i)
-			)
-				i.open('GET', t, !0);
-			else {
-				if ('undefined' == typeof XDomainRequest) return;
-				((i = new XDomainRequest()), i.open('GET', t));
-			}
-			(Object.keys(r).forEach(function (t) {
-				i.setRequestHeader(t, r[t]);
-			}),
-				(i.onload = function () {
-					'function' == typeof n && n(i);
-				}),
-				(i.onerror = function (t) {
-					if ('function' == typeof e && !o)
-						try {
-							(e(t, !1), (o = !0));
-						} catch (t) {}
-				}),
-				(i.onprogress = function () {}),
-				(i.ontimeout = function () {
-					'function' == typeof e && e('tim' + 'eo' + 'ut', !1);
-				}),
-				setTimeout(function () {
-					i.send();
-				}, 0));
-		}
-		function s(t, siteId, n) {
-			function e(t) {
-				var n = t.toString(16);
-				return n.length % 2 ? '0' + n : n;
-			}
-			function r(t) {
-				if (t <= 0) return '';
-				for (var n = '0123456789abcdef', e = '', r = 0; r < t; r++) e += n[Math.floor(Math.random() * n.length)];
-				return e;
-			}
-			function o(t) {
-				for (var n = '', r = 0; r < t.length; r++) n += e(t.charCodeAt(r));
-				return n;
-			}
-			function i(t) {
-				for (var n = t.split(''), e = 0; e < n.length; ++e) n[e] = String.fromCharCode(255 ^ n[e].charCodeAt(0));
-				return n.join('');
-			}
-			n = n ? '1' : '0';
-			var c = [];
-			return (
-				c.push(t),
-				c.push(siteId),
-				c.push(n),
-				(function (t) {
-					var n = 40,
-						e = '';
-					return (t.length < n / 2 && (e = ',' + r(n / 2 - t.length - 1)), o(i(t + e)));
-				})(c.join(','))
-			);
-		}
-		function w() {
-			function t() {
-				D && (J(B.dUAL), setTimeout(h, I, B.dUAL));
-			}
-			function n(t, n) {
-				c(n ? B.uAS + B.uF + B.cP : B.uAS + B.uF);
-			}
-			window.ftr__fdad(t, n);
-		}
-		function h(t) {
-			try {
-				var n;
-				switch (t) {
-					case B.uFP:
-						n = q;
-						break;
-					case B.uDF:
-						n = E;
-						break;
-					default:
-						n = D;
-				}
-				if (!n) return;
-				u(
-					n,
-					void 0,
-					function () {
-						try {
-							(K(), c(t + B.uS));
-						} catch (t) {}
-					},
-					function (n) {
-						try {
-							(K(),
-								(G.td = 1 * new Date() - G.ts),
-								c(n ? t + B.uF + B.cP : t + B.uF),
-								t === B.uFP && f(),
-								t === B.uDF && w());
-						} catch (t) {
-							c(B.eUoe);
-						}
-					}
-				);
-			} catch (n) {
-				c(t + B.eTlu);
-			}
-		}
-		var m = '22ge:t7mj8unkn;1forxgiurqw1qhw2vwdwxv',
-			v = 'fort',
-			l = 'erTo',
-			p = 'ken';
-		window.ftr__config = { m: merchantConfig, s: '23', si: siteId };
-		var g = !1,
-			_ = v + l + p,
-			y = 400 * 24 * 60,
-			T = 10,
-			k = {
-				write: function (t, n, e, r) {
-					void 0 === r && (r = !0);
-					var o = 0;
-					window.ftr__config &&
-						window.ftr__config.m &&
-						window.ftr__config.m.ckDepth &&
-						(o = window.ftr__config.m.ckDepth);
-					var c,
-						a,
-						u = i(o);
-					if (
-						(e
-							? ((c = new Date()), c.setTime(c.getTime() + 60 * e * 1e3), (a = '; expires=' + c.toGMTString()))
-							: (a = ''),
-						!r)
-					)
-						return void (document.cookie = escape(t) + '=' + escape(n) + a + '; path=' + u);
-					for (var f = 1, d = document.domain.split('.'), s = T, w = !0; w && d.length >= f && s > 0; ) {
-						var h = d.slice(-f).join('.');
-						document.cookie = escape(t) + '=' + escape(n) + a + '; path=' + u + '; domain=' + h;
-						var m = k.read(t);
-						((null != m && m == n) ||
-							((h = '.' + h), (document.cookie = escape(t) + '=' + escape(n) + a + '; path=' + u + '; domain=' + h)),
-							(w = -1 === document.cookie.indexOf(t + '=' + n)),
-							f++,
-							s--);
-					}
-				},
-				read: function (t) {
-					var n = null;
-					try {
-						for (var e = escape(t) + '=', r = document.cookie.split(';'), o = 32, i = 0; i < r.length; i++) {
-							for (var c = r[i]; c.charCodeAt(0) === o; ) c = c.substring(1, c.length);
-							0 === c.indexOf(e) && (n = unescape(c.substring(e.length, c.length)));
-						}
-					} finally {
-						return n;
-					}
-				},
-			},
-			S = window.ftr__config.s;
-		S += 'ck';
-		var x = function (t) {
-				var n = !1,
-					e = null,
-					r = function () {
-						try {
-							if (!e || !n) return;
-							(e.remove && 'function' == typeof e.remove ? e.remove() : document.head.removeChild(e), (n = !1));
-						} catch (t) {}
-					};
-				document.head &&
-					(!(function () {
-						((e = document.createElement('link')),
-							e.setAttribute('rel', 'pre' + 'con' + 'nect'),
-							e.setAttribute('cros' + 'sori' + 'gin', 'anonymous'),
-							(e.onload = r),
-							(e.onerror = r),
-							e.setAttribute('href', t),
-							document.head.appendChild(e),
-							(n = !0));
-					})(),
-					setTimeout(r, 3e3));
-			},
-			L = 3,
-			A = n(m || '22ge:t7mj8unkn;1forxgiurqw1qhw2vwdwxv'),
-			F = t('[0Uhtxhvw0LG', -L),
-			U = t('[0Fruuhodwlrq0LG', -L),
-			b = t('Li0Qrqh0Pdwfk', -L),
-			D,
-			C = 'fgq71iruwhu1frp',
-			E = n('(VQ(1' + C + '2vq2(VQ(2vfulsw1mv'),
-			V = n('(VQ(1' + C + '2vqV2(VQ(2vfulsw1mv'),
-			q;
-		window.ftr__config &&
-			window.ftr__config.m &&
-			window.ftr__config.m.fpi &&
-			(q = window.ftr__config.m.fpi + n('2vq2(VQ(2vfulsw1mv'));
-		var I = 10;
-		window.ftr__startScriptLoad = 1 * new Date();
-		var R = function (t) {
-				var n = 'ft' + 'r:tok' + 'enR' + 'eady';
-				(window.ftr__tt && clearTimeout(window.ftr__tt),
-					(window.ftr__tt = setTimeout(function () {
-						try {
-							(delete window.ftr__tt, (t += '_tt'));
-							var e = document.createEvent('Event');
-							(e.initEvent(n, !1, !1), (e.detail = t), document.dispatchEvent(e));
-						} catch (t) {}
-					}, 1e3)));
-			},
-			M = function (t) {
-				var n = function (t) {
-						return t || '';
-					},
-					e = n(t.id) + '_' + n(t.ts) + '_' + n(t.td) + '_' + n(t.ex) + '_' + n(S),
-					r = y;
-				(!isNaN(window.ftr__config.m.ckTTL) && window.ftr__config.m.ckTTL && (r = window.ftr__config.m.ckTTL),
-					k.write(_, e, r, !0),
-					R(e),
-					(window.ftr__gt = e));
-			},
-			P = function () {
-				var t = k.read(_) || '',
-					n = t.split('_'),
-					e = function (t) {
-						return n[t] || void 0;
-					};
-				return { id: e(0), ts: e(1), td: e(2), ex: e(3), vr: e(4) };
-			},
-			j = (function () {
-				for (var t = {}, n = 'fgu', e = [], r = 0; r < 256; r++) e[r] = (r < 16 ? '0' : '') + r.toString(16);
-				var o = function (t, n, r, o, i) {
-						var c = i ? '-' : '';
-						return (
-							e[255 & t] +
-							e[(t >> 8) & 255] +
-							e[(t >> 16) & 255] +
-							e[(t >> 24) & 255] +
-							c +
-							e[255 & n] +
-							e[(n >> 8) & 255] +
-							c +
-							e[((n >> 16) & 15) | 64] +
-							e[(n >> 24) & 255] +
-							c +
-							e[(63 & r) | 128] +
-							e[(r >> 8) & 255] +
-							c +
-							e[(r >> 16) & 255] +
-							e[(r >> 24) & 255] +
-							e[255 & o] +
-							e[(o >> 8) & 255] +
-							e[(o >> 16) & 255] +
-							e[(o >> 24) & 255]
-						);
-					},
-					i = function () {
-						if (window.Uint32Array && window.crypto && window.crypto.getRandomValues) {
-							var t = new window.Uint32Array(4);
-							return (window.crypto.getRandomValues(t), { d0: t[0], d1: t[1], d2: t[2], d3: t[3] });
-						}
-						return {
-							d0: (4294967296 * Math.random()) >>> 0,
-							d1: (4294967296 * Math.random()) >>> 0,
-							d2: (4294967296 * Math.random()) >>> 0,
-							d3: (4294967296 * Math.random()) >>> 0,
-						};
-					},
-					c = function () {
-						var t = '',
-							n = function (t, n) {
-								for (var e = '', r = t; r > 0; --r) e += n.charAt((1e3 * Math.random()) % n.length);
-								return e;
-							};
-						return ((t += n(2, '0123456789')), (t += n(1, '123456789')), (t += n(8, '0123456789')));
-					};
-				return (
-					(t.safeGenerateNoDash = function () {
-						try {
-							var t = i();
-							return o(t.d0, t.d1, t.d2, t.d3, !1);
-						} catch (t) {
-							try {
-								return n + c();
-							} catch (t) {}
-						}
-					}),
-					(t.isValidNumericalToken = function (t) {
-						return (
-							t &&
-							t.toString().length <= 11 &&
-							t.length >= 9 &&
-							parseInt(t, 10).toString().length <= 11 &&
-							parseInt(t, 10).toString().length >= 9
-						);
-					}),
-					(t.isValidUUIDToken = function (t) {
-						return t && 32 === t.toString().length && /^[a-z0-9]+$/.test(t);
-					}),
-					(t.isValidFGUToken = function (t) {
-						return 0 == t.indexOf(n) && t.length >= 12;
-					}),
-					t
-				);
-			})(),
-			B = {
-				uDF: 'UDF',
-				dUAL: 'dUAL',
-				uAS: 'UAS',
-				uFP: 'UFP',
-				mLd: '1',
-				eTlu: '2',
-				eUoe: '3',
-				uS: '4',
-				uF: '9',
-				tmos: ['T5', 'T10', 'T15', 'T30', 'T60'],
-				tmosSecs: [5, 10, 15, 30, 60],
-				bIR: '43',
-				uB: 'u',
-				uBr: 'b',
-				cP: 'c',
-				nIL: 'i',
-				s: 's',
-			};
-		try {
-			var G = P();
-			try {
-				(G.id && (j.isValidNumericalToken(G.id) || j.isValidUUIDToken(G.id) || j.isValidFGUToken(G.id))
-					? (window.ftr__ncd = !1)
-					: ((G.id = j.safeGenerateNoDash()), (window.ftr__ncd = !0)),
-					(G.ts = window.ftr__startScriptLoad),
-					M(G),
-					(window.ftr__snp_cwc = !!k.read(_)),
-					window.ftr__snp_cwc || (E = V));
-				for (
-					var N = 'for' + 'ter' + '.co' + 'm',
-						O = 'ht' + 'tps://c' + 'dn9.' + N,
-						Q = 'ht' + 'tps://' + G.id + '-' + siteId + '.cd' + 'n.' + N,
-						H = 'http' + 's://cd' + 'n3.' + N,
-						X = [O, Q, H],
-						z = 0;
-					z < X.length;
-					z++
-				)
-					x(X[z]);
-				var $ = new Array(B.tmosSecs.length),
-					J = function (t) {
-						for (var n = 0; n < B.tmosSecs.length; n++) $[n] = setTimeout(c, 1e3 * B.tmosSecs[n], t + B.tmos[n]);
-					},
-					K = function () {
-						for (var t = 0; t < B.tmosSecs.length; t++) clearTimeout($[t]);
-					};
-				window.ftr__fdad = function (n, e) {
-					if (!g) {
-						g = !0;
-						var r = {};
-						((r[b] = s(window.ftr__config.s, siteId, window.ftr__config.m.csp)),
-							d(
-								A,
-								function (e) {
-									try {
-										var r = e.getAllResponseHeaders().toLowerCase();
-										if (r.indexOf(U.toLowerCase()) >= 0) {
-											var o = e.getResponseHeader(U);
-											window.ftr__altd2 = t(atob(o), -L - 1);
-										}
-										if (r.indexOf(F.toLowerCase()) < 0) return;
-										var i = e.getResponseHeader(F),
-											c = t(atob(i), -L - 1);
-										if (c) {
-											var a = c.split(':');
-											if (a && 2 === a.length) {
-												for (var u = a[0], f = a[1], d = '', s = 0, w = 0; s < 20; ++s)
-													d += s % 3 > 0 && w < 12 ? siteId.charAt(w++) : G.id.charAt(s);
-												var h = f.split(',');
-												if (h.length > 1) {
-													var m = h[0],
-														v = h[1];
-													D = u + '/' + m + '.' + d + '.' + v;
-												}
-											}
-										}
-										n();
-									} catch (t) {}
-								},
-								function (t, n) {
-									e && e(t, n);
-								},
-								r
-							));
-					}
-				};
-				var W = q ? B.uFP : B.uDF;
-				(J(W), setTimeout(h, I, W));
-			} catch (t) {
-				c(B.mLd);
-			}
-		} catch (t) {}
-	})();
-</script>
-
-<!-- Zendesk chat widget removed for Danzla -->
-
-<section class="motion-section">
-	<style>
-	.motion-section{background:#ffffff;height:calc(100vh*3);overflow:hidden;padding-top:5rem;position:relative;z-index:2}
-	.motion-section__top{text-align:center;margin-bottom:1.6rem;padding:0 1.6rem}
-	.motion-section__mid{display:flex;flex-direction:column;gap:1.2rem;text-align:center}
-	.motion-section__subtitle{font-family:"Prata",serif;font-size:19px;font-weight:400;line-height:1.4;letter-spacing:.02em;text-align:center;text-transform:uppercase;margin:0}
-	.motion-section__text{font-family:"Prata",serif;font-size:15px;font-weight:400;letter-spacing:.02em;line-height:1.5;text-align:center;text-transform:uppercase;max-width:38rem;margin:0 auto;padding:0 1.6rem}
-	.motion-section__text strong{color:#5C3D2E}
-	.motion-section__pin{height:100vh;position:relative;width:100%}
-	.motion-section__bottom{align-items:center;display:flex;top:0;right:0;bottom:0;left:0;justify-content:center;-webkit-mask:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340.0' height='265.7' fill='none' viewBox='0 0 340.0 265.7'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' fill='%23000' d='M62.9 255.9 L27.6 255.9 L18.2 252.0 L14.1 244.8 L12.6 227.7 L16.5 166.8 L15.5 145.1 L23.9 131.4 L37.6 116.2 L38.1 99.0 L41.6 74.4 L46.0 59.7 L54.8 45.4 L70.8 33.4 L82.6 29.5 L103.2 26.0 L111.1 17.7 L118.4 13.8 L163.1 9.8 L199.5 9.8 L212.2 11.3 L220.6 14.3 L229.9 23.1 L256.4 26.5 L267.2 31.0 L276.1 36.9 L286.2 48.9 L292.0 62.6 L297.9 89.7 L300.4 116.7 L321.0 133.4 L325.4 143.2 L327.4 222.7 L326.4 247.8 L319.3 253.4 L311.0 254.9 L167.1 251.0 Z M172.2 70.0 L179.8 67.3 L187.2 62.4 L214.2 41.8 L217.4 38.6 L218.9 35.1 L218.4 30.2 L216.9 27.8 L210.8 24.6 L126.8 26.0 L120.4 27.0 L116.2 30.2 L114.7 33.7 L115.2 38.1 L122.9 45.7 L157.2 68.8 L162.1 70.3 Z'/%3E%3C/svg%3E") 50% 50%/var(--maskW,90%) no-repeat;mask:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340.0' height='265.7' fill='none' viewBox='0 0 340.0 265.7'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' fill='%23000' d='M62.9 255.9 L27.6 255.9 L18.2 252.0 L14.1 244.8 L12.6 227.7 L16.5 166.8 L15.5 145.1 L23.9 131.4 L37.6 116.2 L38.1 99.0 L41.6 74.4 L46.0 59.7 L54.8 45.4 L70.8 33.4 L82.6 29.5 L103.2 26.0 L111.1 17.7 L118.4 13.8 L163.1 9.8 L199.5 9.8 L212.2 11.3 L220.6 14.3 L229.9 23.1 L256.4 26.5 L267.2 31.0 L276.1 36.9 L286.2 48.9 L292.0 62.6 L297.9 89.7 L300.4 116.7 L321.0 133.4 L325.4 143.2 L327.4 222.7 L326.4 247.8 L319.3 253.4 L311.0 254.9 L167.1 251.0 Z M172.2 70.0 L179.8 67.3 L187.2 62.4 L214.2 41.8 L217.4 38.6 L218.9 35.1 L218.4 30.2 L216.9 27.8 L210.8 24.6 L126.8 26.0 L120.4 27.0 L116.2 30.2 L114.7 33.7 L115.2 38.1 L122.9 45.7 L157.2 68.8 L162.1 70.3 Z'/%3E%3C/svg%3E") 50% 50%/var(--maskW,90%) no-repeat;position:absolute;z-index:5}
-	.motion-section__cursor{color:#fff;font-size:1.3rem;font-weight:600;left:0;top:0;line-height:1.3rem;mix-blend-mode:difference;opacity:0;pointer-events:none;position:absolute;text-align:center;text-transform:uppercase;white-space:nowrap;transition:opacity .3s;z-index:2}
-	.motion-section__cursor strong{font-weight:100}
-	.motion-section__cursor.visible{opacity:1}
-	.motion-section__photo{display:block;height:100%;object-fit:cover;width:100%}
-	.motion-section__scroll{font-family:Manrope,sans-serif;font-size:.8rem;font-weight:600;left:50%;letter-spacing:-.02rem;line-height:.9rem;position:absolute;text-align:center;text-transform:uppercase;top:82%;transform:translate(-50%);z-index:1;color:#3a332c;white-space:nowrap}
-	.motion-section__scroll strong{color:#5C3D2E}
-	@media (min-width:768px){
-		.motion-section{padding-top:7rem}
-		.motion-section__subtitle{font-size:23px}
-		.motion-section__text{font-size:18px}
-	}
-	@media (min-width:1024px){
-		.motion-section{padding-top:9rem}
-		.motion-section__subtitle{font-size:27px}
-		.motion-section__text{font-size:21px}
-	}
-	</style>
-	<div class="motion-section__top">
-		<div class="motion-section__mid">
-			<p class="motion-section__subtitle">Тихая роскошь</p>
-			<p class="motion-section__text">Есть вещи, которые не нуждаются в представлении. Их замечают по <strong>силуэту</strong> и <strong>фактуре</strong>. В истории <strong>DanZla</strong> аксессуары становятся частью вашего образа – спокойно, уверенно и надолго.</p>
-		</div>
-	</div>
-	<div class="motion-section__pin" data-ref="motion-pin">
-		<div class="motion-section__bottom" data-ref="motion-mask">
-			<div class="motion-section__cursor" data-ref="motion-cursor"><strong>[ </strong>СМОТРЕТЬ<strong> ]</strong></div>
-			<img class="motion-section__photo" src="img/danzla-story.webp" alt="DanZla – сумки в образе">
-		</div>
-		<p class="motion-section__scroll"><strong>подсказка:</strong> листайте, чтобы рассмотреть детали</p>
-	</div>
-</section>
-<script>
-(function(){
-	function init(){
-		var pin = document.querySelector('[data-ref="motion-pin"]');
-		var maskEl = document.querySelector('[data-ref="motion-mask"]');
-		var cursor = document.querySelector('[data-ref="motion-cursor"]');
-		var footer = document.querySelector('footer');
-		var section = document.querySelector('.motion-section');
-		if(!pin || !maskEl || !footer || !section) return;
-
-		var ranges = {
-			mobile: {from:90, to:1000},
-			tablet: {from:60, to:500},
-			desktop: {from:30, to:440}
-		};
-		function getRange(){
-			var w = window.innerWidth;
-			if(w < 768) return ranges.mobile;
-			if(w < 1024) return ranges.tablet;
-			return ranges.desktop;
-		}
-
-		var pinStart = 0, pinEnd = 0, sectionAbsTop = 0;
-		var state = 'before'; // before | pinned | after
-		var currentRange = getRange();
-		var currentVal = currentRange.from;
-
-		function measure(){
-			// force natural (unpinned) state to measure true offsets
-			var prevPosition = pin.style.position;
-			pin.style.position = 'static';
-			var pinRect = pin.getBoundingClientRect();
-			pinStart = pinRect.top + window.scrollY;
-			var footerRect = footer.getBoundingClientRect();
-			var footerBottom = footerRect.bottom + window.scrollY;
-			// footerBottom always equals the document's total height (footer is the
-			// last element on the page), so footerBottom - viewportHeight is exactly
-			// the browser's hard max scrollY - leaving zero margin for sub-pixel
-			// rounding. That made the pin's release flicker right at the scroll
-			// ceiling (briefly unpins, then the clamped scrollY reads back as
-			// "still pinned"). Releasing a bit earlier gives real margin so the
-			// footer settles into view reliably instead of flashing.
-			pinEnd = footerBottom - window.innerHeight - 160;
-			var sectionRect = section.getBoundingClientRect();
-			sectionAbsTop = sectionRect.top + window.scrollY;
-			pin.style.position = prevPosition;
-		}
-
-		function setMask(progress){
-			var r = getRange();
-			currentRange = r;
-			currentVal = r.from + (r.to - r.from) * progress;
-			maskEl.style.setProperty('--maskW', currentVal + '%');
-		}
-
-		function apply(){
-			var y = window.scrollY;
-			if(y < pinStart){
-				if(state !== 'before'){
-					pin.style.position = '';
-					pin.style.top = '';
-					state = 'before';
-				}
-				setMask(0);
-				return;
-			}
-			if(y <= pinEnd){
-				if(state !== 'pinned'){
-					pin.style.position = 'fixed';
-					pin.style.top = '0';
-					pin.style.left = '0';
-					pin.style.width = '100%';
-					state = 'pinned';
-				}
-				var progress = pinEnd > pinStart ? (y - pinStart) / (pinEnd - pinStart) : 1;
-				setMask(Math.max(0, Math.min(1, progress)));
-				return;
-			}
-			if(state !== 'after'){
-				pin.style.position = 'absolute';
-				pin.style.left = '0';
-				pin.style.width = '100%';
-				pin.style.top = (pinEnd - sectionAbsTop) + 'px';
-				state = 'after';
-			}
-			setMask(1);
-		}
-
-		var raf = 0;
-		function onScroll(){
-			if(!raf) raf = requestAnimationFrame(function(){ raf = 0; apply(); });
-		}
-		function onResize(){
-			measure();
-			apply();
-		}
-
-		measure();
-		apply();
-		window.addEventListener('scroll', onScroll, {passive:true});
-		window.addEventListener('resize', onResize);
-
-		if(window.innerWidth >= 1024){
-			var A = 254/343;
-			function hit(clientX, clientY, rect){
-				// currentVal is tracked directly in JS (set alongside --maskW),
-				// so the hit-test never needs a synchronous getComputedStyle read.
-				var maskW = rect.width * (currentVal/100);
-				var maskH = maskW * A;
-				var left = (rect.width - maskW)/2;
-				var top = (rect.height - maskH)/2;
-				var x = clientX - rect.left;
-				var y = clientY - rect.top;
-				return x >= left && x <= left+maskW && y >= top && y <= top+maskH;
-			}
-			var lastX = 0, lastY = 0, moveRaf = 0;
-			function onMove(){
-				moveRaf = 0;
-				var rect = maskEl.getBoundingClientRect();
-				cursor.style.transform = 'translate3d(' + (lastX - rect.left - cursor.offsetWidth/2) + 'px,' + (lastY - rect.top - cursor.offsetHeight/2) + 'px,0)';
-				var over = hit(lastX, lastY, rect);
-				cursor.classList.toggle('visible', over);
-				maskEl.style.cursor = over ? 'none' : '';
-			}
-			maskEl.addEventListener('mousemove', function(e){
-				lastX = e.clientX;
-				lastY = e.clientY;
-				if(!moveRaf) moveRaf = requestAnimationFrame(onMove);
-			}, {passive:true});
-			maskEl.addEventListener('mouseleave', function(){
-				cursor.classList.remove('visible');
-				maskEl.style.cursor = '';
-			});
-		}
-	}
-	if(document.readyState === 'loading'){
-		document.addEventListener('DOMContentLoaded', init, {once:true});
-	} else {
-		init();
-	}
-})();
-</script>
-
-	<!-- Desktop navigation links stay clickable, but hover mega-menus are disabled. -->
-	<style>
-	@media (min-width:1024px){
-		.header__menu-panel[data-ref="menu-panel"]{display:none!important;visibility:hidden!important;pointer-events:none!important}
-	}
-	</style>
-	<script>
-	(function(){
-		var desktop=window.matchMedia('(min-width:1024px)');
-		function closeHoverMenus(){
-			if(!desktop.matches)return;
-			document.querySelectorAll('[data-ref="menu-trigger"]').forEach(function(trigger){
-				trigger.setAttribute('aria-expanded','false');
-			});
-			document.querySelectorAll('.header__menu-panel[data-ref="menu-panel"]').forEach(function(panel){
-				panel.setAttribute('aria-hidden','true');
-				panel.setAttribute('inert','');
-			});
-			document.documentElement.classList.remove('menu-open');
-			document.body.classList.remove('menu-open');
-			document.querySelectorAll('.header.menu-open').forEach(function(header){header.classList.remove('menu-open')});
-		}
-		function blockHover(event){
-			if(!desktop.matches||!event.target.closest('[data-ref="menu-trigger"]'))return;
-			event.stopImmediatePropagation();
-			closeHoverMenus();
-			requestAnimationFrame(closeHoverMenus);
-		}
-		document.addEventListener('pointerover',blockHover,true);
-		document.addEventListener('mouseover',blockHover,true);
-		document.addEventListener('mouseenter',blockHover,true);
-		window.addEventListener('load',closeHoverMenus);
-		if(desktop.addEventListener)desktop.addEventListener('change',function(event){if(event.matches)closeHoverMenus()});
-	})();
-	</script>
-
-		<footer class="footer" data-ref="footer">
+<main id="main-content">
+    <section class="bestsellers" aria-label="Мужские сумки"><div class="bestsellers__grid">
+      <a class="product-card" href="#" aria-label="Cyme Mini, фактурная кожа, карамельный"><span class="product-card__media"><img src="cdn/shop/files/packshot-front_cyme-mini-camel-grain.png" alt="Сумка Cyme Mini карамельного цвета" width="1920" height="2196"><img src="cdn/shop/files/packshot-turn_cyme-mini-camel-grain.png" alt="" width="1920" height="2196" loading="lazy"></span><span class="product-card__details"><span class="product-card__title">Cyme Mini</span><span class="product-card__edition">Edition Textured Camel</span><span class="product-card__price">$550</span></span></a>
+      <a class="product-card" href="#" aria-label="Cyme Mini, фактурная кожа, коричневый"><span class="product-card__media"><img src="cdn/shop/files/packshot-front_cyme-mini-racine-grain_313afd20-9d9a-41cc-b5b7-b07380aa7132.png" alt="Сумка Cyme Mini коричневого цвета" width="1920" height="2196"><img src="cdn/shop/files/packshot-turn_cyme-mini-racine-grain.png" alt="" width="1920" height="2196" loading="lazy"></span><span class="product-card__details"><span class="product-card__title">Cyme Mini</span><span class="product-card__edition">Edition Textured Root</span><span class="product-card__price">$550</span></span></a>
+      <a class="feature" href="#" aria-label="Коллекция Cyme"><img src="cdn/shop/files/2000x2524_Cyme_Mini_RacinePLP_WEB.jpg" alt="Модель с сумкой Cyme у моря" width="1920" height="2423"></a>
+      <a class="product-card" href="#" aria-label="Cyme, фактурная кожа, карамельный"><span class="product-card__media"><img src="cdn/shop/files/packshot-front_cyme-camel-grain.png" alt="Сумка Cyme карамельного цвета" width="1920" height="2196"><img src="cdn/shop/files/packshot-turn_cyme-camel-grain.png" alt="" width="1920" height="2196" loading="lazy"></span><span class="product-card__details"><span class="product-card__title">Cyme</span><span class="product-card__edition">Edition Textured Camel</span><span class="product-card__price">$620</span></span></a>
+      <a class="product-card" href="#" aria-label="Numéro Neuf Mini, фактурная кожа, серо-бежевый"><span class="product-card__media"><img src="cdn/shop/products/packshot-front_numero-neuf-mini-taupe-grain.png" alt="Сумка Numéro Neuf Mini серо-бежевого цвета" width="1920" height="2196"><img src="cdn/shop/files/packshot-turn_numero-neuf-mini-taupe-grain.png" alt="" width="1920" height="2196" loading="lazy"></span><span class="product-card__details"><span class="product-card__title">Numéro Neuf Mini</span><span class="product-card__edition">Edition Textured Taupe</span><span class="product-card__price">$540</span></span></a>
+    </div></section>
+  </main>
+
+<footer class="footer" data-ref="footer">
 	<style>
 	@font-face{font-display:swap;font-family:"PP Fraktion Mono";font-style:normal;font-weight:400;src:url("fonts/PPFraktionMono-Regular.otf") format("opentype")}
 	@font-face{font-display:swap;font-family:"PP Fraktion Mono";font-style:normal;font-weight:700;src:url("fonts/PPFraktionMono-Bold.otf") format("opentype")}
@@ -5717,19 +3929,7 @@ hsl(var(--grey));">
 })();
 </script>
 
-		
-	<script data-source-attribution="shopify.standard_actions" src="cdn-shopify-com/storefront/standard-actions.js" type="module"></script>
 
-<div class="dz-cookie" id="dz-cookie-banner" role="dialog" aria-live="polite" aria-label="Использование cookie">
-	<img class="dz-cookie__img" src="img/cookie-tag.webp" alt="Мы используем cookie. Продолжая пользоваться сайтом, вы соглашаетесь с нашей политикой использования cookie.">
-	<button class="dz-cookie__hit dz-cookie__hit--close" type="button" aria-label="Закрыть" onclick="document.getElementById('dz-cookie-banner').setAttribute('hidden','')"></button>
-	<button class="dz-cookie__hit dz-cookie__hit--accept" type="button" onclick="localStorage.setItem('dz_cookie_accepted','1');document.getElementById('dz-cookie-banner').setAttribute('hidden','')">Принять</button>
-	<button class="dz-cookie__hit dz-cookie__hit--settings" type="button" onclick="document.getElementById('dz-cookie-banner').setAttribute('hidden','')">Настройки</button>
-</div>
-<script>
-	if (localStorage.getItem('dz_cookie_accepted') === '1') {
-		document.getElementById('dz-cookie-banner').setAttribute('hidden', '');
-	}
-</script>
+	<script data-source-attribution="shopify.standard_actions" src="cdn-shopify-com/storefront/standard-actions.js" type="module"></script>
 
 </body></html>
