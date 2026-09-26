@@ -3895,27 +3895,27 @@ hsl(var(--grey));">
 
 	<picture>
 		
-			<source alt="" height="1333" media="(max-width: 1023px)" sizes="100vw" src="cdn/shop/files/shopstream-app-video-thumbnail-6ab3c0ea069b676d0e335cf5.jpg" srcset="cdn/shop/files/shopstream-app-video-thumbnail-6ab3c0ea069b676d0e335cf5.jpg 750w" width="750"/>
+			<source height="938" media="(max-width: 1023px)" sizes="100vw" src="img/hero-a4-landscape.png" width="1672"/>
 
 		
-		<source alt="" height="542" media="(min-width: 1024px)" sizes="100vw" src="cdn/shop/files/shopstream-app-video-thumbnail-6ab3c090069b676d0e335a5b.jpg" srcset="cdn/shop/files/shopstream-app-video-thumbnail-6ab3c090069b676d0e335a5b.jpg 1200w" width="1200"/>
+		<source height="938" media="(min-width: 1024px)" sizes="100vw" src="img/hero-a4-landscape.png" width="1672"/>
 
-<img alt="" fetchpriority="high" height="542" sizes="100vw" src="cdn/shop/files/shopstream-app-video-thumbnail-6ab3c090069b676d0e335a5b.jpg" srcset="cdn/shop/files/shopstream-app-video-thumbnail-6ab3c090069b676d0e335a5b.jpg 1200w" width="1200"/>
+<img alt="Девушка с сумкой A4 в пейзаже" fetchpriority="high" height="938" sizes="100vw" src="img/hero-a4-landscape.png" width="1672"/>
 </picture>
 
 
 
 	
-<video autoplay="" class="md-lg-only" data-streaming-id="6ab3c090069b676d0e335a5b" height="960" loop="" muted="" playsinline="" width="2124"></video>
+
 	
-<video autoplay="" class="sm-only" data-streaming-id="6ab3c0ea069b676d0e335cf5" height="1920" loop="" muted="" playsinline="" width="1080"></video>
+
 
 
 
 	
 		
 
-<component-video-toggle class="component-video-toggle hero__video-toggle">
+<component-video-toggle class="component-video-toggle hero__video-toggle" hidden style="display:none!important">
 	<button aria-label="Pause video" class="component-video-toggle__button" data-aria-label-pause="Pause video" data-aria-label-play="Play video" data-ref="video-toggle-button" type="button">
 		<span aria-hidden="true" class="component-video-toggle__icon component-video-toggle__play-icon rtl-no-flip-svg"><svg fill="none" height="14" viewBox="0 0 13 14" width="13" xmlns="http://www.w3.org/2000/svg">
   <path d="M8.95703 7L3.25 12.707V1.29297L8.95703 7Z" stroke="black"></path>
@@ -3944,14 +3944,14 @@ hsl(var(--grey));">
 
 
 <article class="hero-product" data-parallax="-100" data-ref="parallax-el">
-	<a class="hero-product__inner" href="/products/cyme-textured-cognac">
+	<a class="hero-product__inner" href="#">
 		<div class="hero-product__details">
-			<h3 class="ts-h3">Cyme </h3>
+			<h3 class="ts-h3">A4</h3>
 			<span class="hero-product__price ts-label-m">
 
 
 	
-			$620
+			4250 ₽
 	
 
 </span>
@@ -3964,7 +3964,7 @@ hsl(var(--grey));">
 
 
 	
-<img alt="" class="" height="2196" sizes="(min-width: 1024px) 16vw, 100vw" src="cdn/shop/files/packshot-front_cyme-cognac-grain_6a853096-9aab-4b93-9742-cb34c2efffff.png" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA= 1w, //eng.polene-paris.com/cdn/shop/files/packshot-front_cyme-cognac-grain_6a853096-9aab-4b93-9742-cb34c2efffff.png?v=1734947720&amp;width=352 352w, //eng.polene-paris.com/cdn/shop/files/packshot-front_cyme-cognac-grain_6a853096-9aab-4b93-9742-cb34c2efffff.png?v=1734947720&amp;width=832 832w, //eng.polene-paris.com/cdn/shop/files/packshot-front_cyme-cognac-grain_6a853096-9aab-4b93-9742-cb34c2efffff.png?v=1734947720&amp;width=1200 1200w, cdn/shop/files/packshot-front_cyme-cognac-grain_6a853096-9aab-4b93-9742-cb34c2efffff.png 1920w" width="1920"/>
+<img alt="Сумка A4" class="" height="1024" sizes="(min-width: 1024px) 16vw, 100vw" src="img/hero-a4-product.png" style="height:100%;object-fit:contain;object-position:center;width:100%" width="1536"/>
 	
 	
 
@@ -4538,6 +4538,28 @@ hsl(var(--grey));">
 
 
 </section>
+	<style>
+	.instagram img.image[data-index]{opacity:1!important}
+	</style>
+	<script>
+	(function(){
+		var photos=[
+			'img/instagram-01.png',
+			'img/instagram-02.png',
+			'img/instagram-03.png',
+			'img/instagram-04.png',
+			'img/instagram-05.png',
+			'img/instagram-06.png'
+		];
+		document.querySelectorAll('.instagram img[data-index]').forEach(function(image){
+			var index=Number(image.getAttribute('data-index'));
+			if(!photos[index])return;
+			image.src=photos[index];
+			image.srcset=photos[index];
+			image.alt='DanZla в Instagram — образ '+(index+1);
+		});
+	})();
+	</script>
 			
 
 			
@@ -5540,116 +5562,159 @@ hsl(var(--grey));">
 })();
 </script>
 
-		
-		<footer class="dz-footer" data-ref="dz-footer">
+	<!-- Desktop navigation links stay clickable, but hover mega-menus are disabled. -->
 	<style>
-	.dz-footer{--fr:2.6666667vw;position:relative;z-index:10;margin-top:-60px;background-color:#78726f;background-image:url(img/footer-bg-mob.webp);background-position:top center;background-repeat:no-repeat;background-size:100% 100%;padding:calc(var(--fr)*5.6) 0 calc(var(--fr)*2.5)}
-	.dz-footer__photo{position:absolute;bottom:-5px;left:calc(var(--fr)*8.8);width:calc(var(--fr)*19.9);z-index:0;pointer-events:none;display:block;height:auto;transform:translateY(80px);transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
-	.dz-footer__inner{position:relative;z-index:1;padding:0 calc(var(--fr)*1.6)}
-	.dz-footer__top{display:flex;flex-direction:column;gap:calc(var(--fr)*10.8);margin-bottom:calc(var(--fr)*15.5)}
-	.dz-footer__nav{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--fr)*1.3) calc(var(--fr)*2.2);list-style:none;margin:0;padding:0}
-	.dz-footer__nav a{color:#fff;text-decoration:none;font-family:Manrope,sans-serif;font-size:calc(var(--fr)*1.3);font-weight:400;letter-spacing:calc(var(--fr)*-.12);line-height:calc(var(--fr)*1.3);text-transform:uppercase;white-space:nowrap;transition:opacity .2s}
-	.dz-footer__nav a:hover{opacity:.6}
-	.dz-footer__nav a.disable{opacity:.5;pointer-events:none}
-	.dz-footer__mid{position:relative;margin-bottom:calc(var(--fr)*2.3)}
-	.dz-footer__logo{display:block;width:100%;margin:0 0 .38em;font-family:Thunder,sans-serif;font-weight:800;font-size:calc(var(--fr)*16.9);line-height:1;color:#fff;mix-blend-mode:exclusion;text-decoration:none;letter-spacing:-.02em;white-space:nowrap;transform:translateY(60px);transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
-	.dz-footer__title{display:flex;flex-wrap:wrap;row-gap:calc(var(--fr)*1.2);align-items:flex-end;gap:calc(var(--fr)*.2);color:#fff;font-family:Thunder,sans-serif;font-weight:800;font-size:calc(var(--fr)*4.2);line-height:calc(var(--fr)*3.4);margin:0 0 calc(var(--fr)*3);pointer-events:none;text-transform:uppercase;transform:scaleY(0);transform-origin:50% 100%;transition:transform .8s cubic-bezier(.16,1,.3,1) .4s}
-	.dz-footer__title span{display:block;font-size:calc(var(--fr)*2.8);line-height:calc(var(--fr)*2.3);margin-bottom:calc(var(--fr)*.4);margin-top:calc(var(--fr)*1);white-space:nowrap;font-weight:400}
-	.dz-footer__title span strong{font-size:calc(var(--fr)*3);font-weight:300;line-height:calc(var(--fr)*2.4)}
-	.dz-footer__form{display:flex;flex-wrap:wrap;align-items:flex-end;gap:calc(var(--fr)*.8);opacity:0;transition:opacity 2s cubic-bezier(.25,.46,.45,.94)}
-	.dz-footer__label{position:relative;display:block;width:calc(var(--fr)*27.5);color:#fff}
-	.dz-footer__label-text{position:absolute;left:0;top:0;transform:translateY(10%);transition:transform .3s,opacity .3s;pointer-events:none;font-family:Manrope,sans-serif;font-size:calc(var(--fr)*1.5);letter-spacing:.02em;text-transform:uppercase}
-	.dz-footer__label input{width:100%;background:none;border:none;border-bottom:1px solid #b9b8b8;color:#fff;font-family:Manrope,sans-serif;font-size:calc(var(--fr)*1.5);height:calc(var(--fr)*2.2);padding:calc(var(--fr)*.4) 0 calc(var(--fr)*.5);outline:none;transition:border-color .3s}
-	.dz-footer__label input::placeholder{color:transparent}
-	.dz-footer__label:focus-within input{border-bottom-color:#5C1F2E}
-	.dz-footer__label:has(input:not(:placeholder-shown)) input{border-bottom-color:#fff}
-	.dz-footer__label:focus-within .dz-footer__label-text,.dz-footer__label:has(input:not(:placeholder-shown)) .dz-footer__label-text{transform:translateY(-100%);opacity:.7}
-	.dz-footer__submit{background:none;border:none;padding:0;color:#fff;font-family:Manrope,sans-serif;font-size:calc(var(--fr)*1.8);font-weight:600;line-height:calc(var(--fr)*1.6);text-transform:uppercase;white-space:nowrap;cursor:pointer;position:relative}
-	.dz-footer__submit::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:1px;background:currentColor;transform-origin:left;transition:transform .4s}
-	.dz-footer__submit:hover::after{transform:scaleX(0)}
-	.dz-footer__bottom{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--fr)*.8);padding-top:calc(var(--fr)*.8)}
-	.dz-footer__bottom p,.dz-footer__bottom a{margin:0;color:#fff;text-decoration:none;font-family:Manrope,sans-serif;font-size:calc(var(--fr)*1.3);font-weight:400;letter-spacing:calc(var(--fr)*-.12);line-height:calc(var(--fr)*1.3);text-transform:uppercase}
-	.dz-footer__bottom a:hover{opacity:.6}
-	.dz-footer.dz-footer--in .dz-footer__logo,.dz-footer.dz-footer--in .dz-footer__photo{transform:translateY(0)}
-	.dz-footer.dz-footer--in .dz-footer__form{opacity:1}
-	.dz-footer.dz-footer--in .dz-footer__title{transform:scaleY(1)}
-	@media (min-width:768px){
-		.dz-footer{--fr:1.302083vw;background-image:url(img/footer-bg-tablet.webp);padding:calc(var(--fr)*6.4) 0 calc(var(--fr)*3.4)}
-		.dz-footer__photo{left:calc(var(--fr)*24);width:calc(var(--fr)*27.5)}
-		.dz-footer__top{display:grid;grid-template-columns:1fr 1fr;align-items:flex-start;justify-content:space-between;gap:calc(var(--fr)*8.6);margin-bottom:calc(var(--fr)*24.9)}
-		.dz-footer__nav{gap:calc(var(--fr)*2.1)}
-		.dz-footer__mid{margin-bottom:calc(var(--fr)*3.2)}
-		.dz-footer__logo{font-size:calc(var(--fr)*34.6)}
-		.dz-footer__title{font-size:calc(var(--fr)*8);line-height:calc(var(--fr)*6.4);margin-bottom:calc(var(--fr)*3.2)}
-		.dz-footer__title span{font-size:calc(var(--fr)*3);line-height:calc(var(--fr)*2.4);margin-bottom:calc(var(--fr)*.8)}
-		.dz-footer__form{gap:calc(var(--fr)*1.6)}
-		.dz-footer__label{width:calc(var(--fr)*30)}
-		.dz-footer__bottom{justify-content:space-between}
-	}
 	@media (min-width:1024px){
-		.dz-footer{--fr:.6944444vw;background-image:url(img/footer-bg-desk.webp);padding:calc(var(--fr)*9) 0 calc(var(--fr)*2.1)}
-		.dz-footer__photo{bottom:calc(var(--fr)*-6.1);left:calc(var(--fr)*45.5);width:calc(var(--fr)*22.6)}
-		.dz-footer__top{grid-template-columns:calc(var(--fr)*31.5) 1fr;gap:calc(var(--fr)*53.5);margin-bottom:calc(var(--fr)*9.7);width:100%}
-		.dz-footer__nav{display:grid;gap:calc(var(--fr)*1);grid-template-columns:calc(var(--fr)*6.8) calc(var(--fr)*8.1) calc(var(--fr)*8) 1fr}
-		.dz-footer__nav:last-child{grid-template-columns:1fr calc(var(--fr)*13.2) calc(var(--fr)*22) calc(var(--fr)*1.6)}
-		.dz-footer__mid{display:grid;grid-template-columns:4.3fr 1fr;align-items:flex-end;margin-bottom:calc(var(--fr)*3.4)}
-		.dz-footer__logo{font-size:calc(var(--fr)*53.44)}
-		.dz-footer__title{grid-column:1/2;grid-row:2/3;margin-bottom:0}
-		.dz-footer__form{grid-column:2/3;grid-row:2/3;margin-left:auto;margin-bottom:calc(var(--fr)*.3);gap:calc(var(--fr)*1.6)}
-		.dz-footer__label{width:calc(var(--fr)*44.3)}
-		.dz-footer__bottom{display:flex;justify-content:space-between}
+		.header__menu-panel[data-ref="menu-panel"]{display:none!important;visibility:hidden!important;pointer-events:none!important}
 	}
 	</style>
-	<img class="dz-footer__photo" src="img/footer-bag-photo.webp" alt="">
-	<div class="dz-footer__inner">
-		<div class="dz-footer__top">
-			<ul class="dz-footer__nav">
-				<li><a href="#">Каталог</a></li>
-				<li><a href="#">Категории</a></li>
-				<li><a href="#">О бренде</a></li>
-				<li><a href="#">Кампания</a></li>
-				<li><a href="#">Контакты</a></li>
-				<li><a href="#">Коллекции</a></li>
-				<li><a href="#">Распродажа</a></li>
-				<li><a href="#">Журнал</a></li>
+	<script>
+	(function(){
+		var desktop=window.matchMedia('(min-width:1024px)');
+		function closeHoverMenus(){
+			if(!desktop.matches)return;
+			document.querySelectorAll('[data-ref="menu-trigger"]').forEach(function(trigger){
+				trigger.setAttribute('aria-expanded','false');
+			});
+			document.querySelectorAll('.header__menu-panel[data-ref="menu-panel"]').forEach(function(panel){
+				panel.setAttribute('aria-hidden','true');
+				panel.setAttribute('inert','');
+			});
+			document.documentElement.classList.remove('menu-open');
+			document.body.classList.remove('menu-open');
+			document.querySelectorAll('.header.menu-open').forEach(function(header){header.classList.remove('menu-open')});
+		}
+		function blockHover(event){
+			if(!desktop.matches||!event.target.closest('[data-ref="menu-trigger"]'))return;
+			event.stopImmediatePropagation();
+			closeHoverMenus();
+			requestAnimationFrame(closeHoverMenus);
+		}
+		document.addEventListener('pointerover',blockHover,true);
+		document.addEventListener('mouseover',blockHover,true);
+		document.addEventListener('mouseenter',blockHover,true);
+		window.addEventListener('load',closeHoverMenus);
+		if(desktop.addEventListener)desktop.addEventListener('change',function(event){if(event.matches)closeHoverMenus()});
+	})();
+	</script>
+
+		<footer class="footer" data-ref="footer">
+	<style>
+	@font-face{font-display:swap;font-family:"PP Fraktion Mono";font-style:normal;font-weight:400;src:url("fonts/PPFraktionMono-Regular.otf") format("opentype")}
+	@font-face{font-display:swap;font-family:"PP Fraktion Mono";font-style:normal;font-weight:700;src:url("fonts/PPFraktionMono-Bold.otf") format("opentype")}
+	.footer{--fr:2.6666667vw;-webkit-mask-image:url(img/footer-bg-mob.webp);mask-image:url(img/footer-bg-mob.webp);-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;overflow:hidden;padding:calc(var(--fr)*5.6) 0 calc(var(--fr)*2.5);position:relative;z-index:15}
+	.footer *{box-sizing:border-box}
+	.footer__bg{position:absolute;inset:-1px;z-index:-3}
+	.footer__bg img{display:block;height:100%;width:100%}
+	.footer__img{bottom:-5px;left:calc(var(--fr)*8.8);position:absolute;width:calc(var(--fr)*19.9);z-index:-1;transform:translateY(100%);transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+	.footer__img img{display:block;height:100%;width:100%}
+	.footer__inner{position:relative;padding:0 calc(var(--fr)*1.6)}
+	.footer__top{display:flex;flex-direction:column;gap:calc(var(--fr)*10.8);margin-bottom:calc(var(--fr)*15.5)}
+	.footer__nav{align-items:center;display:flex;flex-wrap:wrap;gap:calc(var(--fr)*1.3) calc(var(--fr)*2.2);list-style:none;margin:0;padding:0}
+	.footer__nav a{color:#fff;font-family:"PP Fraktion Mono",monospace;font-size:calc(var(--fr)*1.3);font-weight:400;letter-spacing:calc(var(--fr)*-.12);line-height:calc(var(--fr)*1.3);position:relative;text-decoration:none;text-transform:uppercase;white-space:nowrap}
+	.footer__nav a.disable{opacity:.5;pointer-events:none}
+	.footer__mid{margin-bottom:calc(var(--fr)*2.3)}
+	.footer__logo{display:flex;margin-bottom:calc(var(--fr)*5.5);mix-blend-mode:exclusion;width:100%;transform:translateY(300%);transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+	.footer__logo img{display:block;width:100%}
+	.footer__title{align-items:flex-end;color:#fff;display:flex;flex-wrap:wrap;font-family:Thunder,sans-serif;font-size:calc(var(--fr)*6.4);font-weight:800;gap:calc(var(--fr)*.2);line-height:calc(var(--fr)*5.1);margin:0 0 calc(var(--fr)*3);pointer-events:none;text-transform:uppercase;transform:scaleY(0);transform-origin:50% 100%;transition:transform .8s cubic-bezier(.16,1,.3,1) .4s}
+	.footer__title span{display:block;font-size:calc(var(--fr)*2.8);font-weight:400;line-height:calc(var(--fr)*2.3);margin-bottom:calc(var(--fr)*.4)}
+	.footer__title span strong{font-size:calc(var(--fr)*3);font-weight:300;line-height:calc(var(--fr)*2.4)}
+	.footer__form{align-items:flex-end;display:flex;gap:calc(var(--fr)*.8);opacity:0;transition:opacity 2s cubic-bezier(.25,.46,.45,.94)}
+	.footer__label{color:#fff;display:block;position:relative;width:calc(var(--fr)*27.5)}
+	.footer__label .input__label{color:#fff;font-family:Thunder,sans-serif;font-size:calc(var(--fr)*1.8);line-height:calc(var(--fr)*1.8);pointer-events:none;position:absolute;left:0;top:0;text-transform:uppercase}
+	.footer__label .input__error{display:none;color:#fff;font-family:"PP Fraktion Mono",monospace;font-size:calc(var(--fr)*1.1);position:absolute;bottom:calc(100% + var(--fr));left:0;width:100%}
+	.footer__label input{background:none;border:0;border-bottom:1px solid #b9b8b8;border-radius:0;caret-color:#5C1F2E;color:#fff;display:flex;font-family:"PP Fraktion Mono",monospace;font-size:calc(var(--fr)*1.5);height:calc(var(--fr)*2.2);outline:none;padding:calc(var(--fr)*.4) 0 calc(var(--fr)*.5);transition:border .3s;width:100%}
+	.footer__label input::placeholder{color:transparent}
+	.footer__label:focus-within input{border-bottom-color:#5C1F2E}
+	.footer__label:has(input:not(:placeholder-shown)):not(:focus-within) input{border-bottom-color:#fff}
+	.footer__submit{background:none;border:0;color:#fff;cursor:pointer;font-family:Thunder,sans-serif;font-size:calc(var(--fr)*1.8);font-weight:600;line-height:calc(var(--fr)*1.6);padding:0;position:relative;text-transform:uppercase;white-space:nowrap;width:calc(var(--fr)*6)}
+	.footer__submit:after{background:currentColor;bottom:0;content:"";height:1px;left:0;position:absolute;right:0;transform-origin:left;transition:transform .4s}
+	.footer__submit:hover:after{transform:scaleX(0)}
+	.footer__bottom{display:grid;gap:calc(var(--fr)*.8);grid-template-columns:calc(var(--fr)*18) 1fr}
+	.footer__bottom a,.footer__bottom button,.footer__bottom p{background:none;border:0;color:#fff;font-family:"PP Fraktion Mono",monospace;font-size:calc(var(--fr)*1.3);font-weight:400;letter-spacing:calc(var(--fr)*-.12);line-height:calc(var(--fr)*1.3);margin:0;padding:0;text-decoration:none;text-transform:uppercase;width:max-content}
+	.footer.footer--in .footer__logo,.footer.footer--in .footer__img{transform:translateY(0)}
+	.footer.footer--in .footer__form{opacity:1}
+	.footer.footer--in .footer__title{transform:scaleY(1)}
+	@media(max-width:767px){.footer__bottom a:nth-child(2),.footer__bottom a:nth-child(4){text-align:right;width:100%}}
+	@media(min-width:768px){
+		.footer{--fr:1.3020833vw;-webkit-mask-image:url(img/footer-bg-tablet.webp);mask-image:url(img/footer-bg-tablet.webp);padding:calc(var(--fr)*6.4) 0 calc(var(--fr)*3.4)}
+		.footer__inner{padding:0 calc(var(--fr)*3.2)}
+		.footer__img{left:calc(var(--fr)*24);width:calc(var(--fr)*27.5)}
+		.footer__top{align-items:flex-start;display:grid;gap:calc(var(--fr)*8.6);grid-template-columns:1fr 1fr;justify-content:space-between;margin-bottom:calc(var(--fr)*24.9)}
+		.footer__nav{gap:calc(var(--fr)*2.1)}
+		.footer__mid{margin-bottom:calc(var(--fr)*3.2)}
+		.footer__logo{margin-bottom:calc(var(--fr)*6.4)}
+		.footer__title{font-size:calc(var(--fr)*8);line-height:calc(var(--fr)*6.4);margin-bottom:calc(var(--fr)*3.2)}
+		.footer__title span{font-size:calc(var(--fr)*3);line-height:calc(var(--fr)*2.4);margin-bottom:calc(var(--fr)*.8)}
+		.footer__form{gap:calc(var(--fr)*1.6)}
+		.footer__label{width:calc(var(--fr)*30)}
+		.footer__bottom{align-items:center;display:flex;justify-content:space-between}
+	}
+	@media(min-width:1024px){
+		.footer{--fr:.6944444vw;background:linear-gradient(108deg,#aaa9a7 0%,#9f9b98 47%,#837d79 100%);border-top:1px solid rgba(255,255,255,.22);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);-webkit-mask-image:none;mask-image:none;padding:calc(var(--fr)*2.2) 0 calc(var(--fr)*2.1)}
+		.footer:before{background:rgba(255,255,255,.3);content:"";inset:0;pointer-events:none;position:absolute;z-index:-2}
+		.footer__bg{display:none}
+		.footer__inner{padding:0 calc(var(--fr)*3.5)}
+		.footer__img{bottom:calc(var(--fr)*-6.1);left:calc(var(--fr)*45.5);width:calc(var(--fr)*22.6)}
+		.footer__top{gap:clamp(4rem,10vw,13rem);grid-template-columns:minmax(0,1fr) auto;margin-bottom:calc(var(--fr)*9.7);width:100%}
+		.footer__nav{display:flex;gap:calc(var(--fr)*1.8) calc(var(--fr)*3.1)}
+		.footer__nav a{font-family:var(--tertiary),sans-serif;font-size:10px;font-weight:500;letter-spacing:normal;line-height:10px}
+		.footer__nav:first-child{max-width:calc(var(--fr)*36)}
+		.footer__nav:last-child{flex-wrap:nowrap;justify-content:flex-end}
+		.footer__mid{align-items:flex-end;display:grid;grid-template-columns:minmax(0,1fr) minmax(32rem,44vw);margin-bottom:calc(var(--fr)*3.4)}
+		.footer__logo{background:none;-webkit-mask:none;mask:none;margin-bottom:calc(var(--fr)*6.1);mix-blend-mode:exclusion}
+		.footer__logo img{opacity:1}
+		.footer__title{display:block;font-family:var(--tertiary),sans-serif;font-size:clamp(4.2rem,4.25vw,5.4rem);font-weight:500;letter-spacing:normal;line-height:.84;grid-column:1/2;grid-row:2/3;margin-bottom:0}
+		.footer__title span{font-size:clamp(1.6rem,1.6vw,2rem);line-height:1.05;margin:.55rem 0 0}
+		.footer__title span strong{font-size:inherit;line-height:inherit}
+		.footer__form{align-items:flex-start;flex-direction:column;gap:calc(var(--fr)*1.25);grid-column:2/3;grid-row:2/3;margin-bottom:calc(var(--fr)*.3);margin-left:auto;width:calc(var(--fr)*18)}
+		.footer__label{flex:none;min-width:0;width:100%}
+		.footer__label .input__label,.footer__label input,.footer__label .input__error,.footer__submit{font-family:var(--tertiary),sans-serif;font-weight:500;letter-spacing:normal}
+		.footer__submit{align-self:flex-start;flex:0 0 auto;width:auto}
+		.footer__bottom{display:grid;grid-template-columns:calc(var(--fr)*84.5) calc(var(--fr)*28.9) 1fr calc(var(--fr)*1.9)}
+		.footer__bottom a,.footer__bottom button,.footer__bottom p{font-family:var(--tertiary),sans-serif;font-size:calc(var(--ts-label-s-font-size) + 1px);font-weight:500;letter-spacing:normal;line-height:calc(var(--ts-label-s-line-height) + 1px)}
+		.footer__bottom a:last-child{text-align:right}
+	}
+	</style>
+	<picture class="footer__bg">
+		<source media="(min-width: 1024px)" srcset="img/footer-bg-desk.webp">
+		<source media="(min-width: 768px)" srcset="img/footer-bg-tablet.webp">
+		<img src="img/footer-bg-mob.webp" alt="">
+	</picture>
+	<picture class="footer__img"><img src="img/footer-bag-photo.webp" alt=""></picture>
+	<div class="footer__inner">
+		<div class="footer__top">
+			<ul class="footer__nav">
+				<li><a href="#">Каталог</a></li><li><a href="#">Категории</a></li><li><a href="#">О бренде</a></li><li><a href="#">Кампания</a></li>
+				<li><a href="#">Контакты</a></li><li><a href="#">Коллекции</a></li><li><a href="#">Распродажа</a></li><li><a class="disable" href="#">Журнал</a></li>
 			</ul>
-			<ul class="dz-footer__nav">
-				<li><a href="#">Возврат</a></li>
-				<li><a href="#">Реквизиты</a></li>
-				<li><a href="#">Доставка и оплата</a></li>
-				<li><a href="#">Вопросы и ответы</a></li>
+			<ul class="footer__nav">
+				<li><a href="#">Возврат</a></li><li><a href="#">Реквизиты</a></li><li><a href="#">Доставка и оплата</a></li><li><a href="#">Вопросы и ответы</a></li>
 			</ul>
 		</div>
-		<div class="dz-footer__mid">
-			<a class="dz-footer__logo" aria-label="DanZla">DANZLA</a>
-			<p class="dz-footer__title">Подписаться <span><strong>(</strong>последние новости<strong>)</strong></span></p>
-			<form class="dz-footer__form" onsubmit="return false" novalidate>
-				<label class="dz-footer__label">
-					<span class="dz-footer__label-text">Email</span>
-					<input type="email" name="email" placeholder=" " required autocomplete="email">
-				</label>
-				<button class="dz-footer__submit" type="submit">Подписаться</button>
+		<div class="footer__mid">
+			<a href="#" class="footer__logo" aria-label="DanZla"><img src="img/footer-logo.svg" alt="DanZla"></a>
+			<p class="footer__title">Подписаться <span><strong>(</strong>последние новости<strong>)</strong></span></p>
+			<form class="footer__form" onsubmit="return false" novalidate>
+				<label class="footer__label"><span class="input__label">Email</span><span class="input__error">Неверный email, введите корректный адрес</span><input type="email" name="email" placeholder="." required autocomplete="email"></label>
+				<button class="footer__submit" type="submit">Подписаться</button>
 			</form>
 		</div>
-		<div class="dz-footer__bottom">
-			<p>© 2026 DANZLA</p>
-			<a href="/policies/privacy-policy">Политика конфиденциальности</a>
-			<a href="#">Instagram</a>
+		<div class="footer__bottom">
+			<p>©2026_DANZLA</p><a href="#">Политика конфиденциальности</a><button type="button">Разработка</button><a href="#">IG</a>
 		</div>
 	</div>
 </footer>
 <script>
 (function(){
-	var footer = document.querySelector('[data-ref="dz-footer"]');
-	if(!footer) return;
-	function reveal(){ footer.classList.add('dz-footer--in'); }
-	if(!('IntersectionObserver' in window)){ reveal(); return; }
-	var io = new IntersectionObserver(function(entries){
-		entries.forEach(function(entry){
-			if(entry.isIntersecting){ reveal(); io.unobserve(footer); }
-		});
-	}, {rootMargin:'0px 0px -20% 0px', threshold:0});
+	var footer=document.querySelector('[data-ref="footer"]');
+	if(!footer)return;
+	function reveal(){footer.classList.add('footer--in')}
+	if(!('IntersectionObserver' in window)){reveal();return}
+	var io=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){reveal();io.unobserve(footer)}})},{rootMargin:'0px 0px -20% 0px',threshold:0});
 	io.observe(footer);
+	var form=footer.querySelector('.footer__form');
+	if(form)form.addEventListener('submit',function(event){var input=form.querySelector('input[type="email"]');var error=form.querySelector('.input__error');if(input&&!input.checkValidity()){event.preventDefault();if(error)error.style.display='block'}else if(error){error.style.display='none'}});
 })();
 </script>
 
