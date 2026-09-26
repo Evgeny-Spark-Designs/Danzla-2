@@ -974,6 +974,79 @@ first.parentNode.insertBefore(script, first);
 </head>
 
 	<body data-barba='wrapper' class='store__en'>
+<div class="dz-transition" data-ref="dz-transition" aria-hidden="true">
+	<style>
+	.dz-transition{position:fixed;inset:0;z-index:99999;pointer-events:none;transform:translateY(-100%)}
+	.dz-transition__solid{position:absolute;top:0;left:0;right:0;bottom:14vh;background:#000}
+	.dz-transition__band{position:absolute;left:0;right:0;bottom:0;height:14vh;width:100%;overflow:hidden}
+	.dz-transition__band img{display:block;width:100%;height:100%;object-fit:cover}
+	</style>
+	<div class="dz-transition__solid"></div>
+	<div class="dz-transition__band"><img src="../../img/transition-logo.svg" alt=""></div>
+</div>
+<script>
+(function(){
+	var el = document.querySelector('[data-ref="dz-transition"]');
+	if(!el) return;
+	var DURATION = 700;
+	var EASE = 'cubic-bezier(.65,0,.35,1)';
+	var FLAG = 'dz_transition_pending';
+
+	function show(covering, animate, cb){
+		if(!animate){
+			el.style.transition = 'none';
+			el.style.transform = covering ? 'translateY(0)' : 'translateY(-100%)';
+			el.offsetHeight; // force reflow
+			if(cb) cb();
+			return;
+		}
+		el.style.transition = 'transform ' + DURATION + 'ms ' + EASE;
+		requestAnimationFrame(function(){
+			el.style.transform = covering ? 'translateY(0)' : 'translateY(-100%)';
+		});
+		window.setTimeout(function(){ if(cb) cb(); }, DURATION);
+	}
+
+	function arriving(){
+		var pending = false;
+		try{ pending = sessionStorage.getItem(FLAG) === '1'; }catch(e){}
+		if(!pending) return;
+		try{ sessionStorage.removeItem(FLAG); }catch(e){}
+		show(true, false); // snap to covering instantly, no flash of content
+		requestAnimationFrame(function(){
+			requestAnimationFrame(function(){ show(false, true); });
+		});
+	}
+	arriving();
+	window.addEventListener('pageshow', function(e){
+		if(e.persisted) show(false, false); // back/forward from bfcache: never stuck covering
+	});
+
+	function isModifiedClick(e){
+		return e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey;
+	}
+	function isTransitionable(a, href){
+		if(!href || href.charAt(0) === '#') return false;
+		if(a.hasAttribute('download')) return false;
+		if((a.getAttribute('target') || '').toLowerCase() === '_blank') return false;
+		if(/^(mailto:|tel:|javascript:)/i.test(href)) return false;
+		if(a.origin !== window.location.origin) return false;
+		return true;
+	}
+	document.addEventListener('click', function(e){
+		if(isModifiedClick(e)) return;
+		var a = e.target.closest && e.target.closest('a[href]');
+		if(!a) return;
+		var href = a.getAttribute('href');
+		if(!isTransitionable(a, href)) return;
+		// same-page anchor to itself (identical URL) - let it behave natively
+		if(a.href === window.location.href) return;
+		e.preventDefault();
+		try{ sessionStorage.setItem(FLAG, '1'); }catch(err){}
+		show(true, true, function(){ window.location.href = a.href; });
+	}, true);
+})();
+</script>
 
 
 
