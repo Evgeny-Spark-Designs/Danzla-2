@@ -572,18 +572,13 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 @media (min-width:1024px){
 	.header__nav__panel .ts-primary-item{font-size:10px}
 }
-.dz-cookie{position:fixed;left:24px;bottom:24px;z-index:9999;max-width:420px;width:calc(100% - 48px);background:#cabfa9;border-radius:14px;padding:28px 44px 26px 28px;box-shadow:0 12px 30px rgba(0,0,0,.18);font-family:Manrope,sans-serif}
-.dz-cookie::before{content:'';position:absolute;inset:8px;border:1px dashed rgba(60,45,30,.35);border-radius:9px;pointer-events:none}
+.dz-cookie{position:fixed;right:0;bottom:24px;z-index:9999;width:min(92vw,480px);line-height:0}
 .dz-cookie[hidden]{display:none}
-.dz-cookie__close{position:absolute;top:14px;right:14px;width:26px;height:26px;border:1px solid rgba(60,45,30,.5);border-radius:50%;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
-.dz-cookie__close svg{width:10px;height:10px}
-.dz-cookie__close,.dz-cookie__close svg *{stroke:#3c2d1e}
-.dz-cookie__title{font-family:"Prata",serif;font-size:1.5rem;color:#2e2115;margin:0 0 10px}
-.dz-cookie__text{font-size:.85rem;line-height:1.45;color:#4a3826;margin:0 0 20px}
-.dz-cookie__actions{display:flex;align-items:center;gap:22px}
-.dz-cookie__accept{background:#3c2d1e;color:#f3ead9;border:none;border-radius:999px;padding:12px 28px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
-.dz-cookie__settings{background:none;border:none;padding:0;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#3c2d1e;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
-.dz-cookie__cord{position:absolute;top:50%;right:-14px;width:28px;height:90px;transform:translateY(-50%);pointer-events:none}
+.dz-cookie__img{display:block;width:100%;height:auto;pointer-events:none}
+.dz-cookie__hit{position:absolute;background:none;border:none;padding:0;margin:0;cursor:pointer;color:transparent;font-size:0;line-height:0}
+.dz-cookie__hit--close{left:68.7%;top:22.6%;width:5.3%;height:14.6%}
+.dz-cookie__hit--accept{left:11.1%;top:65.1%;width:19.7%;height:9.8%;border-radius:999px}
+.dz-cookie__hit--settings{left:33.5%;top:65.1%;width:11.1%;height:9.8%}
 </style></head>
 
 	<body class="store__en" data-barba="wrapper">
@@ -5603,19 +5598,10 @@ hsl(var(--grey));">
 	<script data-source-attribution="shopify.standard_actions" src="cdn-shopify-com/storefront/standard-actions.js" type="module"></script>
 
 <div class="dz-cookie" id="dz-cookie-banner" role="dialog" aria-live="polite" aria-label="Использование cookie">
-	<button class="dz-cookie__close" type="button" aria-label="Закрыть" onclick="document.getElementById('dz-cookie-banner').setAttribute('hidden','')">
-		<svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L9 9M9 1L1 9" stroke-width="1"/></svg>
-	</button>
-	<svg class="dz-cookie__cord" viewBox="0 0 28 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-		<circle cx="6" cy="12" r="5" fill="none" stroke="#8a7a66" stroke-width="2"/>
-		<path d="M6,17 C6,45 26,45 22,80" stroke="#8a7a66" stroke-width="2" fill="none"/>
-	</svg>
-	<p class="dz-cookie__title">Мы используем cookie</p>
-	<p class="dz-cookie__text">Продолжая пользоваться сайтом, вы соглашаетесь с нашей политикой использования cookie.</p>
-	<div class="dz-cookie__actions">
-		<button class="dz-cookie__accept" type="button" onclick="localStorage.setItem('dz_cookie_accepted','1');document.getElementById('dz-cookie-banner').setAttribute('hidden','')">Принять</button>
-		<button class="dz-cookie__settings" type="button" onclick="document.getElementById('dz-cookie-banner').setAttribute('hidden','')">Настройки</button>
-	</div>
+	<img class="dz-cookie__img" src="img/cookie-tag.webp" alt="Мы используем cookie. Продолжая пользоваться сайтом, вы соглашаетесь с нашей политикой использования cookie.">
+	<button class="dz-cookie__hit dz-cookie__hit--close" type="button" aria-label="Закрыть" onclick="document.getElementById('dz-cookie-banner').setAttribute('hidden','')"></button>
+	<button class="dz-cookie__hit dz-cookie__hit--accept" type="button" onclick="localStorage.setItem('dz_cookie_accepted','1');document.getElementById('dz-cookie-banner').setAttribute('hidden','')">Принять</button>
+	<button class="dz-cookie__hit dz-cookie__hit--settings" type="button" onclick="document.getElementById('dz-cookie-banner').setAttribute('hidden','')">Настройки</button>
 </div>
 <script>
 	if (localStorage.getItem('dz_cookie_accepted') === '1') {
