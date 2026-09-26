@@ -5357,8 +5357,73 @@ hsl(var(--grey));">
 </script>
 
 <!-- Zendesk chat widget removed for Danzla -->
-		
-		
+
+<section class="story-section">
+	<style>
+	.story-section{background:#fff9f7;padding:3.5rem 0}
+	.story-section__inner{max-width:640px;margin:0 auto 2.4rem;padding:0 1.6rem;text-align:center}
+	.story-section__eyebrow{font-family:"Prata",serif;font-size:1.15rem;font-weight:400;color:#1a1512;margin:0 0 1rem}
+	.story-section__text{font-family:"Prata",serif;font-size:.95rem;font-weight:300;line-height:1.6;color:#4a4038;margin:0}
+	.story-section__text strong{font-weight:500;color:#1a1512}
+	.story-section__media{position:relative;overflow:hidden;cursor:none;max-width:960px;margin:0 auto;padding:0 1.6rem}
+	.story-section__photo{display:block;width:100%;height:auto}
+	.story-section__cursor{display:none}
+	@media (min-width:768px){
+		.story-section{padding:5rem 0}
+		.story-section__eyebrow{font-size:1.35rem}
+		.story-section__text{font-size:1.05rem}
+	}
+	@media (min-width:1024px){
+		.story-section__cursor{display:block;height:1px;left:0;mix-blend-mode:difference;pointer-events:none;position:absolute;top:0;width:1px;z-index:10}
+		.story-section__cursor p{color:#fff;font-size:1.4rem;font-weight:500;left:50%;line-height:1.4rem;margin:0;opacity:0;position:absolute;text-align:center;text-transform:uppercase;white-space:nowrap;top:50%;transform:translate(-50%,-50%) rotate(15deg);transition:opacity .2s,transform .2s;font-family:Manrope,sans-serif}
+		.story-section__cursor.visible>p{opacity:1;transform:translate(-50%,-50%) rotate(0)}
+	}
+	</style>
+	<div class="story-section__inner">
+		<p class="story-section__eyebrow">Тихая роскошь</p>
+		<p class="story-section__text">Есть вещи, которые не нуждаются в представлении. Их замечают по <strong>силуэту</strong> и <strong>фактуре</strong>. В истории <strong>DanZla</strong> аксессуары становятся частью вашего образа — спокойно, уверенно и надолго.</p>
+	</div>
+	<div class="story-section__media" data-ref="story-media">
+		<div class="story-section__cursor" data-ref="story-cursor"><p>Смотреть</p></div>
+		<img class="story-section__photo" src="img/danzla-story.webp" alt="DanZla — сумки в образе">
+	</div>
+</section>
+<script>
+(function(){
+	function init(){
+		var media = document.querySelector('[data-ref="story-media"]');
+		var cursor = document.querySelector('[data-ref="story-cursor"]');
+		if(!media || !cursor || window.innerWidth < 1024) return;
+		var raf = 0, cx = 0, cy = 0, visible = false;
+		function setVisible(v){
+			if(visible === v) return;
+			visible = v;
+			cursor.classList.toggle('visible', v);
+		}
+		function place(){
+			raf = 0;
+			cursor.style.transform = 'translate(' + cx + 'px, ' + cy + 'px)';
+		}
+		function onMove(clientX, clientY){
+			var rect = media.getBoundingClientRect();
+			var inside = clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
+			setVisible(inside);
+			cx = clientX - rect.left;
+			cy = clientY - rect.top;
+			if(!raf) raf = requestAnimationFrame(place);
+		}
+		media.addEventListener('pointermove', function(e){ onMove(e.clientX, e.clientY); }, {passive:true});
+		media.addEventListener('pointerleave', function(){ setVisible(false); }, {passive:true});
+	}
+	if(document.readyState === 'loading'){
+		document.addEventListener('DOMContentLoaded', init, {once:true});
+	} else {
+		init();
+	}
+})();
+</script>
+
+
 			<footer>
 				<!-- BEGIN sections: footer-group -->
 <div class="shopify-section shopify-section-group-footer-group" id="shopify-section-sections--30031520203121__footer">
@@ -5376,7 +5441,7 @@ hsl(var(--grey));">
 <div class="newsletter-signup" data-ref="newsletter-signup">
 	<div class="newsletter-signup__inner">
 		
-			<h3 class="ts-h3">Be the first to discover the latest news, collections, and exclusive launches</h3>
+			<h3 class="ts-h3">Узнавайте первыми о новых коллекциях и запусках</h3>
 		
 		
 
@@ -5390,7 +5455,7 @@ hsl(var(--grey));">
 
 		<div class="form-input">
 			<label class="visually-hidden" for="email-newsletter">email</label>
-			<input aria-describedby="email-newsletter-hint" aria-invalid="false" aria-label="Sign up to our newsletter" autocomplete="email" class="" data-ref="form-input" id="email-newsletter" name="email" placeholder="Your email" type="email"/>
+			<input aria-describedby="email-newsletter-hint" aria-invalid="false" aria-label="Подписаться на рассылку" autocomplete="email" class="" data-ref="form-input" id="email-newsletter" name="email" placeholder="Ваш email" type="email"/>
 		</div>
 		
 
@@ -5400,14 +5465,14 @@ hsl(var(--grey));">
 				Enter your email address in the format name@example.com
 			</p>
 			<button class="newsletter-signup__submit" type="submit">
-				<span class="ts-label-m ts-grey"> CONFIRM</span>
+				<span class="ts-label-m ts-grey"> ПОДПИСАТЬСЯ</span>
 			</button>
 		</form>
 		<div aria-live="assertive" class="newsletter-signup__message ts-label-s" data-ref="message-container" id="email-newsletter-error"></div>
 		<div class="newsletter-signup__privacy-policy ts-label-s ts-grey">
-			By confirming my subscription, I agree to receive the newsletter.
+			Подписываясь, вы соглашаетесь на получение рассылки.
 			<br/>
-			For more information, read the <a href="/policies/privacy-policy" target="_blank"> Privacy Policy</a>.
+			Подробнее — в <a href="/policies/privacy-policy" target="_blank">Политике конфиденциальности</a>.
 		</div>
 	</div>
 </div>
@@ -5427,15 +5492,15 @@ hsl(var(--grey));">
 						<ul class="site-footer__nav-list">
 							
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="/pages/about-the-brand">Brand</a>
+									<a class="is-underlined" data-ref="footer-link" href="/pages/about-the-brand">О бренде</a>
 								</li>
-							
+
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="/blogs/stores">Stores</a>
+									<a class="is-underlined" data-ref="footer-link" href="/blogs/stores">Магазины</a>
 								</li>
-							
+
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="/blogs/rh/careers">Careers </a>
+									<a class="is-underlined" data-ref="footer-link" href="/blogs/rh/careers">Карьера</a>
 								</li>
 							
 						</ul>
@@ -5447,15 +5512,15 @@ hsl(var(--grey));">
 						<ul class="site-footer__nav-list">
 							
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="https://support.polene-paris.com/hc/articles/360010107620">Shipping &amp; taxes</a>
+									<a class="is-underlined" data-ref="footer-link">Доставка и оплата</a>
 								</li>
-							
+
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="/a/return">Make a return</a>
+									<a class="is-underlined" data-ref="footer-link" href="/a/return">Возврат</a>
 								</li>
-							
+
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="https://support.polene-paris.com/hc">Help &amp; questions</a>
+									<a class="is-underlined" data-ref="footer-link">Вопросы и ответы</a>
 								</li>
 							
 						</ul>
@@ -5467,19 +5532,19 @@ hsl(var(--grey));">
 						<ul class="site-footer__nav-list">
 							
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="/policies/legal-notice">Legal mentions</a>
+									<a class="is-underlined" data-ref="footer-link" href="/policies/legal-notice">Юридическая информация</a>
 								</li>
-							
+
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="/policies/privacy-policy">Privacy Policy</a>
+									<a class="is-underlined" data-ref="footer-link" href="/policies/privacy-policy">Политика конфиденциальности</a>
 								</li>
-							
+
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="/policies/terms-of-sale">General terms and conditions of online sale</a>
+									<a class="is-underlined" data-ref="footer-link" href="/policies/terms-of-sale">Условия продажи</a>
 								</li>
-							
+
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="/policies/terms-of-service">Terms of Service</a>
+									<a class="is-underlined" data-ref="footer-link" href="/policies/terms-of-service">Условия использования</a>
 								</li>
 							
 						</ul>
@@ -5491,19 +5556,15 @@ hsl(var(--grey));">
 						<ul class="site-footer__nav-list">
 							
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="https://www.facebook.com/poleneparis" target="_blank">Facebook</a>
+									<a class="is-underlined" data-ref="footer-link">Instagram</a>
 								</li>
-							
+
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="https://www.instagram.com/polene_paris/" target="_blank">Instagram</a>
+									<a class="is-underlined" data-ref="footer-link">Telegram</a>
 								</li>
-							
+
 								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="https://www.youtube.com/@polene-paris" target="_blank">Youtube</a>
-								</li>
-							
-								<li class="ts-label-s site-footer__nav-list-item">
-									<a class="is-underlined" data-ref="footer-link" href="https://www.tiktok.com/@polene_paris" target="_blank">TikTok</a>
+									<a class="is-underlined" data-ref="footer-link">VK</a>
 								</li>
 							
 						</ul>
@@ -5590,7 +5651,7 @@ hsl(var(--grey));">
 
 		<div class="site-footer__copyright ts-label-s">
 			
-				© Polène 2026
+				© DanZla 2026
 			
 		</div>
 	</div>
