@@ -10,8 +10,8 @@
   style.textContent = `
     .dz-bags-original-panel { display: none !important; }
     .dz-bags-menu[hidden] { display: none !important; }
-    .dz-bags-menu { position: fixed; z-index: 10000; left: 0; box-sizing: border-box; width: 100%; padding: 0 max(22px, calc((100vw - 1440px) / 2 + 22px)); background: #fff; color: #1a1a1a; border-bottom: 1px solid rgba(0,0,0,.12); }
-    .dz-bags-menu__link { display: block; padding: 15px 0; color: inherit; border-top: 1px solid rgba(0,0,0,.12); font: 500 14px/1.2 Arial, sans-serif; letter-spacing: .02em; text-align: left; text-decoration: none; }
+    .dz-bags-menu { position: absolute; z-index: 10000; top: 100%; left: 0; box-sizing: border-box; width: 100%; padding: 0 max(22px, calc((100vw - 1440px) / 2 + 22px)); background: inherit; backdrop-filter: inherit; color: inherit; border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent); }
+    .dz-bags-menu__link { display: block; padding: 15px 0; color: inherit; border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); font: 500 14px/1.2 Arial, sans-serif; letter-spacing: .02em; text-align: left; text-decoration: none; }
     .dz-bags-menu__link:hover, .dz-bags-menu__link:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
     @media (max-width: 700px) { .dz-bags-menu { padding: 0 16px; } }
   `;
@@ -25,7 +25,8 @@
   menu.innerHTML = `
     <a class="dz-bags-menu__link" href="${links.women}">Женские сумки</a>
     <a class="dz-bags-menu__link" href="${links.men}">Мужские сумки</a>`;
-  document.body.append(menu);
+  const menuHost = document.querySelector('header') || document.body;
+  menuHost.append(menu);
 
   let activeTrigger = null;
   const close = () => {
@@ -35,11 +36,6 @@
   };
   const open = (trigger) => {
     activeTrigger = trigger;
-    const rect = trigger.getBoundingClientRect();
-    const header = trigger.closest('header') || document.querySelector('header');
-    const headerBackground = header && getComputedStyle(header).backgroundColor;
-    menu.style.top = `${rect.bottom}px`;
-    menu.style.backgroundColor = headerBackground && headerBackground !== 'rgba(0, 0, 0, 0)' ? headerBackground : '#fff';
     menu.hidden = false;
     trigger.setAttribute('aria-expanded', 'true');
   };
