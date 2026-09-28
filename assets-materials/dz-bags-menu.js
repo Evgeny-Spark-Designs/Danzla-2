@@ -4,7 +4,6 @@
   const links = {
     women: new URL('collections/handbags/index.html', siteRoot).href,
     men: new URL('collections/mens-bags/index.html', siteRoot).href,
-    womenWallets: new URL('collections/small-leather-goods/', siteRoot).href,
     menWallets: new URL('collections/wallets/', siteRoot).href,
   };
 
@@ -32,7 +31,6 @@
   };
   const menus = {
     bags: createMenu('Выбор категории сумок', [['Женские сумки', links.women], ['Мужские сумки', links.men]]),
-    wallets: createMenu('Выбор категории кошельков', [['Женские кошельки', links.womenWallets], ['Мужские кошельки', links.menWallets]]),
   };
 
   let activeTrigger = null;
@@ -51,9 +49,24 @@
   const menuKeyForTrigger = (element) => {
     const label = element.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
     if (label === 'сумки' || label === 'bags') return 'bags';
-    if (label === 'кошельки' || label === 'wallets') return 'wallets';
     return null;
   };
+
+  const labelFor = (element) => element.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+  document.querySelectorAll('a, button').forEach((item) => {
+    const label = labelFor(item);
+    if (label === 'клатчи' || label === 'clutches') {
+      (item.closest('li') || item).remove();
+      return;
+    }
+    if (label !== 'кошельки' && label !== 'wallets') return;
+    const panelId = item.getAttribute('aria-controls');
+    if (panelId) document.getElementById(panelId)?.classList.add('dz-category-original-panel');
+    item.setAttribute('href', links.menWallets);
+    item.removeAttribute('aria-controls');
+    item.removeAttribute('aria-expanded');
+    item.removeAttribute('data-ref');
+  });
 
   document.querySelectorAll('a, button, [data-ref="menu-trigger"]').forEach((trigger) => {
     const menuKey = menuKeyForTrigger(trigger);
