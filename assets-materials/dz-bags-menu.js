@@ -10,8 +10,9 @@
   const style = document.createElement('style');
   style.textContent = `
     .dz-category-original-panel { display: none !important; }
+    .collection-toggles__filter { display: none !important; }
     .dz-category-menu[hidden] { display: none !important; }
-    .dz-category-menu { position: absolute; z-index: 10000; top: 100%; left: 0; box-sizing: border-box; width: 100%; padding: 0 max(22px, calc((100vw - 1440px) / 2 + 22px)); background: inherit; backdrop-filter: inherit; color: inherit; border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent); }
+    .dz-category-menu { position: absolute; z-index: 10000; top: 100%; left: 0; box-sizing: border-box; width: 100%; padding: 0 max(22px, calc((100vw - 1440px) / 2 + 22px)); background: transparent; color: inherit; border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent); }
     .dz-category-menu__link { display: block; padding: 15px 0; color: inherit; border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); font: 500 14px/1.2 Arial, sans-serif; letter-spacing: .02em; text-align: left; text-decoration: none; }
     .dz-category-menu__link:hover, .dz-category-menu__link:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
     @media (max-width: 700px) { .dz-category-menu { padding: 0 16px; } }
