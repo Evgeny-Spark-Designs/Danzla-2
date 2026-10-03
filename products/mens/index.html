@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Мужская сумка DanZla — карточка товара.">
+  <title>Мужская сумка DanZla</title>
+  <link rel="icon" href="../../img/danzla-logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#1e1e1e;--milk:#f7f2ea;--paper:#fff;--brown:#5c3d2e;--line:rgba(30,30,30,.16)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.55 Manrope,Arial,sans-serif}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .header{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:76px;padding:14px 28px;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+    .header__nav,.header__tools{display:flex;gap:22px;align-items:center;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+    .header__tools{justify-content:flex-end}
+    .header__logo img{width:104px;height:auto}
+    .product{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);min-height:calc(100vh - 76px)}
+    .product__visual{display:grid;place-items:center;min-height:720px;padding:7vw;background:var(--milk)}
+    .product__visual img{width:min(700px,100%);max-height:720px;object-fit:contain;filter:drop-shadow(0 24px 28px rgba(53,33,24,.12))}
+    .product__info{display:flex;flex-direction:column;justify-content:center;padding:clamp(36px,7vw,110px)}
+    .eyebrow{margin:0 0 18px;color:#777;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    h1{margin:0 0 12px;font:400 clamp(34px,4vw,62px)/1.08 Prata,serif}
+    .edition{margin:0 0 30px;color:#666}
+    .price{margin:0 0 34px;font-size:18px;font-weight:600}
+    .specs{display:grid;gap:13px;margin:0 0 34px;padding:22px 0;border-block:1px solid var(--line)}
+    .specs div{display:flex;justify-content:space-between;gap:20px}
+    .specs dt{color:#777}.specs dd{margin:0;text-align:right}
+    .actions{display:grid;grid-template-columns:1fr 52px;gap:10px}
+    .buy,.favorite{height:52px;border:1px solid var(--ink);cursor:pointer;transition:.2s ease}
+    .buy{background:var(--ink);color:#fff;text-transform:uppercase;letter-spacing:.08em}
+    .buy:hover{background:var(--brown);border-color:var(--brown)}
+    .favorite{display:grid;place-items:center;padding:0;background:#fff;border-radius:50%}
+    .favorite svg{width:20px;height:20px;fill:transparent;stroke:currentColor;stroke-width:1.6}
+    .favorite[aria-pressed="true"]{background:var(--brown);border-color:var(--brown);color:#fff}
+    .favorite[aria-pressed="true"] svg{fill:currentColor}
+    .note{margin:24px 0 0;color:#777;font-size:12px}
+    @media(max-width:800px){.header{grid-template-columns:1fr auto;padding:12px 16px}.header__nav{display:none}.header__tools{gap:14px}.product{grid-template-columns:1fr}.product__visual{min-height:auto;padding:72px 28px}.product__info{padding:38px 22px 60px}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="header__nav" aria-label="Каталог"><a href="../../collections/bestsellers/index.html">Весь каталог</a><a href="../../collections/handbags/index.html">Сумки</a><a href="../../collections/wallets/index.html">Кошельки</a></nav>
+    <a class="header__logo" href="../../index.html" aria-label="DanZla — на главную"><img src="../../img/danzla-logo.webp" alt="DanZla"></a>
+    <div class="header__tools"><a href="../../favorites/index.html">Избранное</a><a href="../../checkout/index.html">Корзина</a></div>
+  </header>
+  <main class="product">
+    <section class="product__visual" aria-label="Фотография товара"><img id="product-image" src="../../assets-materials/mens-bags/01.png" alt="Мужская сумка DanZla"></section>
+    <section class="product__info">
+      <p class="eyebrow">DanZla · Мужская коллекция</p>
+      <h1 id="product-name">Cyme Mini</h1>
+      <p class="edition" id="product-edition">Черный · Кожа</p>
+      <p class="price">3 500 ₽</p>
+      <dl class="specs"><div><dt>Цвет</dt><dd>Черный</dd></div><div><dt>Материал</dt><dd id="product-material">Кожа</dd></div><div><dt>Комплектация</dt><dd>Сумка, регулируемый ремень</dd></div></dl>
+      <div class="actions"><button class="buy" id="add-cart" type="button">Добавить в корзину</button><button class="favorite" id="favorite" type="button" aria-pressed="false" aria-label="Добавить в избранное"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg></button></div>
+      <p class="note">Бесплатная доставка по России. Возврат в течение 14 дней.</p>
+    </section>
+  </main>
+  <script src="../../assets/js/storefront.js"></script>
+  <script>
+    (function(){
+      const items={
+        'cyme-mini-leather':{name:'Cyme Mini',material:'Кожа',image:'01.png'},
+        'cyme-mini-nylon':{name:'Cyme Mini',material:'Нейлон',image:'02.png'},
+        'cyme-leather':{name:'Cyme',material:'Кожа',image:'03.png'},
+        'numero-neuf-mini-nylon':{name:'Numéro Neuf Mini',material:'Нейлон',image:'04.png'}
+      };
+      const params=new URLSearchParams(location.search);
+      const key=params.get('model')||'cyme-mini-leather';
+      const item=items[key]||items['cyme-mini-leather'];
+      const product={slug:`mens-${key}`,name:item.name,color:'Black',price:3500,image:`../../assets-materials/mens-bags/${item.image}`,url:`index.html?model=${encodeURIComponent(key)}&color=Black`};
+      document.title=`${item.name} — DanZla`;
+      document.querySelector('meta[name="description"]').content=`${item.name}, мужская сумка DanZla. ${item.material}, черный цвет.`;
+      document.getElementById('product-name').textContent=item.name;
+      document.getElementById('product-edition').textContent=`Черный · ${item.material}`;
+      document.getElementById('product-material').textContent=item.material;
+      const image=document.getElementById('product-image');image.src=product.image;image.alt=`${item.name}, черный цвет`;
+      const favorite=document.getElementById('favorite');
+      function sync(){const on=DanzlaStore.isFavorite(product);favorite.setAttribute('aria-pressed',String(on));favorite.setAttribute('aria-label',on?'Удалить из избранного':'Добавить в избранное')}
+      favorite.addEventListener('click',()=>{const on=DanzlaStore.toggleFavorite(product);sync();DanzlaStore.toast(on?'Добавлено в избранное':'Удалено из избранного')});
+      document.getElementById('add-cart').addEventListener('click',()=>{DanzlaStore.addCart(product);DanzlaStore.toast('Добавлено в корзину')});
+      sync();
+    })();
+  </script>
+</body>
+</html>

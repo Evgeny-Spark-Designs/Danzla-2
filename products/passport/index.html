@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Danzla Passport — портмоне из натуральной кожи для денег, карт и документов.">
+  <title>Danzla Passport — портмоне из натуральной кожи</title>
+  <link rel="icon" href="../../img/danzla-logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
+  <style>
+    :root{--milk:#f2ece0;--paper:#f7f4ef;--brown:#56382d;--brown-deep:#2b1d18;--ink:#1e1e1e;--muted:#79736e;--line:rgba(30,30,30,.16);--header:56px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#fff;color:var(--ink);font-family:Manrope,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    button,input{font:inherit}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    .site-header{position:sticky;top:0;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:var(--header);padding:0 24px;background:rgba(242,236,224,.74);border-bottom:1px solid rgba(30,30,30,.08);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+    .site-header nav{display:flex;align-items:center;gap:42px}
+    .site-header__right{justify-content:flex-end}
+    .site-header a,.site-header button{border:0;background:none;padding:0;text-decoration:none;text-transform:uppercase;font-size:10px;font-weight:600;letter-spacing:.04em;cursor:pointer;white-space:nowrap}
+    .site-header__logo{display:block;width:98px;line-height:0}.site-header__logo img{width:100%}
+
+    .product-layout{display:grid;grid-template-columns:minmax(300px,36vw) minmax(360px,36vw) minmax(310px,1fr);align-items:start;min-height:calc(100vh - var(--header))}
+    .product-crop{position:sticky;top:var(--header);height:calc(100vh - var(--header));overflow:hidden;background:var(--paper)}
+    .product-crop:after{content:attr(data-label);position:absolute;left:22px;bottom:20px;font-size:9px;font-weight:600;letter-spacing:.12em;color:#6d625b}
+    .product-crop img{position:absolute;top:50%;right:0;left:auto;width:auto;height:100%;max-width:none;transform:translateY(-50%)}
+    .product-crop__index{position:absolute;right:18px;top:19px;z-index:1;font-size:10px;letter-spacing:.08em}
+
+    .gallery{padding:8px;background:#fff}
+    .gallery figure{position:relative;margin:0 0 8px;min-height:calc(100vh - var(--header) - 16px);background:var(--paper);overflow:hidden}
+    .gallery img{width:100%;height:100%;min-height:inherit;object-fit:cover}
+    .gallery figure[data-fit="contain"] img{padding:5%;object-fit:contain;mix-blend-mode:multiply}
+    .gallery figure[data-fit="photo"] img{padding:4%;object-fit:contain}
+
+    .product-info{position:sticky;top:var(--header);display:flex;flex-direction:column;min-height:calc(100vh - var(--header));padding:42px clamp(28px,3vw,54px) 30px;background:#fff;border-left:1px solid rgba(30,30,30,.07)}
+    .breadcrumbs{margin:0 0 auto;font-size:9px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+    .breadcrumbs a{text-decoration:none}
+    .product-info__main{padding:55px 0 35px}
+    .eyebrow{margin:0 0 10px;color:var(--brown);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+    h1,h2{font-family:Prata,Georgia,serif;font-weight:400}
+    h1{margin:0;font-size:clamp(48px,5.1vw,78px);line-height:.95;letter-spacing:-.045em}
+    .edition{margin:12px 0 0;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+    .price{margin:24px 0 0;font-size:16px;font-weight:500}
+    .description{max-width:420px;margin:24px 0 30px;color:#5e5854;font-size:13px;line-height:1.75}
+    .choice{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase}.choice span:last-child{color:var(--muted);font-weight:400}
+    .swatches{display:flex;gap:11px;margin:0 0 29px;padding:0;list-style:none}
+    .swatch{width:23px;height:23px;padding:3px;border:1px solid transparent;border-radius:50%;background:#fff;cursor:pointer}.swatch:after{content:"";display:block;width:100%;height:100%;border-radius:50%;background:var(--color)}.swatch[aria-pressed="true"]{border-color:var(--ink)}
+    .buy{width:100%;min-height:54px;border:1px solid var(--brown-deep);background:var(--brown-deep);color:#fff;text-transform:uppercase;font-size:10px;font-weight:600;letter-spacing:.08em;cursor:pointer;transition:.25s}.buy:hover{background:var(--brown);border-color:var(--brown)}
+    .buy.is-added{background:#66786b;border-color:#66786b}
+    .stock{display:flex;align-items:center;gap:8px;margin:14px 0 28px;color:var(--muted);font-size:10px}.stock:before{content:"";width:6px;height:6px;border-radius:50%;background:#71846e}
+    .details{border-top:1px solid var(--line)}
+    .details details{border-bottom:1px solid var(--line)}
+    .details summary{display:flex;justify-content:space-between;padding:16px 0;list-style:none;cursor:pointer;font-size:10px;font-weight:600;letter-spacing:.065em;text-transform:uppercase}.details summary::-webkit-details-marker{display:none}.details summary:after{content:"+";font-size:15px;font-weight:400}.details details[open] summary:after{content:"−"}
+    .details__body{padding:0 0 17px;color:var(--muted);font-size:11px;line-height:1.7}.details__body ul{margin:0;padding-left:17px}
+    .product-info__foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:24px;color:var(--muted);font-size:9px;letter-spacing:.06em;text-transform:uppercase}
+    .wishlist{border:0;background:none;padding:0;color:inherit;cursor:pointer;text-transform:uppercase;font-size:9px;letter-spacing:.06em}.wishlist[aria-pressed="true"]{color:var(--brown)}
+
+    .story{display:grid;grid-template-columns:1.15fr .85fr;min-height:720px;margin:8px;background:var(--milk)}
+    .story img{width:100%;height:100%;object-fit:cover}
+    .story__copy{display:flex;flex-direction:column;justify-content:center;padding:70px clamp(38px,6vw,94px)}
+    .story__copy small{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brown)}
+    .story h2{margin:26px 0 22px;font-size:clamp(38px,4vw,62px);line-height:1.05;letter-spacing:-.035em}
+    .story p{margin:0;color:#5d5651;font-size:14px;line-height:1.8}
+
+    @font-face{font-display:swap;font-family:Thunder;font-style:normal;font-weight:400;src:url("../../fonts/Thunder-LC.woff2") format("woff2")}
+    @font-face{font-display:swap;font-family:"PP Fraktion Mono";font-style:normal;font-weight:400;src:url("../../fonts/PPFraktionMono-Regular.otf") format("opentype")}
+    .footer{--fr:2.6666667vw;background:var(--brown-deep);color:#fff;overflow:hidden;padding:calc(var(--fr)*5.6) 0 calc(var(--fr)*2.5);position:relative;z-index:15}
+    .footer *{box-sizing:border-box}.footer__img{bottom:-5px;left:calc(var(--fr)*8.8);position:absolute;width:calc(var(--fr)*19.9);z-index:-1;transform:translateY(100%);transition:transform 1.2s cubic-bezier(.16,1,.3,1)}.footer__img img{display:block;height:100%;width:100%}
+    .footer__inner{position:relative;padding:0 calc(var(--fr)*1.6)}.footer__top{display:flex;flex-direction:column;gap:calc(var(--fr)*10.8);margin-bottom:calc(var(--fr)*15.5)}.footer__nav{align-items:center;display:flex;flex-wrap:wrap;gap:calc(var(--fr)*1.3) calc(var(--fr)*2.2);list-style:none;margin:0;padding:0}.footer__nav a{color:#fff;font-family:"PP Fraktion Mono",monospace;font-size:calc(var(--fr)*1.3);font-weight:400;letter-spacing:calc(var(--fr)*-.12);line-height:calc(var(--fr)*1.3);position:relative;text-decoration:none;text-transform:uppercase;white-space:nowrap}.footer__nav a.disable{opacity:.5;pointer-events:none}
+    .footer__mid{margin-bottom:calc(var(--fr)*2.3)}.footer__logo{display:flex;margin-bottom:calc(var(--fr)*5.5);mix-blend-mode:exclusion;width:100%;transform:translateY(300%);transition:transform 1.2s cubic-bezier(.16,1,.3,1)}.footer__logo img{display:block;width:100%}.footer__title{align-items:flex-end;color:#fff;display:flex;flex-wrap:wrap;font-family:Thunder,sans-serif;font-size:calc(var(--fr)*6.4);font-weight:800;gap:calc(var(--fr)*.2);line-height:calc(var(--fr)*5.1);margin:0 0 calc(var(--fr)*3);pointer-events:none;text-transform:uppercase;transform:scaleY(0);transform-origin:50% 100%;transition:transform .8s cubic-bezier(.16,1,.3,1) .4s}.footer__title span{display:block;font-size:calc(var(--fr)*2.8);font-weight:400;line-height:calc(var(--fr)*2.3);margin-bottom:calc(var(--fr)*.4)}.footer__title span strong{font-size:calc(var(--fr)*3);font-weight:300;line-height:calc(var(--fr)*2.4)}
+    .footer__form{align-items:flex-end;display:flex;gap:calc(var(--fr)*.8);opacity:0;transition:opacity 2s cubic-bezier(.25,.46,.45,.94)}.footer__label{color:#fff;display:block;position:relative;width:calc(var(--fr)*27.5)}.footer__label .input__label{color:#fff;font-family:Thunder,sans-serif;font-size:calc(var(--fr)*1.8);line-height:calc(var(--fr)*1.8);pointer-events:none;position:absolute;left:0;top:0;text-transform:uppercase}.footer__label .input__error{display:none;color:#fff;font-family:"PP Fraktion Mono",monospace;font-size:calc(var(--fr)*1.1);position:absolute;bottom:calc(100% + var(--fr));left:0;width:100%}.footer__label input{background:none;border:0;border-bottom:1px solid #b9b8b8;border-radius:0;caret-color:#fff;color:#fff;display:flex;font-family:"PP Fraktion Mono",monospace;font-size:calc(var(--fr)*1.5);height:calc(var(--fr)*2.2);outline:none;padding:calc(var(--fr)*.4) 0 calc(var(--fr)*.5);transition:border .3s;width:100%}.footer__label input::placeholder{color:transparent}.footer__label:focus-within input{border-bottom-color:#fff}.footer__label:has(input:not(:placeholder-shown)):not(:focus-within) input{border-bottom-color:#fff}.footer__submit{background:none;border:0;color:#fff;cursor:pointer;font-family:Thunder,sans-serif;font-size:calc(var(--fr)*1.8);font-weight:600;line-height:calc(var(--fr)*1.6);padding:0;position:relative;text-transform:uppercase;white-space:nowrap;width:calc(var(--fr)*6)}.footer__submit:after{background:currentColor;bottom:0;content:"";height:1px;left:0;position:absolute;right:0;transform-origin:left;transition:transform .4s}.footer__submit:hover:after{transform:scaleX(0)}
+    .footer__bottom{display:grid;gap:calc(var(--fr)*.8);grid-template-columns:calc(var(--fr)*18) 1fr}.footer__bottom a,.footer__bottom button,.footer__bottom p{background:none;border:0;color:#fff;font-family:"PP Fraktion Mono",monospace;font-size:calc(var(--fr)*1.3);font-weight:400;letter-spacing:calc(var(--fr)*-.12);line-height:calc(var(--fr)*1.3);margin:0;padding:0;text-decoration:none;text-transform:uppercase;width:max-content}.footer.footer--in .footer__logo,.footer.footer--in .footer__img{transform:translateY(0)}.footer.footer--in .footer__form{opacity:1}.footer.footer--in .footer__title{transform:scaleY(1)}
+    @media(max-width:767px){.footer__bottom a:nth-child(2),.footer__bottom a:nth-child(4){text-align:right;width:100%}}
+    @media(min-width:768px){.footer{--fr:1.3020833vw;padding:calc(var(--fr)*6.4) 0 calc(var(--fr)*3.4)}.footer__inner{padding:0 calc(var(--fr)*3.2)}.footer__img{left:calc(var(--fr)*24);width:calc(var(--fr)*27.5)}.footer__top{align-items:flex-start;display:grid;gap:calc(var(--fr)*8.6);grid-template-columns:1fr 1fr;justify-content:space-between;margin-bottom:calc(var(--fr)*24.9)}.footer__nav{gap:calc(var(--fr)*2.1)}.footer__mid{margin-bottom:calc(var(--fr)*3.2)}.footer__logo{margin-bottom:calc(var(--fr)*6.4)}.footer__title{font-size:calc(var(--fr)*8);line-height:calc(var(--fr)*6.4);margin-bottom:calc(var(--fr)*3.2)}.footer__title span{font-size:calc(var(--fr)*3);line-height:calc(var(--fr)*2.4);margin-bottom:calc(var(--fr)*.8)}.footer__form{gap:calc(var(--fr)*1.6)}.footer__label{width:calc(var(--fr)*30)}.footer__bottom{align-items:center;display:flex;justify-content:space-between}}
+    @media(min-width:1024px){.footer{--fr:.6944444vw;padding:calc(var(--fr)*2.2) 0 calc(var(--fr)*2.1);border-top:1px solid rgba(255,255,255,.22)}.footer__inner{padding:0 calc(var(--fr)*3.5)}.footer__img{bottom:calc(var(--fr)*-6.1);left:calc(var(--fr)*45.5);width:calc(var(--fr)*22.6)}.footer__top{gap:clamp(4rem,10vw,13rem);grid-template-columns:minmax(0,1fr) auto;margin-bottom:calc(var(--fr)*9.7);width:100%}.footer__nav{gap:calc(var(--fr)*1.8) calc(var(--fr)*3.1)}.footer__nav a{font-family:Manrope,sans-serif;font-size:10px;font-weight:500;letter-spacing:normal;line-height:10px}.footer__nav:first-child{max-width:calc(var(--fr)*36)}.footer__nav:last-child{flex-wrap:nowrap;justify-content:flex-end}.footer__mid{align-items:flex-end;display:grid;grid-template-columns:minmax(0,1fr) minmax(32rem,44vw);margin-bottom:calc(var(--fr)*3.4)}.footer__logo{margin-bottom:calc(var(--fr)*6.1)}.footer__title{display:block;font-family:Manrope,sans-serif;font-size:clamp(4.2rem,4.25vw,5.4rem);font-weight:500;letter-spacing:normal;line-height:.84;grid-column:1/2;grid-row:2/3;margin-bottom:0}.footer__title span{font-size:clamp(1.6rem,1.6vw,2rem);line-height:1.05;margin:.55rem 0 0}.footer__title span strong{font-size:inherit;line-height:inherit}.footer__form{align-items:flex-start;flex-direction:column;gap:calc(var(--fr)*1.25);grid-column:2/3;grid-row:2/3;margin-bottom:calc(var(--fr)*.3);margin-left:auto;width:calc(var(--fr)*18)}.footer__label{flex:none;min-width:0;width:100%}.footer__label .input__label,.footer__label input,.footer__label .input__error,.footer__submit{font-family:Manrope,sans-serif;font-weight:500;letter-spacing:normal}.footer__submit{align-self:flex-start;flex:0 0 auto;width:auto}.footer__bottom{display:grid;grid-template-columns:calc(var(--fr)*84.5) calc(var(--fr)*28.9) 1fr calc(var(--fr)*1.9)}.footer__bottom a,.footer__bottom button,.footer__bottom p{font-family:Manrope,sans-serif;font-size:10px;font-weight:500;letter-spacing:normal;line-height:14px}.footer__bottom a:last-child{text-align:right}}
+
+    @media(max-width:980px){
+      .product-layout{grid-template-columns:1fr 1fr}.product-crop{position:relative;top:auto;height:70vh;grid-column:1/-1}
+      .product-info{grid-column:1/-1;grid-row:2;position:relative;top:auto;min-height:auto}.gallery{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.gallery figure{min-height:68vw}.story{grid-template-columns:1fr}.story img{max-height:760px}
+    }
+    @media(max-width:640px){
+      :root{--header:68px}.site-header{height:var(--header);padding:0 15px}.site-header nav{gap:5px;flex-direction:column;align-items:flex-start}.site-header__right{align-items:flex-end!important;flex-direction:column-reverse!important}.site-header__logo{width:104px}
+      .product-crop{height:62vh}.product-info{padding:32px 20px}.breadcrumbs{margin-bottom:35px}.product-info__main{padding:0 0 25px}h1{font-size:54px}.gallery{grid-template-columns:1fr;padding:5px}.gallery figure{min-height:120vw;margin-bottom:5px}.story{margin:5px}.story__copy{padding:55px 25px}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav aria-label="Основная навигация"><a href="../../collections/bestsellers/index.html">Весь каталог</a><a href="../../collections/handbags/index.html">Сумки</a><a href="../../collections/wallets/index.html">Кошельки</a></nav>
+    <a class="site-header__logo" href="../../index.html" aria-label="DanZla — на главную"><img src="../../img/danzla-logo.webp" alt="DanZla"></a>
+    <nav class="site-header__right" aria-label="Сервисная навигация"><a href="#search">Поиск</a><button type="button" data-wishlist-header>Избранное</button><button type="button" data-cart>Корзина 0</button></nav>
+  </header>
+
+  <main>
+    <section class="product-layout" aria-labelledby="product-title">
+      <div class="product-crop" aria-label="Крупный вид портмоне Danzla Passport" data-label="PASSPORT / CHOCOLATE">
+        <span class="product-crop__index">01 / 06</span>
+        <img id="hero-img" src="../../assets-materials/products/passport/passport-chocolate-front.png" alt="Коричневое портмоне Danzla Passport из натуральной кожи">
+      </div>
+
+      <div class="gallery" id="gallery" aria-label="Фотографии товара">
+        <figure data-fit="photo"><img src="../../assets-materials/products/passport/passport-chocolate-interior-1.png" alt="Passport изнутри: отделения для купюр и карт"></figure>
+        <figure data-fit="photo"><img src="../../assets-materials/products/passport/passport-chocolate-interior-2.png" alt="Passport: карманы для карт и прозрачное окно"></figure>
+        <figure data-fit="photo"><img src="../../assets-materials/products/passport/passport-chocolate-interior-3.png" alt="Отделение для паспорта в портмоне Passport"></figure>
+        <figure data-fit="photo"><img src="../../assets-materials/products/passport/passport-chocolate-interior-4.png" alt="Карман на молнии и окно для документа Passport"></figure>
+        <figure data-fit="photo"><img src="../../assets-materials/products/passport/passport-chocolate-box.png" alt="Портмоне Passport в фирменной подарочной упаковке DanZla"></figure>
+      </div>
+
+      <aside class="product-info">
+        <p class="breadcrumbs"><a href="../../collections/bestsellers/index.html">Весь каталог</a> / Кошельки</p>
+        <div class="product-info__main">
+          <p class="eyebrow">Для документов и денег</p>
+          <h1 id="product-title">Passport</h1>
+          <p class="edition">Edition <span id="edition-name">Chocolate</span></p>
+          <p class="price">2 758 ₽</p>
+          <p class="description">Вместительное портмоне для денег и документов из натуральной кожи. В одном корпусе размещаются паспорт, водительское удостоверение, СТС, банковские карты, купюры и мелочь; две кнопки фиксируют наполненный кошелёк.</p>
+          <div class="choice"><span>Цвет</span><span id="color-name">Chocolate</span></div>
+          <ul class="swatches" aria-label="Цвета">
+            <li><button class="swatch" style="--color:#4a2f22" aria-label="Chocolate" aria-pressed="true" data-color="Chocolate" data-code="CHO" data-label="PASSPORT / CHOCOLATE" data-hero="../../assets-materials/products/passport/passport-chocolate-front.png" data-hero-alt="Коричневое портмоне Danzla Passport из натуральной кожи" data-story="../../assets-materials/products/passport/passport-chocolate-box.png" data-story-alt="Портмоне Passport в фирменной подарочной упаковке DanZla" data-gallery='[{"src":"../../assets-materials/products/passport/passport-chocolate-interior-1.png","alt":"Passport изнутри: отделения для купюр и карт"},{"src":"../../assets-materials/products/passport/passport-chocolate-interior-2.png","alt":"Passport: карманы для карт и прозрачное окно"},{"src":"../../assets-materials/products/passport/passport-chocolate-interior-3.png","alt":"Отделение для паспорта в портмоне Passport"},{"src":"../../assets-materials/products/passport/passport-chocolate-interior-4.png","alt":"Карман на молнии и окно для документа Passport"},{"src":"../../assets-materials/products/passport/passport-chocolate-box.png","alt":"Портмоне Passport в фирменной подарочной упаковке DanZla"}]'></button></li>
+            <li><button class="swatch" style="--color:#141414" aria-label="Black" aria-pressed="false" data-color="Black" data-code="BLK" data-label="PASSPORT / BLACK" data-hero="../../assets-materials/products/passport/passport-black-front.png" data-hero-alt="Чёрное портмоне Danzla Passport из натуральной кожи" data-story="../../assets-materials/products/passport/passport-chernyy-box.png" data-story-alt="Чёрное портмоне Passport в фирменной подарочной упаковке DanZla" data-gallery='[{"src":"../../assets-materials/products/passport/passport-black-interior-1.png","alt":"Passport чёрного цвета изнутри: отделения для купюр и карт"},{"src":"../../assets-materials/products/passport/passport-chernyy-interior-2.png","alt":"Passport чёрного цвета: карманы для карт и прозрачное окно"},{"src":"../../assets-materials/products/passport/passport-chernyy-interior-3.png","alt":"Отделение для паспорта в чёрном Passport"},{"src":"../../assets-materials/products/passport/passport-chernyy-interior-4.png","alt":"Карман на молнии и окно для документа, чёрный Passport"},{"src":"../../assets-materials/products/passport/passport-chernyy-box.png","alt":"Чёрное портмоне Passport в фирменной подарочной упаковке DanZla"}]'></button></li>
+            <li><button class="swatch" style="--color:#1f2a3d" aria-label="Navy" aria-pressed="false" data-color="Navy" data-code="NAVY" data-label="PASSPORT / NAVY" data-hero="../../assets-materials/products/passport/passport-navy-front.png" data-hero-alt="Тёмно-синее портмоне Danzla Passport из натуральной кожи" data-story="../../assets-materials/products/passport/passport-temno-siniy-box.png" data-story-alt="Тёмно-синее портмоне Passport в фирменной подарочной упаковке DanZla" data-gallery='[{"src":"../../assets-materials/products/passport/passport-navy-interior-1.png","alt":"Passport тёмно-синего цвета изнутри: отделения для купюр и карт"},{"src":"../../assets-materials/products/passport/passport-temno-siniy-interior-2.png","alt":"Passport тёмно-синего цвета: карманы для карт и прозрачное окно"},{"src":"../../assets-materials/products/passport/passport-temno-siniy-interior-3.png","alt":"Отделение для паспорта в тёмно-синем Passport"},{"src":"../../assets-materials/products/passport/passport-temno-siniy-interior-4.png","alt":"Карман на молнии и окно для документа, тёмно-синий Passport"},{"src":"../../assets-materials/products/passport/passport-temno-siniy-box.png","alt":"Тёмно-синее портмоне Passport в фирменной подарочной упаковке DanZla"}]'></button></li>
+          </ul>
+          <button class="buy" type="button" data-buy>Добавить в корзину</button>
+          <p class="stock">В наличии · отправка в течение 2–3 дней</p>
+          <div class="details">
+            <details><summary>Описание</summary><div class="details__body">Портмоне из натуральной кожи наппа с логотипом DZ. Внутренняя организация: 7 отделений для карт, 3 отделения для купюр, карман на кнопке для мелочи, скрытые отделы, отделение для паспорта и документов формата A5.</div></details>
+            <details><summary>Размеры и материалы</summary><div class="details__body"><ul><li>14 × 11,5 × 3,5 см</li><li>Натуральная кожа наппа</li><li>Застёжка: две кнопки и молния</li><li>Комплектация: кошелёк, брендированная подарочная упаковка</li><li>Страна производства: Россия</li></ul></div></details>
+            <details><summary>Доставка и возврат</summary><div class="details__body">Бесплатная доставка от 7 000 ₽. Возврат неношеного изделия возможен в течение 14 дней.</div></details>
+          </div>
+        </div>
+        <div class="product-info__foot"><span>Артикул DZ-PASSPORT-<span id="article-code">CHO</span></span><button class="wishlist" type="button" aria-pressed="false" data-wishlist>♡ В избранное</button></div>
+      </aside>
+    </section>
+
+    <section class="story">
+      <img id="story-img" src="../../assets-materials/products/passport/passport-chocolate-box.png" alt="Портмоне Passport в фирменной подарочной упаковке DanZla" style="object-fit:contain;padding:6%;background:var(--milk)">
+      <div class="story__copy"><small>Готово как подарок</small><h2>Продумано до последнего кармана</h2><p>Паспорт, права, карты и купюры — у каждого своё место. Passport закрывается на две кнопки и приходит в фирменной подарочной упаковке DanZla, готовый к вручению.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer" data-ref="footer">
+    <picture class="footer__img"><img src="../../img/footer-bag-photo.webp" alt="Девушка с сумкой DanZla"></picture>
+    <div class="footer__inner">
+      <div class="footer__top">
+        <ul class="footer__nav">
+          <li><a href="../../collections/bestsellers/index.html">Каталог</a></li><li><a href="../../collections/handbags/index.html">Категории</a></li><li><a href="#brand">О бренде</a></li><li><a href="#campaign">Кампания</a></li>
+          <li><a href="#contacts">Контакты</a></li><li><a href="#collections">Коллекции</a></li><li><a href="#sale">Распродажа</a></li><li><a class="disable" href="#journal">Журнал</a></li>
+        </ul>
+        <ul class="footer__nav">
+          <li><a href="#returns">Возврат</a></li><li><a href="#details">Реквизиты</a></li><li><a href="#delivery">Доставка и оплата</a></li><li><a href="#faq">Вопросы и ответы</a></li>
+        </ul>
+      </div>
+      <div class="footer__mid">
+        <a href="../../index.html" class="footer__logo" aria-label="DanZla"><img src="../../img/footer-logo.svg" alt="DanZla"></a>
+        <p class="footer__title">Подписаться <span><strong>(</strong>последние новости<strong>)</strong></span></p>
+        <form class="footer__form" novalidate>
+          <label class="footer__label"><span class="input__label">Email</span><span class="input__error">Неверный email, введите корректный адрес</span><input type="email" name="email" placeholder="." required autocomplete="email"></label>
+          <button class="footer__submit" type="submit">Подписаться</button>
+        </form>
+      </div>
+      <div class="footer__bottom"><p>©2026_DANZLA</p><a href="#privacy">Политика конфиденциальности</a><button type="button">Разработка</button><a href="#instagram">IG</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const swatches=[...document.querySelectorAll('.swatch')];
+    const heroImg=document.getElementById('hero-img');
+    const cropEl=document.querySelector('.product-crop');
+    const cropIndex=document.querySelector('.product-crop__index');
+    const galleryEl=document.getElementById('gallery');
+    const storyImg=document.getElementById('story-img');
+    const colorName=document.getElementById('color-name');
+    const editionName=document.getElementById('edition-name');
+    const articleCode=document.getElementById('article-code');
+    function selectColor(btn){
+      swatches.forEach(b=>b.setAttribute('aria-pressed','false'));
+      btn.setAttribute('aria-pressed','true');
+      heroImg.src=btn.dataset.hero;
+      heroImg.alt=btn.dataset.heroAlt;
+      cropEl.setAttribute('data-label',btn.dataset.label);
+      colorName.textContent=btn.dataset.color;
+      editionName.textContent=btn.dataset.color;
+      if(articleCode)articleCode.textContent=btn.dataset.code;
+      if(btn.dataset.gallery){
+        const items=JSON.parse(btn.dataset.gallery);
+        galleryEl.innerHTML=items.map(i=>`<figure data-fit="photo"><img src="${i.src}" alt="${i.alt}"></figure>`).join('');
+        cropIndex.textContent=`01 / ${String(items.length+1).padStart(2,'0')}`;
+      }
+      if(btn.dataset.story&&storyImg){storyImg.src=btn.dataset.story;storyImg.alt=btn.dataset.storyAlt;}
+    }
+    swatches.forEach(btn=>btn.addEventListener('click',()=>selectColor(btn)));
+    const urlColor=new URLSearchParams(location.search).get('color');
+    if(urlColor){
+      const matchBtn=swatches.find(b=>b.dataset.color&&b.dataset.color.toLowerCase()===urlColor.toLowerCase());
+      if(matchBtn)selectColor(matchBtn);
+    }
+    const buy=document.querySelector('[data-buy]');
+    const cart=document.querySelector('[data-cart]');
+    buy.addEventListener('click',()=>{buy.textContent='Добавлено';buy.classList.add('is-added');cart.textContent='Корзина 1';});
+    const wish=document.querySelector('[data-wishlist]');
+    const wishHead=document.querySelector('[data-wishlist-header]');
+    wish.addEventListener('click',()=>{const active=wish.getAttribute('aria-pressed')!=='true';wish.setAttribute('aria-pressed',String(active));wish.textContent=active?'♥ В избранном':'♡ В избранное';wishHead.textContent=active?'Избранное 1':'Избранное';});
+    document.querySelectorAll('.details details').forEach(detail=>detail.addEventListener('toggle',()=>{
+      if(detail.open)requestAnimationFrame(()=>detail.scrollIntoView({behavior:'smooth',block:'center'}));
+    }));
+    const footer=document.querySelector('[data-ref="footer"]');
+    const revealFooter=()=>footer.classList.add('footer--in');
+    if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){revealFooter();io.unobserve(footer);}}),{rootMargin:'0px 0px -20% 0px'});io.observe(footer);}else revealFooter();
+    const footerForm=footer.querySelector('.footer__form');
+    footerForm.addEventListener('submit',event=>{event.preventDefault();const input=footerForm.querySelector('input');const error=footerForm.querySelector('.input__error');if(!input.checkValidity()){error.style.display='block';return;}error.style.display='none';input.value='';input.blur();});
+  </script>
+</body>
+</html>
