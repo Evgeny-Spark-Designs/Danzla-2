@@ -92,7 +92,7 @@
   <header class="site-header">
     <nav aria-label="Основная навигация"><a href="../../collections/bestsellers/index.html">Весь каталог</a><a href="../../collections/handbags/index.html">Сумки</a><a href="../../collections/wallets/index.html">Кошельки</a></nav>
     <a class="site-header__logo" href="../../index.html" aria-label="DanZla — на главную"><img src="../../img/danzla-logo.webp" alt="DanZla"></a>
-    <nav class="site-header__right" aria-label="Сервисная навигация"><a href="#search">Поиск</a><button type="button" data-wishlist-header>Избранное</button><button type="button" data-cart>Корзина 0</button></nav>
+    <nav class="site-header__right" aria-label="Сервисная навигация"><a href="#search">Поиск</a><a href="../../favorites/index.html">Избранное <span data-favorites-count>0</span></a><a href="../../checkout/index.html">Корзина <span data-cart-count>0</span></a></nav>
   </header>
 
   <main>
@@ -168,13 +168,14 @@
     </div>
   </footer>
 
+  <script src="../../assets/js/storefront.js"></script>
   <script>
     const buy=document.querySelector('[data-buy]');
-    const cart=document.querySelector('[data-cart]');
-    buy.addEventListener('click',()=>{buy.textContent='Добавлено';buy.classList.add('is-added');cart.textContent='Корзина 1';});
+    const a4Item={slug:'a4',name:'Danzla A4',color:'Espresso',price:6900,image:'../assets-materials/products/a4/a4-espresso-studio-v2.png',url:'../products/a4/index.html?color=Espresso'};
+    buy.addEventListener('click',()=>{DanzlaStore.addCart(a4Item);buy.textContent='Добавлено';buy.classList.add('is-added');setTimeout(()=>{buy.textContent='Добавить в корзину';buy.classList.remove('is-added')},1600);});
     const wish=document.querySelector('[data-wishlist]');
-    const wishHead=document.querySelector('[data-wishlist-header]');
-    wish.addEventListener('click',()=>{const active=wish.getAttribute('aria-pressed')!=='true';wish.setAttribute('aria-pressed',String(active));wish.textContent=active?'♥ В избранном':'♡ В избранное';wishHead.textContent=active?'Избранное 1':'Избранное';});
+    const syncWish=()=>{const active=DanzlaStore.isFavorite(a4Item);wish.setAttribute('aria-pressed',String(active));wish.textContent=active?'♥ В избранном':'♡ В избранное'};syncWish();
+    wish.addEventListener('click',()=>{DanzlaStore.toggleFavorite(a4Item);syncWish();});
     document.querySelectorAll('.details details').forEach(detail=>detail.addEventListener('toggle',()=>{
       if(detail.open)requestAnimationFrame(()=>detail.scrollIntoView({behavior:'smooth',block:'center'}));
     }));
