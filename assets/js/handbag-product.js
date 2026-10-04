@@ -8,7 +8,7 @@
   function render(){
     const v=current();document.title=`${product.name} — ${color}`;$('#product-color').textContent=color;$('#product-edition').textContent=`Edition ${color}`;$('#product-sku').textContent=`Артикул DZ-${(product.displayName||product.slug).replace(/-/g,'').toUpperCase()}-${color.slice(0,3).toUpperCase()}`;
     $$('.gallery img').forEach((img,i)=>{img.src=v.images[i];img.alt=`${product.name}, ${color}: ${product.labels[i]}`});
-    const crop=$('.product-crop img');if(crop){crop.src=v.images[3]||v.images[0];crop.alt=`${product.name}, ${color}: крупный план`;crop.parentElement.dataset.cropLabel=`${product.displayName||product.slug} / ${color}`}
+    const crop=$('.product-crop img');if(crop){crop.src=v.hero||v.images[0];crop.alt=`${product.name}, ${color}: фронтальный вид`;crop.parentElement.dataset.cropLabel=`${product.displayName||product.slug} / ${color}`}
     const story=$('[data-variant-story]');if(story){story.src=v.images[1];story.alt=`${product.name}, ${color} в образе`}
     $$('.swatch').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.color===color)));
     const url=new URL(location.href);url.searchParams.set('color',color);history.replaceState(null,'',url);
