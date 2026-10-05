@@ -27,7 +27,7 @@
 
     .product-layout{display:grid;grid-template-columns:minmax(300px,36vw) minmax(360px,36vw) minmax(310px,1fr);align-items:start;min-height:calc(100vh - var(--header))}
     .product-crop{position:sticky;top:var(--header);height:calc(100vh - var(--header));overflow:hidden;background:var(--paper)}
-    .product-crop:after{content:"A4 / ESPRESSO";position:absolute;left:22px;bottom:20px;font-size:9px;font-weight:600;letter-spacing:.12em;color:#6d625b}
+    .product-crop:after{content:attr(data-crop-label);position:absolute;left:22px;bottom:20px;font-size:9px;font-weight:600;letter-spacing:.12em;color:#6d625b;text-transform:uppercase}
     .product-crop img{position:absolute;top:50%;right:0;left:auto;width:auto;height:100%;max-width:none;transform:translateY(-50%);mix-blend-mode:multiply}
     .product-crop__index{position:absolute;right:18px;top:19px;z-index:1;font-size:10px;letter-spacing:.08em}
 
@@ -97,7 +97,7 @@
 
   <main>
     <section class="product-layout" aria-labelledby="product-title">
-      <div class="product-crop" aria-label="Крупный вид сумки Danzla A4">
+      <div class="product-crop" data-crop-label="A4 / Espresso" aria-label="Крупный вид сумки Danzla A4">
         <span class="product-crop__index">01 / 07</span>
         <img src="../../assets-materials/products/a4/a4-espresso-front.png" alt="Коричневая сумка Danzla A4, крупный план">
       </div>
@@ -116,15 +116,17 @@
         <div class="product-info__main">
           <p class="eyebrow">Новая классика</p>
           <h1 id="product-title">A4</h1>
-          <p class="edition">Edition Espresso</p>
+          <p class="edition" id="product-edition">Edition Espresso</p>
           <p class="price">6 900 ₽</p>
           <p class="description">Мягкая архитектурная сумка для рабочего дня. Вмещает ноутбук до 14″, документы A4 и всё необходимое, сохраняя чёткий силуэт.</p>
-          <div class="choice"><span>Цвет</span><span>Эспрессо</span></div>
+          <div class="choice"><span>Цвет</span><span id="product-color">Espresso</span></div>
           <ul class="swatches" aria-label="Цвета">
-            <li><button class="swatch" style="--color:#56382d" aria-label="Эспрессо" aria-pressed="true"></button></li>
-            <li><button class="swatch" style="--color:#1f2020" aria-label="Черный" aria-pressed="false"></button></li>
-            <li><button class="swatch" style="--color:#77735d" aria-label="Оливковый" aria-pressed="false"></button></li>
-            <li><button class="swatch" style="--color:#84746d" aria-label="Тауп" aria-pressed="false"></button></li>
+            <li><button class="swatch" type="button" data-color="Espresso" style="--color:#56382d" aria-label="Эспрессо" aria-pressed="true"></button></li>
+            <li><button class="swatch" type="button" data-color="Chocolate" style="--color:#6a4939" aria-label="Шоколадный" aria-pressed="false"></button></li>
+            <li><button class="swatch" type="button" data-color="Black" style="--color:#1f2020" aria-label="Черный" aria-pressed="false"></button></li>
+            <li><button class="swatch" type="button" data-color="Olive" style="--color:#77735d" aria-label="Оливковый" aria-pressed="false"></button></li>
+            <li><button class="swatch" type="button" data-color="Taupe" style="--color:#84746d" aria-label="Тауп" aria-pressed="false"></button></li>
+            <li><button class="swatch" type="button" data-color="Burgundy" style="--color:#6b2133" aria-label="Бордовый" aria-pressed="false"></button></li>
           </ul>
           <button class="buy" type="button" data-buy>Добавить в корзину</button>
           <p class="stock">В наличии · отправка в течение 2–3 дней</p>
@@ -134,12 +136,12 @@
             <details><summary>Доставка и возврат</summary><div class="details__body">Бесплатная доставка от 7 000 ₽. Возврат неношеного изделия возможен в течение 14 дней.</div></details>
           </div>
         </div>
-        <div class="product-info__foot"><span>Артикул DZ-A4-ESP</span><button class="wishlist" type="button" aria-pressed="false" data-wishlist>♡ В избранное</button></div>
+        <div class="product-info__foot"><span id="product-sku">Артикул DZ-A4-ESP</span><button class="wishlist wishlist--text" type="button" aria-pressed="false" data-wishlist>♡ В избранное</button></div>
       </aside>
     </section>
 
     <section class="story">
-      <img src="../../assets-materials/products/a4/a4-espresso-1.jpg" alt="Ноутбук помещается в сумку Danzla A4">
+      <img data-variant-story src="../../assets-materials/products/a4/a4-espresso-1.jpg" alt="Ноутбук помещается в сумку Danzla A4">
       <div class="story__copy"><small>Создана для ритма дня</small><h2>Пространство без лишнего объёма</h2><p>A4 держит форму, когда наполнена, и остаётся мягкой в движении. Широкое раскрытие помогает быстро найти нужное, а длинные ручки комфортно ложатся на плечо даже поверх пальто.</p></div>
     </section>
   </main>
@@ -170,12 +172,18 @@
 
   <script src="../../assets/js/storefront.js"></script>
   <script>
-    const buy=document.querySelector('[data-buy]');
-    const a4Item={slug:'a4',name:'Danzla A4',color:'Espresso',price:6900,image:'../assets-materials/products/a4/a4-espresso-studio-v2.png',url:'../products/a4/index.html?color=Espresso'};
-    buy.addEventListener('click',()=>{DanzlaStore.addCart(a4Item);buy.textContent='Добавлено';buy.classList.add('is-added');setTimeout(()=>{buy.textContent='Добавить в корзину';buy.classList.remove('is-added')},1600);});
-    const wish=document.querySelector('[data-wishlist]');
-    const syncWish=()=>{const active=DanzlaStore.isFavorite(a4Item);wish.setAttribute('aria-pressed',String(active));wish.textContent=active?'♥ В избранном':'♡ В избранное'};syncWish();
-    wish.addEventListener('click',()=>{DanzlaStore.toggleFavorite(a4Item);syncWish();});
+    window.HANDBAG_PRODUCT={
+          slug:'a4',name:'Danzla A4',displayName:'A4',price:6900,defaultColor:'Espresso',
+          labels:['студийный ракурс','в образе','вместимость','деталь конструкции','четыре детали','макро материала'],
+          variants:{
+            Espresso: {hero:'../../assets-materials/products/a4/a4-espresso-front.png',story:'../../assets-materials/products/a4/a4-espresso-1.jpg',images:['../../assets-materials/products/a4/a4-espresso-studio-v2.png','../../assets-materials/products/a4/a4-espresso-city-v2.png','../../assets-materials/products/a4/a4-espresso-capacity-v2.png','../../assets-materials/products/a4/a4-espresso-6.jpg','../../assets-materials/products/a4/a4-espresso-7.jpg','../../assets-materials/products/a4/a4-espresso-10.jpg']},
+            "Chocolate": {hero:"../../assets-materials/womens-catalog/23.png",images:["../../assets-materials/products/duna/duna-chocolate-studio.png","../../assets-materials/products/duna/duna-chocolate-lifestyle.png","../../assets-materials/products/duna/duna-chocolate-capacity.png","../../assets-materials/products/duna/duna-chocolate-detail.png","../../assets-materials/products/duna/duna-chocolate-details-grid.png","../../assets-materials/products/duna/duna-chocolate-material-macro.png"]},
+        "Taupe": {hero:"../../assets-materials/womens-catalog/22.png",images:["../../assets-materials/products/duna/duna-taupe-studio.png","../../assets-materials/products/duna/duna-taupe-lifestyle.png","../../assets-materials/products/duna/duna-taupe-capacity.png","../../assets-materials/products/duna/duna-taupe-detail.png","../../assets-materials/products/duna/duna-taupe-details-grid.png","../../assets-materials/products/duna/duna-taupe-material-macro.png"]},
+        "Black": {hero:"../../assets-materials/womens-catalog/33.png",images:["../../assets-materials/products/duna/duna-black-studio.png","../../assets-materials/products/duna/duna-black-lifestyle.png","../../assets-materials/products/duna/duna-black-capacity.png","../../assets-materials/products/duna/duna-black-detail.png","../../assets-materials/products/duna/duna-black-details-grid.png","../../assets-materials/products/duna/duna-black-material-macro.png"]},
+        "Olive": {hero:"../../assets-materials/womens-catalog/34.png",images:["../../assets-materials/products/duna/duna-olive-studio.png","../../assets-materials/products/duna/duna-olive-lifestyle.png","../../assets-materials/products/duna/duna-olive-capacity.png","../../assets-materials/products/duna/duna-olive-detail.png","../../assets-materials/products/duna/duna-olive-details-grid.png","../../assets-materials/products/duna/duna-olive-material-macro.png"]},
+        "Burgundy": {hero:"../../assets-materials/womens-catalog/35.png",images:["../../assets-materials/products/duna/duna-burgundy-studio.png","../../assets-materials/products/duna/duna-burgundy-lifestyle.png","../../assets-materials/products/duna/duna-burgundy-capacity.png","../../assets-materials/products/duna/duna-burgundy-detail.png","../../assets-materials/products/duna/duna-burgundy-details-grid.png","../../assets-materials/products/duna/duna-burgundy-material-macro.png"]}
+          }
+        };
     document.querySelectorAll('.details details').forEach(detail=>detail.addEventListener('toggle',()=>{
       if(detail.open)requestAnimationFrame(()=>detail.scrollIntoView({behavior:'smooth',block:'center'}));
     }));
@@ -185,5 +193,6 @@
     const footerForm=footer.querySelector('.footer__form');
     footerForm.addEventListener('submit',event=>{event.preventDefault();const input=footerForm.querySelector('input');const error=footerForm.querySelector('.input__error');if(!input.checkValidity()){error.style.display='block';return;}error.style.display='none';input.value='';input.blur();});
   </script>
+  <script src="../../assets/js/handbag-product.js"></script>
 </body>
 </html>
