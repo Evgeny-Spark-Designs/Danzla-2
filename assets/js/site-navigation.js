@@ -8,7 +8,8 @@
     mens: new URL('collections/mens-bags/index.html', siteRoot).href,
     wallets: new URL('collections/wallets/index.html', siteRoot).href,
     favorites: new URL('favorites/index.html', siteRoot).href,
-    checkout: new URL('checkout/index.html', siteRoot).href
+    checkout: new URL('checkout/index.html', siteRoot).href,
+    legal: new URL('legal/index.html', siteRoot).href
   };
 
   var colorDictionary = {
@@ -366,6 +367,30 @@
     });
   }
 
+  function prepareFooterConsent() {
+    document.querySelectorAll('.footer__form').forEach(function (form) {
+      if (form.querySelector('[name="marketingConsent"]')) return;
+      var consent = document.createElement('label');
+      consent.className = 'footer__consent';
+      consent.innerHTML = '<input type="checkbox" name="marketingConsent" required><span>Согласен на <a href="' + paths.legal + '#marketing">рекламную рассылку</a> и ознакомлен с <a href="' + paths.legal + '#privacy">политикой конфиденциальности</a></span>';
+      form.appendChild(consent);
+      form.addEventListener('submit', function (event) {
+        var checkbox = form.querySelector('[name="marketingConsent"]');
+        if (!checkbox || checkbox.checked) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        checkbox.reportValidity();
+      }, true);
+    });
+
+    if (!document.getElementById('dz-footer-consent-styles')) {
+      var style = document.createElement('style');
+      style.id = 'dz-footer-consent-styles';
+      style.textContent = '.footer__consent{display:grid;grid-template-columns:auto 1fr;gap:7px;align-items:start;width:min(100%,330px);margin-top:8px;color:rgba(255,255,255,.76);font:400 8px/1.45 Manrope,Arial,sans-serif;text-transform:none}.footer__consent input{width:12px;height:12px;margin:0;accent-color:#fff}.footer__consent a{color:inherit;text-decoration:underline;text-underline-offset:2px}@media(max-width:767px){.footer__consent{font-size:7px;max-width:270px}}';
+      document.head.appendChild(style);
+    }
+  }
+
   function init() {
     var searchFrame = 0;
     var searchFollowUntil = 0;
@@ -377,6 +402,7 @@
     }
     injectStyles();
     normalizeHeader();
+    prepareFooterConsent();
     document.addEventListener('danzla:category-menu-open', closeSearch);
     window.addEventListener('resize', function () {
       var search = document.querySelector('.dz-search:not([hidden])');

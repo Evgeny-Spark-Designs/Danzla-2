@@ -12,6 +12,10 @@ body{min-height:100vh}
 .commerce-site-header__logo img{display:block;width:100%;height:auto}
 .commerce-site-header__right{justify-content:flex-end}
 .commerce-footer{background:linear-gradient(155deg,#a8a4a1 0%,#918b87 58%,#756d68 100%)}
+.checkout-consents{display:grid;gap:12px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.checkout-consent{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;color:var(--muted);font-size:10px;line-height:1.55}
+.checkout-consent input{margin-top:2px}
+.checkout-consent a{text-decoration:underline;text-underline-offset:2px}
 
 @media(min-width:1024px){
   .commerce-footer{background:linear-gradient(108deg,#aaa9a7 0%,#9f9b98 47%,#837d79 100%);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
