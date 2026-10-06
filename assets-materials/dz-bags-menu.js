@@ -45,7 +45,10 @@
     activeTrigger = trigger;
     menu.hidden = false;
     trigger.setAttribute('aria-expanded', 'true');
+    document.dispatchEvent(new CustomEvent('danzla:category-menu-open'));
   };
+
+  document.addEventListener('danzla:search-open', close);
 
   const menuKeyForTrigger = (element) => {
     const label = element.textContent.replace(/\s+/g, ' ').trim().toLowerCase();

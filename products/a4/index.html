@@ -29,7 +29,6 @@
     .product-crop{position:sticky;top:var(--header);height:calc(100vh - var(--header));overflow:hidden;background:var(--paper)}
     .product-crop:after{content:attr(data-crop-label);position:absolute;left:22px;bottom:20px;font-size:9px;font-weight:600;letter-spacing:.12em;color:#6d625b;text-transform:uppercase}
     .product-crop img{position:absolute;top:50%;right:0;left:auto;width:auto;height:100%;max-width:none;transform:translateY(-50%);mix-blend-mode:multiply}
-    .product-crop__index{position:absolute;right:18px;top:19px;z-index:1;font-size:10px;letter-spacing:.08em}
 
     .gallery{padding:8px;background:#fff}
     .gallery figure{position:relative;margin:0 0 8px;min-height:calc(100vh - var(--header) - 16px);background:var(--paper);overflow:hidden}
@@ -87,6 +86,7 @@
       .product-crop{height:62vh}.product-info{padding:32px 20px}.breadcrumbs{margin-bottom:35px}.product-info__main{padding:0 0 25px}h1{font-size:54px}.gallery{grid-template-columns:1fr;padding:5px}.gallery figure{min-height:120vw;margin-bottom:5px}.story{margin:5px}.story__copy{padding:55px 25px}
     }
   </style>
+  <link rel="stylesheet" href="../../assets/css/a4-mobile.css?v=10">
 </head>
 <body>
   <header class="site-header">
@@ -98,7 +98,7 @@
   <main>
     <section class="product-layout" aria-labelledby="product-title">
       <div class="product-crop" data-crop-label="A4 / Espresso" aria-label="Крупный вид сумки Danzla A4">
-        <span class="product-crop__index">01 / 07</span>
+        <p class="breadcrumbs breadcrumbs--mobile"><a href="../../collections/bestsellers/index.html">Весь каталог</a>&nbsp;/&nbsp;Сумки</p>
         <img src="../../assets-materials/products/a4/a4-espresso-front.png" alt="Коричневая сумка Danzla A4, крупный план">
       </div>
 
@@ -122,7 +122,6 @@
           <div class="choice"><span>Цвет</span><span id="product-color">Espresso</span></div>
           <ul class="swatches" aria-label="Цвета">
             <li><button class="swatch" type="button" data-color="Espresso" style="--color:#56382d" aria-label="Эспрессо" aria-pressed="true"></button></li>
-            <li><button class="swatch" type="button" data-color="Chocolate" style="--color:#6a4939" aria-label="Шоколадный" aria-pressed="false"></button></li>
             <li><button class="swatch" type="button" data-color="Black" style="--color:#1f2020" aria-label="Черный" aria-pressed="false"></button></li>
             <li><button class="swatch" type="button" data-color="Olive" style="--color:#77735d" aria-label="Оливковый" aria-pressed="false"></button></li>
             <li><button class="swatch" type="button" data-color="Taupe" style="--color:#84746d" aria-label="Тауп" aria-pressed="false"></button></li>
@@ -144,6 +143,25 @@
       <img data-variant-story src="../../assets-materials/products/a4/a4-espresso-1.jpg" alt="Ноутбук помещается в сумку Danzla A4">
       <div class="story__copy"><small>Создана для ритма дня</small><h2>Пространство без лишнего объёма</h2><p>A4 держит форму, когда наполнена, и остаётся мягкой в движении. Широкое раскрытие помогает быстро найти нужное, а длинные ручки комфортно ложатся на плечо даже поверх пальто.</p></div>
     </section>
+
+    <section class="related-products" aria-labelledby="related-title">
+      <p class="related-products__eyebrow">Продолжить знакомство</p>
+      <h2 id="related-title">Вам также может понравиться</h2>
+      <div class="related-products__track">
+        <a class="related-card" href="../oval/index.html?color=Chocolate">
+          <span class="related-card__image"><img src="../../assets-materials/products/oval/oval-chocolate-product.png" alt="Danzla Oval Chocolate" loading="lazy"></span>
+          <span class="related-card__body"><strong>Oval</strong><span>Edition Chocolate</span><b>5 900 ₽</b></span>
+        </a>
+        <a class="related-card" href="../vela/index.html?color=Taupe">
+          <span class="related-card__image"><img src="../../assets-materials/products/vela/vela-taupe-product.png" alt="Danzla Vela Taupe" loading="lazy"></span>
+          <span class="related-card__body"><strong>Vela</strong><span>Edition Taupe</span><b>5 800 ₽</b></span>
+        </a>
+        <a class="related-card" href="../rondo/index.html?color=Chocolate">
+          <span class="related-card__image"><img src="../../assets-materials/products/rondo/rondo-chocolate-product.png" alt="Danzla Rondo Chocolate" loading="lazy"></span>
+          <span class="related-card__body"><strong>Rondo</strong><span>Edition Chocolate</span><b>6 000 ₽</b></span>
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer class="footer" data-ref="footer">
@@ -151,8 +169,7 @@
     <div class="footer__inner">
       <div class="footer__top">
         <ul class="footer__nav">
-          <li><a href="../../collections/bestsellers/index.html">Каталог</a></li><li><a href="../../collections/handbags/index.html">Категории</a></li><li><a href="#brand">О бренде</a></li><li><a href="#campaign">Кампания</a></li>
-          <li><a href="#contacts">Контакты</a></li><li><a href="#collections">Коллекции</a></li><li><a href="#sale">Распродажа</a></li><li><a class="disable" href="#journal">Журнал</a></li>
+          <li><a href="../../collections/bestsellers/index.html">Каталог</a></li><li><a href="../../collections/handbags/index.html">Категории</a></li><li><a href="#contacts">Контакты</a></li>
         </ul>
         <ul class="footer__nav">
           <li><a href="#returns">Возврат</a></li><li><a href="#details">Реквизиты</a></li><li><a href="#delivery">Доставка и оплата</a></li><li><a href="#faq">Вопросы и ответы</a></li>
@@ -177,7 +194,6 @@
           labels:['студийный ракурс','в образе','вместимость','деталь конструкции','четыре детали','макро материала'],
           variants:{
             Espresso: {hero:'../../assets-materials/products/a4/a4-espresso-front.png',story:'../../assets-materials/products/a4/a4-espresso-1.jpg',images:['../../assets-materials/products/a4/a4-espresso-studio-v2.png','../../assets-materials/products/a4/a4-espresso-city-v2.png','../../assets-materials/products/a4/a4-espresso-capacity-v2.png','../../assets-materials/products/a4/a4-espresso-6.jpg','../../assets-materials/products/a4/a4-espresso-7.jpg','../../assets-materials/products/a4/a4-espresso-10.jpg']},
-            "Chocolate": {hero:"../../assets-materials/womens-catalog/23.png",images:["../../assets-materials/products/duna/duna-chocolate-studio.png","../../assets-materials/products/duna/duna-chocolate-lifestyle.png","../../assets-materials/products/duna/duna-chocolate-capacity.png","../../assets-materials/products/duna/duna-chocolate-detail.png","../../assets-materials/products/duna/duna-chocolate-details-grid.png","../../assets-materials/products/duna/duna-chocolate-material-macro.png"]},
         "Taupe": {hero:"../../assets-materials/womens-catalog/22.png",images:["../../assets-materials/products/duna/duna-taupe-studio.png","../../assets-materials/products/duna/duna-taupe-lifestyle.png","../../assets-materials/products/duna/duna-taupe-capacity.png","../../assets-materials/products/duna/duna-taupe-detail.png","../../assets-materials/products/duna/duna-taupe-details-grid.png","../../assets-materials/products/duna/duna-taupe-material-macro.png"]},
         "Black": {hero:"../../assets-materials/womens-catalog/33.png",images:["../../assets-materials/products/duna/duna-black-studio.png","../../assets-materials/products/duna/duna-black-lifestyle.png","../../assets-materials/products/duna/duna-black-capacity.png","../../assets-materials/products/duna/duna-black-detail.png","../../assets-materials/products/duna/duna-black-details-grid.png","../../assets-materials/products/duna/duna-black-material-macro.png"]},
         "Olive": {hero:"../../assets-materials/womens-catalog/34.png",images:["../../assets-materials/products/duna/duna-olive-studio.png","../../assets-materials/products/duna/duna-olive-lifestyle.png","../../assets-materials/products/duna/duna-olive-capacity.png","../../assets-materials/products/duna/duna-olive-detail.png","../../assets-materials/products/duna/duna-olive-details-grid.png","../../assets-materials/products/duna/duna-olive-material-macro.png"]},
@@ -194,5 +210,6 @@
     footerForm.addEventListener('submit',event=>{event.preventDefault();const input=footerForm.querySelector('input');const error=footerForm.querySelector('.input__error');if(!input.checkValidity()){error.style.display='block';return;}error.style.display='none';input.value='';input.blur();});
   </script>
   <script src="../../assets/js/handbag-product.js"></script>
-</body>
+  <script src="../../assets/js/a4-mobile.js?v=2"></script>
+<script src="../../assets/js/site-navigation.js?v=10"></script></body>
 </html>

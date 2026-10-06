@@ -6,6 +6,8 @@
 
 		<link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet"/>
 		<link href="cdn/shop/t/61/assets/include-main.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/mobile-home.css?v=4" media="all" rel="stylesheet" type="text/css"/>
+		<script src="assets/js/mobile-nav.js?v=1" defer></script>
 
 <script defer="" src="cdn/shop/t/61/assets/danzla-vendor.js"></script>
 
@@ -583,7 +585,7 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 @media(min-width:1024px){.dz-header-right a{font-size:10px}}
 .dz-header-right a:hover{text-decoration:underline;text-underline-offset:3px}
 @media(min-width:990px){.dz-header-right{display:flex}}
-</style><script defer src="assets-materials/dz-bags-menu.js?v=2"></script></head>
+</style><script defer src="assets-materials/dz-bags-menu.js?v=3"></script></head>
 
 	<body class="store__en" data-barba="wrapper">
 <div class="dz-transition" data-ref="dz-transition" aria-hidden="true">
@@ -4012,9 +4014,7 @@ hsl(var(--grey));">
 	}
 </style>
 <style>
-.promoted-collections__item-title{font-family:"Prata",serif!important;font-size:15px!important;line-height:1.5!important;font-weight:400!important;letter-spacing:.02em}
-@media (min-width:768px){.promoted-collections__item-title{font-size:18px!important}}
-@media (min-width:1024px){.promoted-collections__item-title{font-size:21px!important}}
+.promoted-collections__item-title{font-family:Primary,serif!important;font-size:var(--ts-title-m-font-size)!important;line-height:var(--ts-title-m-line-height)!important;font-weight:300!important;letter-spacing:0}
 </style>
 
 <div class="promoted-collections">
@@ -5431,6 +5431,10 @@ hsl(var(--grey));">
 		var footer = document.querySelector('footer');
 		var section = document.querySelector('.motion-section');
 		if(!pin || !maskEl || !footer || !section) return;
+		if(window.innerWidth < 1024){
+			maskEl.style.setProperty('--maskW', '1000%');
+			return;
+		}
 
 		var ranges = {
 			mobile: {from:90, to:1000},
@@ -5688,8 +5692,7 @@ hsl(var(--grey));">
 	<div class="footer__inner">
 		<div class="footer__top">
 			<ul class="footer__nav">
-				<li><a href="#">Каталог</a></li><li><a href="#">Категории</a></li><li><a href="#">О бренде</a></li><li><a href="#">Кампания</a></li>
-				<li><a href="#">Контакты</a></li><li><a href="#">Коллекции</a></li><li><a href="#">Распродажа</a></li><li><a class="disable" href="#">Журнал</a></li>
+				<li><a href="#">Каталог</a></li><li><a href="#">Категории</a></li><li><a href="#">Контакты</a></li>
 			</ul>
 			<ul class="footer__nav">
 				<li><a href="#">Возврат</a></li><li><a href="#">Реквизиты</a></li><li><a href="#">Доставка и оплата</a></li><li><a href="#">Вопросы и ответы</a></li>
@@ -5736,4 +5739,4 @@ hsl(var(--grey));">
 	}
 </script>
 
-</body></html>
+<script src="assets/js/site-navigation.js?v=10"></script></body></html>
