@@ -54,7 +54,7 @@
       <h1 id="product-name">Cyme Mini</h1>
       <p class="edition" id="product-edition">Черный · Кожа</p>
       <p class="price">3 500 ₽</p>
-      <dl class="specs"><div><dt>Цвет</dt><dd>Черный</dd></div><div><dt>Материал</dt><dd id="product-material">Кожа</dd></div><div><dt>Комплектация</dt><dd>Сумка, регулируемый ремень</dd></div></dl>
+      <dl class="specs"><div><dt>Цвет</dt><dd>Черный</dd></div><div><dt>Материал</dt><dd id="product-material">Кожа</dd></div><div><dt>Размер</dt><dd id="product-size">39 × 19 × 12 см</dd></div><div><dt>Вес</dt><dd id="product-weight">570 г</dd></div><div><dt>Комплектация</dt><dd>Сумка, регулируемый ремень</dd></div></dl>
       <div class="actions"><button class="buy" id="add-cart" type="button">Добавить в корзину</button><button class="favorite" id="favorite" type="button" aria-pressed="false" aria-label="Добавить в избранное"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg></button></div>
       <p class="note">Доставка по России; бесплатно при стоимости товаров от 10 000 ₽. Возврат товара надлежащего качества — в течение 7 дней после получения.</p>
     </section>
@@ -63,10 +63,10 @@
   <script>
     (function(){
       const items={
-        'cyme-mini-leather':{name:'Cyme Mini',material:'Кожа',image:'01.png'},
-        'cyme-mini-nylon':{name:'Cyme Mini',material:'Нейлон',image:'02.png'},
-        'cyme-leather':{name:'Cyme',material:'Кожа',image:'03.png'},
-        'numero-neuf-mini-nylon':{name:'Numéro Neuf Mini',material:'Нейлон',image:'04.png'}
+        'cyme-mini-leather':{name:'Cyme Mini',material:'Кожа',image:'01.png',size:'39 × 19 × 12 см',weight:'570 г'},
+        'cyme-mini-nylon':{name:'Cyme Mini',material:'Нейлон',image:'02.png',size:'39 × 19 × 12 см',weight:'540 г'},
+        'cyme-leather':{name:'Cyme',material:'Кожа',image:'03.png',size:'28 × 25 см',weight:'540 г'},
+        'numero-neuf-mini-nylon':{name:'Numéro Neuf Mini',material:'Нейлон',image:'04.png',size:'28 × 25 см',weight:'520 г'}
       };
       const params=new URLSearchParams(location.search);
       const key=params.get('model')||'cyme-mini-leather';
@@ -77,6 +77,8 @@
       document.getElementById('product-name').textContent=item.name;
       document.getElementById('product-edition').textContent=`Черный · ${item.material}`;
       document.getElementById('product-material').textContent=item.material;
+      document.getElementById('product-size').textContent=item.size;
+      document.getElementById('product-weight').textContent=item.weight;
       const image=document.getElementById('product-image');image.src=product.image;image.alt=`${item.name}, черный цвет`;
       const favorite=document.getElementById('favorite');
       function sync(){const on=DanzlaStore.isFavorite(product);favorite.setAttribute('aria-pressed',String(on));favorite.setAttribute('aria-label',on?'Удалить из избранного':'Добавить в избранное')}
@@ -85,5 +87,5 @@
       sync();
     })();
   </script>
-<script src="../../assets/js/site-navigation.js?v=12"></script></body>
+<script src="../../assets/js/site-navigation.js?v=13"></script></body>
 </html>

@@ -180,8 +180,8 @@
     left: 0;
     z-index: 120;
     display: grid;
-    grid-template-columns: 1fr 54px;
-    gap: 8px;
+    grid-template-columns: minmax(0, 1fr) 50px;
+    gap: 6px;
     padding: 9px 10px max(9px, env(safe-area-inset-bottom));
     background: rgba(247, 244, 239, .9);
     border-top: 1px solid rgba(30, 30, 30, .12);
@@ -195,15 +195,42 @@
     min-height: 50px;
     border: 0;
     background: var(--brown-deep);
-    color: #fff;
+    color: #1e1e1e;
     font-size: 10px;
     font-weight: 600;
     letter-spacing: .07em;
     text-transform: uppercase;
   }
+  .mobile-purchase-bar__buy.is-on-dark { color: #fff; }
   .mobile-purchase-bar__buy span { margin-left: 12px; opacity: .72; }
-  .mobile-purchase-bar__wish { border: 1px solid rgba(30, 30, 30, .2); background: #fff; font-size: 20px; }
-  .mobile-purchase-bar__wish[aria-pressed="true"] { background: var(--milk); color: var(--brown); }
+  .mobile-purchase-bar__wish {
+    display: grid;
+    place-items: center;
+    width: 50px;
+    min-height: 50px;
+    padding: 0;
+    border: 1px solid rgba(30, 30, 30, .2);
+    border-radius: 50%;
+    background: rgba(247, 244, 239, .58);
+    color: #1e1e1e;
+    font-size: 0;
+    line-height: 1;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .mobile-purchase-bar__wish::before {
+    content: "♡";
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+    transform: translateY(-1px);
+  }
+  .mobile-purchase-bar__wish[aria-pressed="true"] {
+    background: rgba(247, 244, 239, .72);
+    color: var(--brown, #56382d);
+  }
+  .mobile-purchase-bar__wish[aria-pressed="true"]::before { content: "♥"; font-size: 20px; }
 
   /* Preserve the mobile composition and proportions of the Serotonin footer. */
   .footer__top {

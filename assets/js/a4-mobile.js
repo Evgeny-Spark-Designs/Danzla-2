@@ -66,6 +66,42 @@
     var barBuy = bar.querySelector('.mobile-purchase-bar__buy');
     var barWish = bar.querySelector('.mobile-purchase-bar__wish');
 
+    function rgba(value) {
+      var match = String(value || '').match(/rgba?\(([^)]+)\)/i);
+      if (!match) return null;
+      var parts = match[1].split(',').map(Number);
+      return { r: parts[0] || 0, g: parts[1] || 0, b: parts[2] || 0, a: parts.length > 3 ? parts[3] : 1 };
+    }
+
+    function composite(foreground, background) {
+      var alpha = foreground.a + background.a * (1 - foreground.a);
+      if (!alpha) return { r: 255, g: 255, b: 255, a: 1 };
+      return {
+        r: (foreground.r * foreground.a + background.r * background.a * (1 - foreground.a)) / alpha,
+        g: (foreground.g * foreground.a + background.g * background.a * (1 - foreground.a)) / alpha,
+        b: (foreground.b * foreground.a + background.b * background.a * (1 - foreground.a)) / alpha,
+        a: alpha
+      };
+    }
+
+    function effectiveBackground(element) {
+      var layers = [];
+      for (var current = element; current; current = current.parentElement) {
+        var color = rgba(window.getComputedStyle(current).backgroundColor);
+        if (color && color.a) layers.push(color);
+        if (color && color.a >= .99) break;
+      }
+      return layers.reverse().reduce(function (background, layer) {
+        return composite(layer, background);
+      }, { r: 255, g: 255, b: 255, a: 1 });
+    }
+
+    function syncPurchaseContrast() {
+      var color = effectiveBackground(barBuy);
+      var luminance = (.2126 * color.r + .7152 * color.g + .0722 * color.b) / 255;
+      barBuy.classList.toggle('is-on-dark', luminance < .52);
+    }
+
     function syncWish() {
       var active = originalWish.getAttribute('aria-pressed') === 'true';
       barWish.setAttribute('aria-pressed', String(active));
@@ -84,6 +120,7 @@
     });
     document.addEventListener('danzla:store-updated', syncWish);
     syncWish();
+    syncPurchaseContrast();
 
     var details = Array.from(document.querySelectorAll('.details details'));
     details.forEach(function (current) {
@@ -101,7 +138,7 @@
     }
     updateBar();
     window.addEventListener('scroll', updateBar, { passive: true });
-    window.addEventListener('resize', updateBar);
+    window.addEventListener('resize', function () { updateBar(); syncPurchaseContrast(); });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
