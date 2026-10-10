@@ -4956,6 +4956,57 @@ hsl(var(--grey));">
 
 <!-- Zendesk chat widget removed for Danzla -->
 
+<section class="mens-editorial" aria-labelledby="mens-editorial-title">
+	<style>
+	.mens-editorial{background:#201c19;color:#f4efe8;overflow:hidden;padding:clamp(4rem,8vw,8rem) clamp(1rem,3.2vw,3.5rem) clamp(5rem,12vw,11rem);position:relative}
+	.mens-editorial__head{align-items:end;border-top:1px solid rgba(244,239,232,.3);display:grid;gap:1.5rem;grid-template-columns:minmax(0,1fr) minmax(18rem,30rem);padding-top:1.25rem}
+	.mens-editorial__kicker{font-family:Manrope,sans-serif;font-size:11px;letter-spacing:.16em;margin:0 0 1rem;text-transform:uppercase}
+	.mens-editorial__title{font-family:"Prata",serif;font-size:clamp(4rem,8.6vw,9rem);font-weight:400;letter-spacing:-.055em;line-height:.9;margin:0}
+	.mens-editorial__intro{font-family:"Prata",serif;font-size:clamp(1rem,1.45vw,1.35rem);line-height:1.45;margin:0 0 .35rem;max-width:28rem}
+	.mens-editorial__grid{display:grid;gap:clamp(.75rem,1.4vw,1.5rem);grid-template-columns:minmax(0,1.65fr) minmax(18rem,.85fr);margin-top:clamp(2.5rem,5vw,5rem)}
+	.mens-editorial__card{color:inherit;display:block;overflow:hidden;position:relative;text-decoration:none}
+	.mens-editorial__card--bags{aspect-ratio:16/9}
+	.mens-editorial__card--wallets{aspect-ratio:4/5;background:#b7a18d;margin-top:clamp(3rem,8vw,8rem)}
+	.mens-editorial__card img{display:block;height:100%;transition:transform .8s cubic-bezier(.16,1,.3,1);width:100%}
+	.mens-editorial__card--bags img{object-fit:cover}
+	.mens-editorial__card--wallets img{object-fit:contain;padding:11%}
+	.mens-editorial__card:after{background:linear-gradient(180deg,transparent 55%,rgba(15,12,10,.67));content:"";inset:0;pointer-events:none;position:absolute}
+	.mens-editorial__caption{align-items:end;bottom:0;display:flex;justify-content:space-between;left:0;padding:clamp(1rem,2.1vw,2rem);position:absolute;right:0;z-index:1}
+	.mens-editorial__caption span:first-child{font-family:"Prata",serif;font-size:clamp(1.7rem,3vw,3.5rem);line-height:1}
+	.mens-editorial__caption span:last-child{font-family:Manrope,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+	.mens-editorial__card:hover img{transform:scale(1.025)}
+	@media(max-width:767px){
+		.mens-editorial{padding:3.5rem 1rem 4rem}
+		.mens-editorial__head{display:block}
+		.mens-editorial__title{font-size:clamp(3.2rem,17vw,5.2rem)}
+		.mens-editorial__intro{font-size:15px;margin-top:1.5rem;max-width:21rem}
+		.mens-editorial__grid{grid-template-columns:1fr;margin-top:2.25rem}
+		.mens-editorial__card--bags{aspect-ratio:4/5}
+		.mens-editorial__card--bags img{object-position:67% center}
+		.mens-editorial__card--wallets{aspect-ratio:1/1;margin-top:0}
+		.mens-editorial__caption{padding:1rem}
+		.mens-editorial__caption span:first-child{font-size:1.8rem}
+	}
+	</style>
+	<div class="mens-editorial__head">
+		<div>
+			<p class="mens-editorial__kicker">DanZla / для него</p>
+			<h2 class="mens-editorial__title" id="mens-editorial-title">Мужская линия</h2>
+		</div>
+		<p class="mens-editorial__intro">Сумки и портмоне с выверенными пропорциями, спокойной палитрой и характером, который раскрывается в деталях.</p>
+	</div>
+	<div class="mens-editorial__grid">
+		<a class="mens-editorial__card mens-editorial__card--bags" href="collections/mens-bags/index.html">
+			<img src="img/mens-line-bags.webp" alt="Мужские сумки DanZla" loading="lazy">
+			<span class="mens-editorial__caption"><span>Сумки</span><span>Смотреть коллекцию →</span></span>
+		</a>
+		<a class="mens-editorial__card mens-editorial__card--wallets" href="collections/wallets/index.html">
+			<img src="img/mens-line-wallet.webp" alt="Портмоне DanZla" loading="lazy">
+			<span class="mens-editorial__caption"><span>Портмоне</span><span>Выбрать →</span></span>
+		</a>
+	</div>
+</section>
+
 <section class="motion-section" id="story-reveal">
 	<style>
 	.motion-section{background:#ffffff;height:calc(100vh*3);overflow:hidden;padding-top:5rem;position:relative;z-index:2}
@@ -4972,6 +5023,10 @@ hsl(var(--grey));">
 	.motion-section__photo{display:block;height:100%;object-fit:cover;width:100%}
 	.motion-section__scroll{font-family:Manrope,sans-serif;font-size:.8rem;font-weight:600;left:50%;letter-spacing:-.02rem;line-height:.9rem;position:absolute;text-align:center;text-transform:uppercase;top:82%;transform:translate(-50%);z-index:1;color:#3a332c;white-space:nowrap}
 	.motion-section__scroll strong{color:#5C3D2E}
+	@media (max-width:767px){
+		.motion-section{height:calc(300vh - 72px)}
+		.motion-section__pin{margin-top:-72px}
+	}
 	@media (min-width:768px){
 		.motion-section{padding-top:7rem}
 		.motion-section__subtitle{font-size:23px}

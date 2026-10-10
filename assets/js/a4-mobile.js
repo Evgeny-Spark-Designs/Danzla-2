@@ -96,10 +96,77 @@
       }, { r: 255, g: 255, b: 255, a: 1 });
     }
 
-    function syncPurchaseContrast() {
-      var color = effectiveBackground(barBuy);
+    var sampleCanvas = document.createElement('canvas');
+    sampleCanvas.width = sampleCanvas.height = 1;
+    var sampleContext = sampleCanvas.getContext('2d', { willReadFrequently: true });
+
+    function mediaColor(media, x, y) {
+      if (!sampleContext) return null;
+      var rect = media.getBoundingClientRect();
+      var sourceWidth = media.videoWidth || media.naturalWidth;
+      var sourceHeight = media.videoHeight || media.naturalHeight;
+      if (!sourceWidth || !sourceHeight || !rect.width || !rect.height) return null;
+      var fit = window.getComputedStyle(media).objectFit || 'fill';
+      var scaleX = rect.width / sourceWidth;
+      var scaleY = rect.height / sourceHeight;
+      var scale = fit === 'cover' ? Math.max(scaleX, scaleY) : fit === 'contain' ? Math.min(scaleX, scaleY) : 0;
+      var drawnWidth = scale ? sourceWidth * scale : rect.width;
+      var drawnHeight = scale ? sourceHeight * scale : rect.height;
+      var localX = x - rect.left - (rect.width - drawnWidth) / 2;
+      var localY = y - rect.top - (rect.height - drawnHeight) / 2;
+      var sourceX = scale ? localX / scale : localX * sourceWidth / rect.width;
+      var sourceY = scale ? localY / scale : localY * sourceHeight / rect.height;
+      if (sourceX < 0 || sourceY < 0 || sourceX >= sourceWidth || sourceY >= sourceHeight) return null;
+      try {
+        sampleContext.clearRect(0, 0, 1, 1);
+        sampleContext.drawImage(media, sourceX, sourceY, 1, 1, 0, 0, 1, 1);
+        var pixel = sampleContext.getImageData(0, 0, 1, 1).data;
+        return { r: pixel[0], g: pixel[1], b: pixel[2], a: pixel[3] / 255 };
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function colorBehind(element) {
+      var rect = element.getBoundingClientRect();
+      var x = rect.left + rect.width / 2;
+      var y = rect.top + rect.height / 2;
+      var previousVisibility = bar.style.visibility;
+      bar.style.visibility = 'hidden';
+      var target = document.elementFromPoint(x, y);
+      bar.style.visibility = previousVisibility;
+      if (!target) return { r: 255, g: 255, b: 255, a: 1 };
+      if (target.tagName === 'IMG' || target.tagName === 'VIDEO') return mediaColor(target, x, y) || effectiveBackground(target);
+      var nestedMedia = target.querySelector && target.querySelector('img,video');
+      if (nestedMedia) {
+        var mediaRect = nestedMedia.getBoundingClientRect();
+        if (mediaRect.left <= x && mediaRect.right >= x && mediaRect.top <= y && mediaRect.bottom >= y) {
+          return mediaColor(nestedMedia, x, y) || effectiveBackground(target);
+        }
+      }
+      return effectiveBackground(target);
+    }
+
+    function setAdaptiveTone(element) {
+      var color = colorBehind(element);
+      var glass = rgba(window.getComputedStyle(bar).backgroundColor);
+      if (glass && glass.a) color = composite(glass, color);
       var luminance = (.2126 * color.r + .7152 * color.g + .0722 * color.b) / 255;
-      barBuy.classList.toggle('is-on-dark', luminance < .52);
+      element.classList.toggle('is-on-dark', luminance < .48);
+    }
+
+    function syncPurchaseContrast() {
+      setAdaptiveTone(barBuy);
+      setAdaptiveTone(barWish);
+    }
+
+    var contrastFrame = 0;
+    function schedulePurchaseContrast() {
+      if (contrastFrame) return;
+      contrastFrame = window.requestAnimationFrame(function () {
+        contrastFrame = 0;
+        syncPurchaseContrast();
+      });
     }
 
     function syncWish() {
@@ -135,6 +202,7 @@
       var start = info.offsetTop + Math.min(280, info.offsetHeight * .35);
       var stop = footer.offsetTop - 80;
       bar.classList.toggle('is-visible', viewportBottom >= start && viewportBottom < stop);
+      schedulePurchaseContrast();
     }
     updateBar();
     window.addEventListener('scroll', updateBar, { passive: true });

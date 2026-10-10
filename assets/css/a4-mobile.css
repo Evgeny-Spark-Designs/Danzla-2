@@ -194,7 +194,7 @@
   .mobile-purchase-bar__buy {
     min-height: 50px;
     border: 0;
-    background: var(--brown-deep);
+    background: transparent;
     color: #1e1e1e;
     font-size: 10px;
     font-weight: 600;
@@ -209,15 +209,16 @@
     width: 50px;
     min-height: 50px;
     padding: 0;
-    border: 1px solid rgba(30, 30, 30, .2);
+    border: 1px solid currentColor;
     border-radius: 50%;
-    background: rgba(247, 244, 239, .58);
+    background: transparent;
     color: #1e1e1e;
     font-size: 0;
     line-height: 1;
     -webkit-appearance: none;
     appearance: none;
   }
+  .mobile-purchase-bar__wish.is-on-dark { color: #fff; }
   .mobile-purchase-bar__wish::before {
     content: "♡";
     font-family: "Times New Roman", Georgia, serif;
@@ -227,8 +228,7 @@
     transform: translateY(-1px);
   }
   .mobile-purchase-bar__wish[aria-pressed="true"] {
-    background: rgba(247, 244, 239, .72);
-    color: var(--brown, #56382d);
+    background: transparent;
   }
   .mobile-purchase-bar__wish[aria-pressed="true"]::before { content: "♥"; font-size: 20px; }
 
