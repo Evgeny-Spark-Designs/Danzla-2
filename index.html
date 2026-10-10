@@ -4956,7 +4956,7 @@ hsl(var(--grey));">
 
 <!-- Zendesk chat widget removed for Danzla -->
 
-<section class="motion-section">
+<section class="motion-section" id="story-reveal">
 	<style>
 	.motion-section{background:#ffffff;height:calc(100vh*3);overflow:hidden;padding-top:5rem;position:relative;z-index:2}
 	.motion-section__top{text-align:center;margin-bottom:1.6rem;padding:0 1.6rem}
@@ -5006,7 +5006,8 @@ hsl(var(--grey));">
 		var footer = document.querySelector('footer');
 		var section = document.querySelector('.motion-section');
 		if(!pin || !maskEl || !footer || !section) return;
-		if(window.innerWidth < 1024){
+		var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		if(reducedMotion.matches){
 			maskEl.style.setProperty('--maskW', '1000%');
 			return;
 		}
@@ -5036,6 +5037,8 @@ hsl(var(--grey));">
 			pinStart = pinRect.top + window.scrollY;
 			var footerRect = footer.getBoundingClientRect();
 			var footerBottom = footerRect.bottom + window.scrollY;
+			var sectionRect = section.getBoundingClientRect();
+			sectionAbsTop = sectionRect.top + window.scrollY;
 			// footerBottom always equals the document's total height (footer is the
 			// last element on the page), so footerBottom - viewportHeight is exactly
 			// the browser's hard max scrollY - leaving zero margin for sub-pixel
@@ -5043,9 +5046,9 @@ hsl(var(--grey));">
 			// ceiling (briefly unpins, then the clamped scrollY reads back as
 			// "still pinned"). Releasing a bit earlier gives real margin so the
 			// footer settles into view reliably instead of flashing.
-			pinEnd = footerBottom - window.innerHeight - 160;
-			var sectionRect = section.getBoundingClientRect();
-			sectionAbsTop = sectionRect.top + window.scrollY;
+			pinEnd = window.innerWidth < 1024
+				? sectionAbsTop + section.offsetHeight - window.innerHeight
+				: footerBottom - window.innerHeight - 160;
 			pin.style.position = prevPosition;
 		}
 
