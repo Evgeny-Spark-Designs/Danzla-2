@@ -3668,33 +3668,38 @@ hsl(var(--grey));">
 		var inner = section.querySelector('[data-ref="best-inner"]');
 		var cursor = section.querySelector('[data-ref="best-cursor"]');
 		var cards = section.querySelectorAll('.best-card');
-		if(!inner || !cursor || window.innerWidth < 1024) return;
+		if(!inner || !cards.length) return;
 
-		var raf = 0, cx = 0, cy = 0, visible = false;
-		function setVisible(v){
-			if(visible === v) return;
-			visible = v;
-			cursor.classList.toggle('visible', v);
+		if(cursor && window.innerWidth >= 1024){
+			var raf = 0, cx = 0, cy = 0, visible = false;
+			function setVisible(v){
+				if(visible === v) return;
+				visible = v;
+				cursor.classList.toggle('visible', v);
+			}
+			function place(){
+				raf = 0;
+				cursor.style.transform = 'translate(' + cx + 'px, ' + cy + 'px)';
+			}
+			function onMove(clientX, clientY){
+				var rect = inner.getBoundingClientRect();
+				var inside = clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
+				setVisible(inside);
+				cx = clientX - rect.left;
+				cy = clientY - rect.top;
+				if(!raf) raf = requestAnimationFrame(place);
+			}
+			inner.addEventListener('pointermove', function(e){ onMove(e.clientX, e.clientY); }, {passive:true});
+			inner.addEventListener('pointerleave', function(){ setVisible(false); }, {passive:true});
 		}
-		function place(){
-			raf = 0;
-			cursor.style.transform = 'translate(' + cx + 'px, ' + cy + 'px)';
-		}
-		function onMove(clientX, clientY){
-			var rect = inner.getBoundingClientRect();
-			var inside = clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
-			setVisible(inside);
-			cx = clientX - rect.left;
-			cy = clientY - rect.top;
-			if(!raf) raf = requestAnimationFrame(place);
-		}
-		inner.addEventListener('pointermove', function(e){ onMove(e.clientX, e.clientY); }, {passive:true});
-		inner.addEventListener('pointerleave', function(){ setVisible(false); }, {passive:true});
 
 		function primeVideo(video){
 			if(!video) return null;
 			video.muted = true;
+			video.defaultMuted = true;
 			video.playsInline = true;
+			video.setAttribute('playsinline', '');
+			video.setAttribute('webkit-playsinline', '');
 			var source = video.querySelector('source[data-src]');
 			if(source && !source.getAttribute('src')){
 				var src = source.getAttribute('data-src');
@@ -3715,14 +3720,53 @@ hsl(var(--grey));">
 		var current = null;
 		cards.forEach(function(card){
 			var video = card.querySelector('.best-card__video');
-			card.addEventListener('pointerenter', function(){
+			var touchStartedAt = 0;
+			function activateTouch(){
+				if(!video || !video.paused) return;
+				if(current && current !== video) pauseVideo(current);
+				current = video;
+				touchStartedAt = Date.now();
+				playVideo(video);
+			}
+			card.addEventListener('pointerenter', function(e){
+				if(e.pointerType !== 'mouse') return;
 				if(current && current !== video) pauseVideo(current);
 				current = video;
 				playVideo(video);
 			}, {passive:true});
-			card.addEventListener('pointerleave', function(){
+			card.addEventListener('pointerleave', function(e){
+				if(e.pointerType !== 'mouse') return;
 				if(current === video){ pauseVideo(video); current = null; }
 			}, {passive:true});
+			if(window.PointerEvent){
+				card.addEventListener('pointerdown', function(e){
+					if(e.pointerType === 'touch' || e.pointerType === 'pen') activateTouch();
+				}, {passive:true});
+			} else {
+				card.addEventListener('touchstart', activateTouch, {passive:true});
+			}
+			card.addEventListener('click', function(e){
+				if(touchStartedAt && Date.now() - touchStartedAt < 800){
+					e.preventDefault();
+					touchStartedAt = 0;
+				}
+			});
+		});
+
+		if('IntersectionObserver' in window){
+			var observer = new IntersectionObserver(function(entries){
+				entries.forEach(function(entry){
+					if(!entry.isIntersecting){
+						var video = entry.target.querySelector('.best-card__video');
+						pauseVideo(video);
+						if(current === video) current = null;
+					}
+				});
+			}, {threshold:.15});
+			cards.forEach(function(card){ observer.observe(card); });
+		}
+		document.addEventListener('visibilitychange', function(){
+			if(document.hidden && current){ pauseVideo(current); current = null; }
 		});
 	}
 	if(document.readyState === 'loading'){
