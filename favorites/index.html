@@ -6,7 +6,7 @@
   <title>Избранное — DanZla</title><link rel="stylesheet" href="../assets/css/local-fonts.css">
   <link rel="icon" href="../img/danzla-logo.webp">
   <link rel="stylesheet" href="../assets/css/product-footer.css?v=2">
-  <link rel="stylesheet" href="../assets/css/commerce.css?v=3">
+  <link rel="stylesheet" href="../assets/css/commerce.css?v=5">
 <link rel="stylesheet" href="../assets/css/footer-mobile-unified.css?v=1"></head>
 <body>
   <header class="site-header commerce-site-header" data-ref="site-header">
@@ -23,9 +23,17 @@
     </nav>
   </header>
 
-  <main class="page">
-    <h1>Избранное</h1>
-    <div id="favorites-grid" class="favorites-grid"></div>
+  <main class="page page--favorites">
+    <section class="commerce-photo-hero commerce-photo-hero--favorites" aria-labelledby="favorites-title">
+      <img class="commerce-photo-hero__image" src="../img/favorites-red-square.webp" width="1672" height="941" alt="Девушка с сумкой DanZla на Красной площади">
+      <div class="commerce-photo-hero__content">
+        <div class="commerce-photo-hero__heading">
+          <p>DanZla / Москва</p>
+          <h1 id="favorites-title">Избранное</h1>
+        </div>
+        <div id="favorites-grid" class="favorites-grid"></div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer commerce-footer" data-ref="footer">

@@ -6,7 +6,7 @@
   <title>Оформление заказа — DanZla</title><link rel="stylesheet" href="../assets/css/local-fonts.css">
   <link rel="icon" href="../img/danzla-logo.webp">
   <link rel="stylesheet" href="../assets/css/product-footer.css?v=2">
-  <link rel="stylesheet" href="../assets/css/commerce.css?v=4">
+  <link rel="stylesheet" href="../assets/css/commerce.css?v=5">
 <link rel="stylesheet" href="../assets/css/footer-mobile-unified.css?v=1"></head>
 <body>
   <header class="site-header commerce-site-header" data-ref="site-header">
@@ -23,8 +23,17 @@
     </nav>
   </header>
 
-  <main class="page">
-    <h1>Оформление заказа</h1>
+  <section class="commerce-photo-hero commerce-photo-hero--checkout" aria-labelledby="checkout-title">
+    <img class="commerce-photo-hero__image" src="../img/checkout-bolshoi.webp" width="1672" height="941" alt="Девушка с сумкой DanZla у Большого театра">
+    <div class="commerce-photo-hero__content commerce-photo-hero__content--title">
+      <div class="commerce-photo-hero__heading">
+        <p>DanZla / Москва</p>
+        <h1 id="checkout-title">Оформление заказа</h1>
+      </div>
+    </div>
+  </section>
+
+  <main class="page page--checkout">
     <div class="success" id="success">Демо-заказ проверен: данные формы валидны. Реальная отправка и оплата не выполнялись.</div>
     <div class="checkout-shell">
       <form class="checkout-main" id="checkout-form">

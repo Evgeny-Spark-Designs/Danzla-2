@@ -41,3 +41,35 @@ body{min-height:100vh}
   .commerce-footer .footer__form{opacity:1}
   .commerce-footer .footer__title{transform:none}
 }
+
+/* Full-width editorial photography for favorites and checkout. */
+.page--favorites{max-width:none;padding:0}
+.commerce-photo-hero{position:relative;min-height:calc(100svh - 46px);overflow:hidden;background:#80776f;color:#fff;isolation:isolate}
+.commerce-photo-hero__image{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center}
+.commerce-photo-hero:after{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(22,16,13,.42) 0%,rgba(22,16,13,.12) 44%,rgba(22,16,13,.04) 72%),linear-gradient(0deg,rgba(22,16,13,.4) 0%,transparent 50%);content:"";pointer-events:none}
+.commerce-photo-hero__content{display:flex;min-height:inherit;flex-direction:column;justify-content:space-between;padding:clamp(44px,6vw,92px) max(28px,4vw) clamp(34px,5vw,72px)}
+.commerce-photo-hero__content--title{justify-content:flex-end}
+.commerce-photo-hero__heading p{margin:0 0 12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.commerce-photo-hero h1{max-width:1100px;margin:0;color:#fff;font-size:clamp(54px,7vw,112px);line-height:.95;text-shadow:0 2px 24px rgba(0,0,0,.12)}
+.page--favorites .favorites-grid{position:relative;display:grid;width:min(440px,100%);grid-template-columns:1fr;gap:12px;color:var(--ink)}
+.page--favorites .empty{padding:32px 28px;text-align:left;background:rgba(248,245,239,.82);border:1px solid rgba(255,255,255,.42);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.page--favorites .empty h2{margin:0 0 10px;font-size:30px}
+.page--favorites .empty p{margin:0;line-height:1.55}
+.page--favorites .empty a{margin-top:24px}
+.page--favorites .fav-card{background:rgba(248,245,239,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.page--checkout{padding-top:64px}
+.commerce-photo-hero--checkout{min-height:min(78svh,820px)}
+.commerce-photo-hero--checkout .commerce-photo-hero__image{object-position:center 52%}
+
+@media(max-width:767px){
+  .commerce-photo-hero{min-height:calc(100svh - 64px)}
+  .commerce-photo-hero__content{padding:34px 14px 24px}
+  .commerce-photo-hero__heading p{margin-bottom:9px;font-size:8px}
+  .commerce-photo-hero h1{font-size:clamp(48px,15vw,68px);line-height:1}
+  .commerce-photo-hero--favorites .commerce-photo-hero__image{object-position:51% center}
+  .commerce-photo-hero--checkout{min-height:72svh}
+  .commerce-photo-hero--checkout .commerce-photo-hero__image{object-position:52% center}
+  .page--favorites .empty{padding:24px 20px}
+  .page--favorites .empty h2{font-size:25px}
+  .page--checkout{padding-top:32px}
+}
