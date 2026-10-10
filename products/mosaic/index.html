@@ -4,11 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Danzla Mosaic — портмоне-органайзер с плетёной фактурой и круговой молнией.">
-  <title>Danzla Mosaic — портмоне с плетёной фактурой</title>
+  <title>Danzla Mosaic — портмоне с плетёной фактурой</title><link rel="stylesheet" href="../../assets/css/local-fonts.css">
   <link rel="icon" href="../../img/danzla-logo.webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
   <style>
     :root{--milk:#f2ece0;--paper:#f7f4ef;--brown:#56382d;--brown-deep:#2b1d18;--ink:#1e1e1e;--muted:#79736e;--line:rgba(30,30,30,.16);--header:56px}
     *{box-sizing:border-box}
@@ -124,7 +121,7 @@
           <div class="details">
             <details><summary>Описание</summary><div class="details__body">Портмоне-органайзер с плетёной фактурой и круговой молнией. 10 отделений: купюры, карты, водительские права, отдельное место для смартфона.</div></details>
             <details><summary>Размеры и материалы</summary><div class="details__body"><ul><li>21 × 11 × 3 см</li><li>100% натуральная кожа</li><li>Застёжка: круговая молния</li><li>Комплектация: кошелёк, пыльник, брендированная подарочная упаковка</li><li>Страна производства: Россия</li></ul></div></details>
-            <details><summary>Доставка и возврат</summary><div class="details__body">Бесплатная доставка от 7 000 ₽. Возврат неношеного изделия возможен в течение 14 дней.</div></details>
+            <details><summary>Доставка и возврат</summary><div class="details__body">Бесплатная доставка при стоимости товаров от 10 000 ₽. Возврат товара надлежащего качества — в течение 7 дней после получения при соблюдении условий возврата.</div></details>
           </div>
         </div>
         <div class="product-info__foot"><span>Артикул DZ-MOSAIC-BLK</span><button class="wishlist" type="button" aria-pressed="false" data-wishlist>♡ В избранное</button></div>
@@ -176,5 +173,5 @@
     const footerForm=footer.querySelector('.footer__form');
     footerForm.addEventListener('submit',event=>{event.preventDefault();const input=footerForm.querySelector('input');const error=footerForm.querySelector('.input__error');if(!input.checkValidity()){error.style.display='block';return;}error.style.display='none';input.value='';input.blur();});
   </script>
-<script src="../../assets/js/site-navigation.js?v=11"></script></body>
+<script src="../../assets/js/site-navigation.js?v=12"></script></body>
 </html>

@@ -370,13 +370,14 @@
   function prepareFooterConsent() {
     document.querySelectorAll('.footer__form').forEach(function (form) {
       if (form.querySelector('[name="marketingConsent"]')) return;
-      var consent = document.createElement('label');
-      consent.className = 'footer__consent';
-      consent.innerHTML = '<input type="checkbox" name="marketingConsent" required><span>Согласен на <a href="' + paths.legal + '#marketing">рекламную рассылку</a> и ознакомлен с <a href="' + paths.legal + '#privacy">политикой конфиденциальности</a></span>';
-      form.appendChild(consent);
+      var consents = document.createElement('div');
+      consents.className = 'footer__consents';
+      consents.innerHTML = '<label class="footer__consent"><input type="checkbox" name="newsletterDataConsent" required><span>Даю <a href="' + paths.legal + '#newsletter-data-consent">согласие на обработку e-mail</a> для оформления подписки</span></label>' +
+        '<label class="footer__consent"><input type="checkbox" name="marketingConsent" required><span>Согласен получать <a href="' + paths.legal + '#marketing">рекламные и информационные сообщения DanZla</a></span></label>';
+      form.appendChild(consents);
       form.addEventListener('submit', function (event) {
-        var checkbox = form.querySelector('[name="marketingConsent"]');
-        if (!checkbox || checkbox.checked) return;
+        var checkbox = form.querySelector('[name="newsletterDataConsent"]:not(:checked),[name="marketingConsent"]:not(:checked)');
+        if (!checkbox) return;
         event.preventDefault();
         event.stopImmediatePropagation();
         checkbox.reportValidity();
@@ -386,9 +387,24 @@
     if (!document.getElementById('dz-footer-consent-styles')) {
       var style = document.createElement('style');
       style.id = 'dz-footer-consent-styles';
-      style.textContent = '.footer__consent{display:grid;grid-template-columns:auto 1fr;gap:7px;align-items:start;width:min(100%,330px);margin-top:8px;color:rgba(255,255,255,.76);font:400 8px/1.45 Manrope,Arial,sans-serif;text-transform:none}.footer__consent input{width:12px;height:12px;margin:0;accent-color:#fff}.footer__consent a{color:inherit;text-decoration:underline;text-underline-offset:2px}@media(max-width:767px){.footer__consent{font-size:7px;max-width:270px}}';
+      style.textContent = '.footer__consents{display:grid;gap:6px;width:min(100%,360px);margin-top:8px}.footer__consent{display:grid;grid-template-columns:auto 1fr;gap:7px;align-items:start;color:rgba(255,255,255,.78);font:400 8px/1.45 var(--danzla-sans,Arial,sans-serif);text-transform:none}.footer__consent input{width:12px;height:12px;margin:0;accent-color:#fff}.footer__consent a{color:inherit;text-decoration:underline;text-underline-offset:2px}@media(max-width:767px){.footer__consents{max-width:285px}.footer__consent{font-size:7px}}';
       document.head.appendChild(style);
     }
+  }
+
+  function prepareProductLegalDetails() {
+    if (!/^\/products\//.test(location.pathname)) return;
+    var details = document.querySelector('.product-info .details');
+    if (!details || details.querySelector('[data-seller-warranty]')) return;
+    var block = document.createElement('details');
+    block.dataset.sellerWarranty = '';
+    block.innerHTML = '<summary>Продавец и гарантия</summary><div class="details__body"><ul>' +
+      '<li>Продавец: ИП Новиков Роман Анатольевич</li>' +
+      '<li>ИНН 760504500962 · ОГРНИП 323762700033782</li>' +
+      '<li>Гарантийный срок: 12 месяцев</li>' +
+      '<li>Продажа и доставка: территория Российской Федерации</li>' +
+      '</ul><p><a href="' + paths.legal + '#requisites">Реквизиты, условия продажи и возврата</a></p></div>';
+    details.appendChild(block);
   }
 
   function init() {
@@ -403,6 +419,7 @@
     injectStyles();
     normalizeHeader();
     prepareFooterConsent();
+    prepareProductLegalDetails();
     document.addEventListener('danzla:category-menu-open', closeSearch);
     window.addEventListener('resize', function () {
       var search = document.querySelector('.dz-search:not([hidden])');

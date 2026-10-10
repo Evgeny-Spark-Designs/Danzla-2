@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Prata";
+  src: url("../../cdn/shop/t/61/assets/canelaweb-light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* The storefront previously loaded Manrope from Google.  The system stack keeps
+   checkout and legal text readable without sending visitor data to Google. */
+:root {
+  --danzla-sans: Arial, Helvetica, sans-serif;
+}
+
