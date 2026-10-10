@@ -118,11 +118,18 @@
       .dz-search__result:after{content:"→";font-size:16px}\
       .dz-search__empty{margin:30px 0;color:#77706b;font:400 13px/1.6 Manrope,Arial,sans-serif}\
       body.dz-overlay-open{overflow:hidden}\
-      .dz-nav-drawer{position:fixed;inset:0;z-index:9999;padding:84px 18px 24px;background:#f7f4ef;color:#1e1e1e;overflow:auto}\
-      .dz-nav-drawer__close{position:absolute;top:20px;right:18px;width:42px;height:42px;border:1px solid rgba(30,30,30,.18);border-radius:50%;background:transparent;font-size:22px}\
-      .dz-nav-drawer__links{display:grid;border-top:1px solid rgba(30,30,30,.14)}\
-      .dz-nav-drawer__links a{display:flex;align-items:center;justify-content:space-between;min-height:58px;border-bottom:1px solid rgba(30,30,30,.14);color:inherit;font:400 24px/1.1 Prata,Georgia,serif;text-decoration:none}\
+      .dz-nav-drawer{position:fixed;inset:0;z-index:10001;box-sizing:border-box;padding:0 16px max(20px,env(safe-area-inset-bottom));background:#f7f4ef;color:#1e1e1e;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}\
+      .dz-nav-drawer__head{display:grid;grid-template-columns:38px 1fr 38px;align-items:center;height:64px;border-bottom:1px solid rgba(30,30,30,.1)}\
+      .dz-nav-drawer__close{display:grid;place-items:center;width:38px;height:38px;padding:0;border:0;background:transparent;color:inherit;font:300 24px/1 Arial,sans-serif}\
+      .dz-nav-drawer__logo{justify-self:center;width:116px;line-height:0}.dz-nav-drawer__logo img{display:block;width:100%;height:auto}\
+      .dz-nav-drawer__search{display:grid;grid-template-columns:18px 1fr;align-items:center;gap:18px;width:100%;min-height:72px;padding:0 14px;border:0;border-bottom:1px solid rgba(30,30,30,.13);background:transparent;color:#6f6964;text-align:left;font:400 10px/1 Manrope,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}\
+      .dz-nav-drawer__search span{position:relative;width:15px;height:15px;border:.7px solid #1e1e1e;border-radius:50%}.dz-nav-drawer__search span:after{position:absolute;right:-5px;bottom:-3px;width:6px;border-top:.7px solid #1e1e1e;content:"";transform:rotate(45deg);transform-origin:left center}\
+      .dz-nav-drawer__featured{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:24px 0 22px}\
+      .dz-nav-drawer__featured a{position:relative;display:block;aspect-ratio:.76;overflow:hidden;background:#d8d1ca;color:#fff;text-decoration:none}.dz-nav-drawer__featured img{width:100%;height:100%;object-fit:cover}.dz-nav-drawer__featured a:first-child img{object-position:27% center}.dz-nav-drawer__featured a:last-child img{object-position:69% center}.dz-nav-drawer__featured span{position:absolute;right:12px;bottom:12px;left:12px;color:#fff;font:400 clamp(18px,5.7vw,26px)/1 Prata,Georgia,serif;text-shadow:0 1px 8px rgba(0,0,0,.25)}\
+      .dz-nav-drawer__links{display:grid}\
+      .dz-nav-drawer__links a{display:flex;align-items:center;justify-content:space-between;min-height:48px;border-bottom:1px solid rgba(30,30,30,.13);color:inherit;font:400 24px/1.1 Prata,Georgia,serif;text-decoration:none}\
       .dz-nav-drawer__links a:after{content:"";width:9px;height:7px;flex:0 0 auto;background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 9 7%22 fill=%22none%22%3E%3Cpath d=%22M0 3.5h8.36M5.14.23 8.36 3.5 5.14 6.77%22 stroke=%22%231e1e1e%22 stroke-width=%22.5%22/%3E%3C/svg%3E") center/contain no-repeat}\
+      .dz-nav-drawer__services{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:40px}.dz-nav-drawer__services a{color:inherit;font:500 10px/1.3 Manrope,Arial,sans-serif;letter-spacing:.08em;text-decoration:none;text-transform:uppercase}.dz-nav-drawer__services a:nth-child(even){justify-self:end;text-align:right}\
       @media(max-width:767px){.dz-search__panel{padding:0 15px}.dz-search__line{height:44px;grid-template-columns:15px minmax(0,1fr) 28px;gap:10px}.dz-search__icon{width:15px;height:15px}.dz-search__input{font-size:11px}.dz-search__close{width:28px;height:28px;font-size:20px}.dz-search__results{max-height:176px}.dz-search__result{height:44px;min-height:44px;font-size:10px}}\
     ';
     document.head.appendChild(style);
@@ -313,14 +320,26 @@
     drawer.className = 'dz-nav-drawer';
     drawer.hidden = true;
     drawer.setAttribute('aria-label', 'Навигация по каталогу');
-    drawer.innerHTML = '<button class="dz-nav-drawer__close" type="button" aria-label="Закрыть меню">×</button><div class="dz-nav-drawer__links"><a href="' + paths.catalog + '">Весь каталог</a><a href="' + paths.handbags + '">Сумки</a><a href="' + paths.mens + '">Мужская линия</a><a href="' + paths.wallets + '">Кошельки</a><a href="' + paths.favorites + '">Избранное</a><a href="' + paths.checkout + '">Корзина</a></div>';
+    var womenImage = new URL('assets-materials/bestsellers-editorial/04-chocolate-group.png', siteRoot).href;
+    var menImage = new URL('assets-materials/bestsellers-editorial/10-men-landscape.png', siteRoot).href;
+    var logoImage = new URL('img/danzla-logo.webp', siteRoot).href;
+    drawer.innerHTML = '<div class="dz-nav-drawer__head"><button class="dz-nav-drawer__close" type="button" aria-label="Закрыть меню">×</button><a class="dz-nav-drawer__logo" href="' + paths.home + '"><img src="' + logoImage + '" alt="DanZla"></a><span></span></div>' +
+      '<button class="dz-nav-drawer__search" type="button"><span aria-hidden="true"></span>Поиск по каталогу</button>' +
+      '<div class="dz-nav-drawer__featured"><a href="' + paths.handbags + '"><img src="' + womenImage + '" alt=""><span>Сумки</span></a><a href="' + paths.mens + '"><img src="' + menImage + '" alt=""><span>Мужская линия</span></a></div>' +
+      '<div class="dz-nav-drawer__links"><a href="' + paths.catalog + '">Весь каталог</a><a href="' + paths.wallets + '">Кошельки</a></div>' +
+      '<div class="dz-nav-drawer__services"><a href="' + paths.favorites + '">Избранное</a><a href="' + paths.checkout + '">Корзина</a><a href="' + paths.home + '#brand">О бренде</a><a href="' + paths.home + '#contacts">Контакты</a></div>';
     document.body.appendChild(drawer);
     drawer.querySelector('.dz-nav-drawer__close').addEventListener('click', closeDrawer);
+    drawer.querySelector('.dz-nav-drawer__search').addEventListener('click', function (event) {
+      closeDrawer();
+      openSearch(event);
+    });
     return drawer;
   }
 
   function openDrawer(event) {
     event.preventDefault();
+    closeSearch();
     var drawer = ensureDrawer();
     drawer.hidden = false;
     document.body.classList.add('dz-overlay-open');
@@ -339,7 +358,7 @@
       else if (/^сумки$/.test(label)) link.href = paths.handbags;
       else if (/мужские сумки/.test(label)) link.href = paths.mens;
       else if (/^кошельки$/.test(label)) link.href = paths.wallets;
-      else if (/^меню\s*\+$/.test(label)) {
+      else if (/^меню(?:\s*\+)?$/.test(label)) {
         link.href = '#menu';
         link.addEventListener('click', openDrawer);
       }
