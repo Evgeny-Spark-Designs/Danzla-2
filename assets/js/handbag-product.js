@@ -3,13 +3,21 @@
   const params=new URLSearchParams(location.search);const requested=(params.get('color')||product.defaultColor).toLowerCase();
   let color=Object.keys(product.variants).find(x=>x.toLowerCase()===requested)||product.defaultColor;
   const $=(s)=>document.querySelector(s),$$=(s)=>[...document.querySelectorAll(s)];
+  const modelNames={a4:'A4',oval:'Side',rondo:'Halo',vela:'Asya','half-moon':'Muna',triangle:'Vita',weave:'Twist'};
+  const colorNames={Black:'Noir',Chocolate:'espresso',Espresso:'espresso',Taupe:'Ash',Olive:'Khaki',Burgundy:'burgundy',Ivory:'Ivory'};
+  const displayName=()=>modelNames[product.slug]||product.displayName||product.name.replace(/^Danzla\s+/,'');
+  const displayColor=()=>colorNames[color]||color;
   function current(){return product.variants[color]}
   function item(){const v=current();return{slug:product.slug,name:product.name,color,price:product.price,image:v.images[0].replace(/^\.\.\/\.\.\//,'../'),url:`../products/${product.slug}/index.html?color=${encodeURIComponent(color)}`}}
   function render(){
-    const v=current();document.title=`${product.name} — ${color}`;$('#product-color').textContent=color;$('#product-edition').textContent=`Edition ${color}`;$('#product-sku').textContent=`Артикул DZ-${(product.displayName||product.slug).replace(/-/g,'').toUpperCase()}-${color.slice(0,3).toUpperCase()}`;
-    $$('.gallery img').forEach((img,i)=>{img.src=v.images[i];img.alt=`${product.name}, ${color}: ${product.labels[i]}`});
-    const crop=$('.product-crop img');if(crop){crop.src=v.hero||v.images[0];crop.alt=`${product.name}, ${color}: фронтальный вид`;crop.parentElement.dataset.cropLabel=`${product.displayName||product.slug} / ${color}`}
-    const story=$('[data-variant-story]');if(story){story.src=v.story||v.images[1];story.alt=`${product.name}, ${color} в образе`}
+    const v=current(),name=displayName(),display=displayColor();
+    const galleryItems=v.images.map((src,index)=>({src,label:product.labels[index]})).filter(({src})=>!/(?:-interior|-capacity)(?:[-.]|$)/i.test(src));
+    document.title=`DanZla ${name} — ${display}`;$('#product-color').textContent=display;$('#product-edition').textContent=`Edition ${display}`;$('#product-sku').textContent=`Артикул DZ-${(product.displayName||product.slug).replace(/-/g,'').toUpperCase()}-${color.slice(0,3).toUpperCase()}`;
+    const gallery=$('.gallery');
+    if(gallery)gallery.innerHTML=galleryItems.map((item,index)=>`<figure${index===0?' data-kind="studio"':''}><img src="${item.src}" alt="DanZla ${name}, ${display}: ${item.label}"></figure>`).join('');
+    const cropIndex=$('.product-crop__index');if(cropIndex)cropIndex.textContent=`01 / ${String(galleryItems.length+1).padStart(2,'0')}`;
+    const crop=$('.product-crop img');if(crop){crop.src=v.hero||v.images[0];crop.alt=`DanZla ${name}, ${display}: фронтальный вид`;crop.parentElement.dataset.cropLabel=`${name} / ${display}`}
+    const story=$('[data-variant-story]');if(story){story.src=v.story||galleryItems[1].src;story.alt=`DanZla ${name}, ${display} в образе`}
     $$('.swatch').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.color===color)));
     const url=new URL(location.href);url.searchParams.set('color',color);history.replaceState(null,'',url);
     const wish=$('[data-wishlist]');const active=DanzlaStore.isFavorite(item());wish.setAttribute('aria-pressed',String(active));wish.textContent=wish.classList.contains('wishlist--text')?(active?'♥ В избранном':'♡ В избранное'):(active?'♥':'♡');

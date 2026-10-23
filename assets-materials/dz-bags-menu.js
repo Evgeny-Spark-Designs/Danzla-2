@@ -14,8 +14,8 @@
     .dz-category-original-panel { display: none !important; }
     .collection-toggles__filter { display: none !important; }
     .dz-category-menu[hidden] { display: none !important; }
-    .dz-category-menu { position: absolute; z-index: 10000; top: 100%; left: 0; box-sizing: border-box; width: 100%; padding: 0 max(22px, calc((100vw - 1440px) / 2 + 22px)); background: rgba(245, 240, 233, .84); color: #1e1b19; border-bottom: 1px solid rgba(30, 27, 25, .18); -webkit-backdrop-filter: blur(18px) saturate(115%); backdrop-filter: blur(18px) saturate(115%); box-shadow: 0 12px 26px rgba(35, 27, 22, .08); }
-    .dz-category-menu__link { display: block; padding: 15px 0; color: inherit; border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); font: 500 14px/1.2 Arial, sans-serif; letter-spacing: .02em; text-align: left; text-decoration: none; }
+    .dz-category-menu { position: absolute; z-index: 10000; top: 100%; left: 0; box-sizing: border-box; width: 100%; padding: 0 max(22px, calc((100vw - 1440px) / 2 + 22px)); background: rgba(25, 31, 37, .22); color: #fff; border-bottom: 1px solid rgba(255, 255, 255, .24); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: none; }
+    .dz-category-menu__link { display: block; padding: 15px 0; color: inherit; border-top: 1px solid rgba(255, 255, 255, .24); font: 500 14px/1.2 Arial, sans-serif; letter-spacing: .02em; text-align: left; text-decoration: none; }
     .dz-category-menu__link:hover, .dz-category-menu__link:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
     @media (max-width: 700px) { .dz-category-menu { padding: 0 16px; } }
   `;
@@ -59,6 +59,13 @@
   };
 
   const labelFor = (element) => element.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+  const disableLegacyNavigation = (trigger) => {
+    const removeHref = () => {
+      if (trigger.hasAttribute('href')) trigger.removeAttribute('href');
+    };
+    removeHref();
+    new MutationObserver(removeHref).observe(trigger, { attributes: true, attributeFilter: ['href'] });
+  };
   document.querySelectorAll('a, button').forEach((item) => {
     const label = labelFor(item);
     if (label === 'клатчи' || label === 'clutches') {
@@ -80,7 +87,7 @@
     trigger.dataset.dzCategoryTrigger = menuKey;
     const panelId = trigger.getAttribute('aria-controls');
     if (panelId) document.getElementById(panelId)?.classList.add('dz-category-original-panel');
-    trigger.removeAttribute('href');
+    disableLegacyNavigation(trigger);
     trigger.setAttribute('role', 'button');
     trigger.setAttribute('tabindex', '0');
   });

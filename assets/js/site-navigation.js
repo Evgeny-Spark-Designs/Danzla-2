@@ -6,7 +6,7 @@
 
     var bannerStyle = document.createElement('style');
     bannerStyle.id = 'dz-cookie-style';
-    bannerStyle.textContent = '.dz-cookie{position:fixed;right:-54px;bottom:12px;z-index:9999;width:min(94vw,570px);aspect-ratio:2.56/1;perspective:1100px;transform-origin:71% 56%;will-change:transform,opacity}.dz-cookie[hidden]{display:none}.dz-cookie__image{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none}.dz-cookie__close,.dz-cookie__accept,.dz-cookie__settings{position:absolute;border:0;background:transparent;cursor:pointer}.dz-cookie__close{top:14%;right:24.5%;width:7%;height:14%;font-size:0}.dz-cookie__accept{left:10%;bottom:13%;width:22%;height:19%;border-radius:999px}.dz-cookie__settings{left:33%;bottom:13%;width:19%;height:19%}.dz-cookie__close:focus-visible,.dz-cookie__accept:focus-visible,.dz-cookie__settings:focus-visible{outline:2px solid #4d2028;outline-offset:3px}.dz-cookie.is-leaving{pointer-events:none;animation:dz-cookie-release 1.05s cubic-bezier(.2,.72,.15,1) forwards}@keyframes dz-cookie-release{20%{transform:rotate(-8deg) translate3d(-8px,-4px,0)}55%{transform:rotate(-19deg) rotateY(-38deg) translate3d(14vw,-23vh,0)}100%{opacity:0;transform:translate3d(72vw,-118vh,0) rotate(-32deg) rotateY(-84deg)}}@media(prefers-reduced-motion:reduce){.dz-cookie.is-leaving{animation:none;opacity:0}}@media(max-width:600px){.dz-cookie{right:-28px;bottom:6px;width:min(99vw,500px)}}';
+    bannerStyle.textContent = '.dz-cookie{position:fixed;right:-54px;bottom:12px;z-index:9999;width:min(94vw,570px);aspect-ratio:2.56/1;perspective:1100px;transform-origin:72% 55%;will-change:transform,opacity}.dz-cookie[hidden]{display:none}.dz-cookie__image{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none}.dz-cookie__close,.dz-cookie__accept,.dz-cookie__settings{position:absolute;z-index:1;margin:0;padding:0;border:0;background:transparent;color:transparent;cursor:pointer;touch-action:manipulation}.dz-cookie__close{top:22%;left:65%;width:10%;height:15%;font-size:0}.dz-cookie__accept{left:8%;top:60%;width:25%;height:20%;border-radius:999px}.dz-cookie__settings{left:32%;top:61%;width:20%;height:20%}.dz-cookie__close:focus-visible,.dz-cookie__accept:focus-visible,.dz-cookie__settings:focus-visible{outline:2px solid #4d2028;outline-offset:3px}.dz-cookie.is-leaving{pointer-events:none;animation:dz-cookie-release 1.05s cubic-bezier(.2,.72,.15,1) forwards}@keyframes dz-cookie-release{18%{transform:rotate(-7deg) translate3d(-5px,-3px,0)}58%{transform:rotate(-24deg) rotateY(-42deg) translate3d(16vw,-24vh,0)}100%{opacity:0;transform:translate3d(76vw,-125vh,0) rotate(-38deg) rotateY(-88deg)}}@media(prefers-reduced-motion:reduce){.dz-cookie.is-leaving{animation:none;opacity:0}}@media(max-width:600px){.dz-cookie{right:-28px;bottom:6px;width:min(99vw,500px)}}';
     document.head.appendChild(bannerStyle);
 
     var banner = document.createElement('div');
@@ -18,7 +18,9 @@
     banner.innerHTML = '<img class="dz-cookie__image" src="' + new URL('../../img/cookie-tag-v2.png', script.src).href + '" alt="Мы используем cookie, чтобы сайт работал для вас точнее."><button class="dz-cookie__close" type="button" aria-label="Закрыть"></button><button class="dz-cookie__accept" type="button" aria-label="Принять cookie"></button><button class="dz-cookie__settings" type="button" aria-label="Настройки cookie"></button>';
     document.body.appendChild(banner);
 
-    var consentKey = 'dz_cookie_accepted_v2';
+    // New key deliberately shows the restored image banner once to visitors who
+    // had dismissed its earlier iteration.
+    var consentKey = 'dz_cookie_accepted_v3';
     if (localStorage.getItem(consentKey) === '1') {
       banner.setAttribute('hidden', '');
       return;
@@ -86,12 +88,12 @@
 
   var productRows = [
     { name: 'A4', category: 'bag', gender: 'women', material: 'экозамша замша', path: 'products/a4/index.html', colors: ['Espresso', 'Taupe', 'Black', 'Olive', 'Burgundy'] },
-    { name: 'Oval', category: 'bag', gender: 'women', material: 'экозамша замша', path: 'products/oval/index.html', colors: ['Chocolate', 'Taupe', 'Black', 'Olive', 'Burgundy', 'Plum', 'Ivory', 'Camel'] },
-    { name: 'Rondo', category: 'bag', gender: 'women', material: 'экозамша замша натуральное дерево', path: 'products/rondo/index.html', colors: ['Chocolate', 'Taupe', 'Black', 'Olive', 'Burgundy'] },
-    { name: 'Vela', category: 'bag', gender: 'women', material: 'экозамша замша', path: 'products/vela/index.html', colors: ['Chocolate', 'Taupe', 'Black', 'Olive', 'Burgundy', 'Ivory'] },
-    { name: 'Half Moon', category: 'bag', gender: 'women', material: 'экозамша замша', path: 'products/half-moon/index.html', colors: ['Chocolate', 'Taupe', 'Black', 'Olive', 'Burgundy', 'Ivory'] },
-    { name: 'Triangle', category: 'bag', gender: 'women', material: 'экозамша замша натуральное дерево', path: 'products/triangle/index.html', colors: ['Black', 'Olive', 'Burgundy'] },
-    { name: 'Weave', category: 'bag', gender: 'women', material: 'экозамша замша', path: 'products/weave/index.html', colors: ['Chocolate', 'Black', 'Olive', 'Ivory'] },
+    { name: 'Lova', aliases: 'oval овал', category: 'bag', gender: 'women', material: 'экозамша замша', path: 'products/oval/index.html', colors: ['Chocolate', 'Taupe', 'Black', 'Olive', 'Burgundy', 'Plum', 'Ivory', 'Camel'] },
+    { name: 'Halo', aliases: 'rondo круглая круг', category: 'bag', gender: 'women', material: 'экозамша замша натуральное дерево', path: 'products/rondo/index.html', colors: ['Chocolate', 'Taupe', 'Black', 'Olive', 'Burgundy'] },
+    { name: 'Asya', aliases: 'vela ассиметрия асимметрия', category: 'bag', gender: 'women', material: 'экозамша замша', path: 'products/vela/index.html', colors: ['Chocolate', 'Taupe', 'Black', 'Olive', 'Burgundy', 'Ivory'] },
+    { name: 'Muna', aliases: 'half moon полумесяц', category: 'bag', gender: 'women', material: 'экозамша замша', path: 'products/half-moon/index.html', colors: ['Chocolate', 'Taupe', 'Black', 'Olive', 'Burgundy', 'Ivory'] },
+    { name: 'Vita', aliases: 'triangle треугольник trio', category: 'bag', gender: 'women', material: 'экозамша замша натуральное дерево', path: 'products/triangle/index.html', colors: ['Black', 'Olive', 'Burgundy'] },
+    { name: 'Twist', aliases: 'weave плетенка плетёная', category: 'bag', gender: 'women', material: 'экозамша замша', path: 'products/weave/index.html', colors: ['Chocolate', 'Black', 'Olive', 'Ivory'] },
 
     { name: 'Cyme Mini', qualifier: 'Кожа', category: 'bag', gender: 'men', material: 'натуральная кожа кожаный', path: 'products/mens/index.html?model=cyme-mini-leather', colors: ['Black'] },
     { name: 'Cyme Mini', qualifier: 'Нейлон', category: 'bag', gender: 'men', material: 'нейлон нейлоновый', path: 'products/mens/index.html?model=cyme-mini-nylon', colors: ['Black'] },
@@ -114,7 +116,7 @@
     var genderWords = product.gender === 'women' ? 'женская женские' : product.gender === 'men' ? 'мужская мужские' : '';
     product.index = index;
     product.normalizedName = normalizeText(product.name);
-    product.searchText = normalizeText([product.name, product.qualifier || '', categoryWords, genderWords, product.material].join(' '));
+    product.searchText = normalizeText([product.name, product.aliases || '', product.qualifier || '', categoryWords, genderWords, product.material].join(' '));
     return product;
   });
 
@@ -127,6 +129,90 @@
       .replace(/[^a-zа-я0-9]+/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
+  }
+
+  var womensModelNames = {
+    a4: 'A4',
+    oval: 'Side',
+    rondo: 'Halo',
+    vela: 'Asya',
+    'half-moon': 'Muna',
+    triangle: 'Vita',
+    weave: 'Twist'
+  };
+
+  var womensColorNames = {
+    Black: 'Noir',
+    Chocolate: 'espresso',
+    Espresso: 'espresso',
+    Taupe: 'Ash',
+    Olive: 'Khaki',
+    Burgundy: 'burgundy',
+    Ivory: 'Ivory'
+  };
+
+  function displayColorName(color) {
+    return womensColorNames[color] || color;
+  }
+
+  function productSlugFromUrl(value) {
+    var match = String(value || '').match(/products\/([^/?#]+)\/index\.html/i);
+    return match ? match[1].toLowerCase() : '';
+  }
+
+  function replaceTextValue(element, from, to) {
+    if (!element || !from || !to) return;
+    Array.prototype.forEach.call(element.childNodes, function (node) {
+      if (node.nodeType === Node.TEXT_NODE && node.nodeValue.indexOf(from) !== -1) {
+        node.nodeValue = node.nodeValue.split(from).join(to);
+      }
+    });
+  }
+
+  function applyWomensProductPresentation() {
+    var currentSlug = productSlugFromUrl(location.pathname);
+    var currentName = womensModelNames[currentSlug];
+
+    document.querySelectorAll('.component-product-card__link').forEach(function (link) {
+      var slug = productSlugFromUrl(link.getAttribute('href'));
+      var modelName = womensModelNames[slug];
+      if (!modelName) return;
+
+      var card = link.closest('.component-product-card');
+      link.setAttribute('aria-label', 'Danzla ' + modelName);
+      if (!card) return;
+      var title = card.querySelector('.component-product-card__footer__details__label--title');
+      if (title) title.textContent = 'Danzla ' + modelName;
+      var edition = card.querySelector('.component-product-card__footer__details__label--edition');
+      if (edition) edition.textContent = edition.textContent.replace(/Edition\s+(.+)/, function (_, color) {
+        return 'Edition ' + displayColorName(color.trim());
+      });
+      card.querySelectorAll('img[alt]').forEach(function (image) {
+        image.alt = image.alt.replace(/Danzla (A4|Oval|Rondo|Vela|Half Moon|Triangle|Weave)/g, 'Danzla ' + modelName);
+      });
+    });
+
+    if (!currentName) return;
+    var title = document.getElementById('product-title');
+    if (title) title.textContent = currentName;
+    document.querySelectorAll('.breadcrumbs').forEach(function (breadcrumb) {
+      Object.keys(womensModelNames).forEach(function (slug) {
+        var oldName = { a4: 'A4', oval: 'Oval', rondo: 'Rondo', vela: 'Vela', 'half-moon': 'Half Moon', triangle: 'Triangle', weave: 'Weave' }[slug];
+        replaceTextValue(breadcrumb, oldName, womensModelNames[slug]);
+      });
+    });
+    var oldName = { a4: 'A4', oval: 'Oval', rondo: 'Rondo', vela: 'Vela', 'half-moon': 'Half Moon', triangle: 'Triangle', weave: 'Weave' }[currentSlug];
+    if (oldName) document.title = document.title.replace('Danzla ' + oldName, 'Danzla ' + currentName);
+    var currentColor = document.getElementById('product-color');
+    if (currentColor) currentColor.textContent = displayColorName(currentColor.textContent.trim());
+    var currentEdition = document.getElementById('product-edition');
+    if (currentEdition) currentEdition.textContent = currentEdition.textContent.replace(/Edition\s+(.+)/, function (_, color) {
+      return 'Edition ' + displayColorName(color.trim());
+    });
+    document.querySelectorAll('.swatch[aria-label]').forEach(function (swatch) {
+      var color = swatch.dataset.color;
+      if (color) swatch.setAttribute('aria-label', 'Цвет ' + displayColorName(color));
+    });
   }
 
   function injectStyles() {
@@ -231,7 +317,7 @@
 
   function resultLabel(product, color) {
     var type = product.category === 'wallet' ? 'Кошелёк' : product.gender === 'men' ? 'Мужская сумка' : 'Женская сумка';
-    return ['Edition ' + color, product.qualifier || type].join(' · ');
+    return ['Edition ' + displayColorName(color), product.qualifier || type].join(' · ');
   }
 
   function searchProducts(query) {
@@ -459,6 +545,68 @@
     }
   }
 
+  function applyTypographyScale() {
+    document.querySelectorAll('.footer__title').forEach(function (title) { title.remove(); });
+    if (document.getElementById('dz-typography-scale')) return;
+    var style = document.createElement('style');
+    style.id = 'dz-typography-scale';
+    style.textContent =
+      '.header__nav__panel .ts-primary-item,.dz-header-right a,.dz-catalog-header a,.site-header nav a{font-size:13px!important}' +
+      '.footer__nav a{font-size:15px!important;line-height:1.25!important}' +
+      '.footer__bottom a,.footer__bottom button,.footer__bottom p{font-size:15px!important;line-height:1.25!important}' +
+      '.footer__label .input__label,.footer__submit{font-size:19px!important;line-height:1.2!important}' +
+      '.footer__label input{font-size:16px!important}' +
+      '.footer__label .input__error{font-size:12px!important;line-height:1.35!important}' +
+      '.footer__consent{font-size:13.5px!important;line-height:1.45!important}.footer__consent input{width:18px!important;height:18px!important}' +
+      '.footer{background:#f2ece0!important;color:#291c17!important;-webkit-mask-image:none!important;mask-image:none!important;padding:32px 0 24px!important}.footer:before,.footer__bg{display:none!important}.footer__top{gap:20px!important;margin-bottom:28px!important}.footer__mid{margin-bottom:24px!important}.footer__logo{margin-bottom:22px!important;position:relative;top:clamp(36px,4vw,64px)}.footer__nav a,.footer__bottom a,.footer__bottom button,.footer__bottom p,.footer__label,.footer__label .input__label,.footer__label input,.footer__submit,.footer__label .input__error,.footer__consent{color:#291c17!important}.footer__label input{border-bottom-color:rgba(41,28,23,.38)!important}.footer__consent input{accent-color:#56382d!important}.footer__img{width:min(240px,17vw)!important;bottom:-28px!important}' +
+      '@media(min-width:768px){.footer__mid{grid-template-columns:minmax(0,1fr) minmax(280px,34vw)!important}}' +
+      '@media(max-width:767px){.header__nav__panel .ts-primary-item,.dz-header-right a,.dz-catalog-header a,.site-header nav a{font-size:13px!important}.footer__nav a{font-size:15px!important}.footer__bottom a,.footer__bottom button,.footer__bottom p{font-size:14px!important}.footer__label .input__label,.footer__submit{font-size:18px!important}.footer__label input{font-size:15px!important}.footer__consent{font-size:12px!important}.footer__consent input{width:16px!important;height:16px!important}}';
+    document.head.appendChild(style);
+  }
+
+  function applyWomensCatalogNames() {
+    if (!/\/collections\/(?:handbags|bestsellers)\//.test(location.pathname)) return;
+    var colors = { Black: 'Noir', Chocolate: 'espresso', Espresso: 'espresso', Taupe: 'Ash', Burgundy: 'burgundy', Olive: 'Khaki', Ivory: 'Ivory' };
+    var technicalColors = { Black: 'черный', Chocolate: 'коричневый', Espresso: 'коричневый', Taupe: 'серый', Burgundy: 'бордо', Olive: 'хаки', Ivory: 'белый', Plum: 'сливовый', Camel: 'кэмел' };
+    var lunaImages = new Set(['08.png', '09.png', '27.png', '43.png', '44.png', '45.png']);
+    var sideImages = new Set(['04.png', '05.png', '14.png', '25.png', '39.png', '40.png', '48.png']);
+    document.querySelectorAll('component-product-card').forEach(function (card) {
+      var link = card.querySelector('.component-product-card__link');
+      if (!link) return;
+      var image = card.querySelector('.component-product-card__media-container__packshot--default img');
+      var imageName = image ? (image.getAttribute('src') || '').split('/').pop() : '';
+      var match = link.getAttribute('href').match(/products\/([^/]+)\/index\.html\?color=([^&]+)/);
+      if (!match) return;
+      var slug = match[1];
+      var color = decodeURIComponent(match[2]);
+      var name = { a4: 'A4', vela: 'Asya', rondo: 'Halo', triangle: 'Vita', weave: 'Twist' }[slug];
+      var technicalName = { a4: 'a4', vela: 'ассиметрия', rondo: 'круглая', triangle: 'треугольник', weave: 'плетенка' }[slug];
+      if (slug === 'oval') {
+        name = sideImages.has(imageName) ? 'Side' : 'Lova';
+        technicalName = name === 'Side' ? 'боковая' : 'овал';
+        if (name === 'Lova') link.setAttribute('href', '../../products/lova/index.html?color=' + encodeURIComponent(color) + '&image=' + encodeURIComponent(imageName));
+      }
+      if (slug === 'half-moon') {
+        name = lunaImages.has(imageName) ? 'Luna' : 'Muna';
+        technicalName = name === 'Luna' ? 'луна' : 'полумесяц';
+        if (name === 'Luna') link.setAttribute('href', '../../products/luna/index.html?color=' + encodeURIComponent(color) + '&image=' + encodeURIComponent(imageName));
+      }
+      if (!name) return;
+      link.setAttribute('aria-label', 'Danzla ' + name);
+      var title = card.querySelector('.component-product-card__footer__details__label--title');
+      var edition = card.querySelector('.component-product-card__footer__details__label--edition');
+      if (title) title.textContent = 'Danzla ' + name;
+      if (edition) edition.textContent = 'Edition ' + (colors[color] || color);
+      if (image) image.alt = 'Danzla ' + name + ', ' + (colors[color] || color);
+      var hovered = card.querySelector('.component-product-card__media-container__packshot--hovered img');
+      if (hovered) hovered.alt = 'Danzla ' + name + ', ' + (colors[color] || color);
+      card.dataset.dzTechnicalModel = technicalName || slug;
+      card.dataset.dzTechnicalColor = technicalColors[color] || color;
+      card.dataset.dzDisplayModel = name;
+      card.dataset.dzDisplayColor = colors[color] || color;
+    });
+  }
+
   function prepareProductLegalDetails() {
     if (!/^\/products\//.test(location.pathname)) return;
     var details = document.querySelector('.product-info .details');
@@ -479,7 +627,7 @@
     var categoryScript = document.createElement('script');
     categoryScript.id = 'dz-bags-menu-script';
     categoryScript.defer = true;
-    categoryScript.src = new URL('assets-materials/dz-bags-menu.js?v=5', siteRoot).href;
+    categoryScript.src = new URL('assets-materials/dz-bags-menu.js?v=7', siteRoot).href;
     document.head.appendChild(categoryScript);
   }
 
@@ -496,7 +644,10 @@
     normalizeHeader();
     loadBagCategorySelector();
     prepareFooterConsent();
+    applyTypographyScale();
     prepareProductLegalDetails();
+    applyWomensProductPresentation();
+    applyWomensCatalogNames();
     document.addEventListener('danzla:category-menu-open', closeSearch);
     window.addEventListener('resize', function () {
       var search = document.querySelector('.dz-search:not([hidden])');
@@ -517,4 +668,5 @@
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
+  window.addEventListener('load', applyWomensProductPresentation, { once: true });
 })();
