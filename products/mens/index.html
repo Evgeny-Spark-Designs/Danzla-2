@@ -26,9 +26,12 @@
     h1{margin:0 0 12px;font:400 clamp(34px,4vw,62px)/1.08 Prata,serif}
     .edition{margin:0 0 30px;color:#666}
     .price{margin:0 0 34px;font-size:18px;font-weight:600}
-    .specs{display:grid;gap:13px;margin:0 0 34px;padding:22px 0;border-block:1px solid var(--line)}
-    .specs div{display:flex;justify-content:space-between;gap:20px}
-    .specs dt{color:#777}.specs dd{margin:0;text-align:right}
+    .details{margin:28px 0 0;border-top:1px solid var(--line)}
+    .details details{border-bottom:1px solid var(--line)}
+    .details summary{display:flex;justify-content:space-between;align-items:center;padding:17px 0;list-style:none;cursor:pointer;font-size:10px;font-weight:600;letter-spacing:.065em;text-transform:uppercase}
+    .details summary::-webkit-details-marker{display:none}.details summary:after{content:"+";font-size:16px;font-weight:400}.details details[open] summary:after{content:"−"}
+    .details__body{padding:0 0 18px;color:#777;font-size:11px;line-height:1.7}.details__body p{margin:0}.details__body p+p{margin-top:12px}
+    .specs{display:grid;gap:10px;margin:0;padding:0;list-style:none}.specs li{display:flex;justify-content:space-between;gap:20px}.specs span:first-child{color:#777}.specs span:last-child{text-align:right;color:var(--ink)}
     .actions{display:grid;grid-template-columns:1fr 52px;gap:10px}
     .buy,.favorite{height:52px;border:1px solid var(--ink);cursor:pointer;transition:.2s ease}
     .buy{background:var(--ink);color:#fff;text-transform:uppercase;letter-spacing:.08em}
@@ -54,9 +57,14 @@
       <h1 id="product-name">Cyme Mini</h1>
       <p class="edition" id="product-edition">Черный · Кожа</p>
       <p class="price">3 500 ₽</p>
-      <dl class="specs"><div><dt>Цвет</dt><dd>Черный</dd></div><div><dt>Материал</dt><dd id="product-material">Кожа</dd></div><div><dt>Размер</dt><dd id="product-size">39 × 19 × 12 см</dd></div><div><dt>Вес</dt><dd id="product-weight">570 г</dd></div><div><dt>Комплектация</dt><dd>Сумка, регулируемый ремень</dd></div></dl>
       <div class="actions"><button class="buy" id="add-cart" type="button">Добавить в корзину</button><button class="favorite" id="favorite" type="button" aria-pressed="false" aria-label="Добавить в избранное"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg></button></div>
-      <p class="note">Доставка по России; бесплатно при стоимости товаров от 10 000 ₽. Возврат товара надлежащего качества — в течение 7 дней после получения.</p>
+      <div class="details">
+        <details><summary>Описание</summary><div class="details__body" data-mens-description></div></details>
+        <details><summary>Характеристики</summary><div class="details__body"><ul class="specs"><li><span>Цвет</span><span>Чёрный</span></li><li><span>Материал</span><span id="product-material">Кожа</span></li><li><span>Размер</span><span id="product-size">39 × 19 × 12 см</span></li><li><span>Вес</span><span id="product-weight">570 г</span></li><li><span>Комплектация</span><span>Сумка, регулируемый ремень</span></li></ul></div></details>
+        <details><summary>Материалы и детали</summary><div class="details__body" data-mens-materials></div></details>
+        <details><summary>Доставка и возврат</summary><div class="details__body">Доставка по России бесплатна при стоимости товаров от 10 000 ₽. Возврат товара надлежащего качества возможен в течение 7 дней после получения при соблюдении условий возврата.</div></details>
+        <details><summary>Продавец и гарантия</summary><div class="details__body">Продавец: DanZla. На фурнитуру и материалы действует гарантия 12 месяцев.</div></details>
+      </div>
     </section>
   </main>
   <script src="../../assets/js/storefront.js"></script>
@@ -87,5 +95,6 @@
       sync();
     })();
   </script>
-<script src="../../assets/js/site-navigation.js?v=14"></script></body>
+<script src="../../assets/js/product-content.js?v=8"></script>
+<script src="../../assets/js/site-navigation.js?v=20"></script></body>
 </html>

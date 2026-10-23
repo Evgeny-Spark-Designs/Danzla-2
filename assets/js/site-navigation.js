@@ -1,5 +1,43 @@
 (function () {
   var script = document.currentScript;
+
+  function initCookieBanner() {
+    if (!document.body || document.getElementById('dz-cookie-banner')) return;
+
+    var bannerStyle = document.createElement('style');
+    bannerStyle.id = 'dz-cookie-style';
+    bannerStyle.textContent = '.dz-cookie{position:fixed;right:-54px;bottom:12px;z-index:9999;width:min(94vw,570px);aspect-ratio:2.56/1;perspective:1100px;transform-origin:71% 56%;will-change:transform,opacity}.dz-cookie[hidden]{display:none}.dz-cookie__image{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none}.dz-cookie__close,.dz-cookie__accept,.dz-cookie__settings{position:absolute;border:0;background:transparent;cursor:pointer}.dz-cookie__close{top:14%;right:24.5%;width:7%;height:14%;font-size:0}.dz-cookie__accept{left:10%;bottom:13%;width:22%;height:19%;border-radius:999px}.dz-cookie__settings{left:33%;bottom:13%;width:19%;height:19%}.dz-cookie__close:focus-visible,.dz-cookie__accept:focus-visible,.dz-cookie__settings:focus-visible{outline:2px solid #4d2028;outline-offset:3px}.dz-cookie.is-leaving{pointer-events:none;animation:dz-cookie-release 1.05s cubic-bezier(.2,.72,.15,1) forwards}@keyframes dz-cookie-release{20%{transform:rotate(-8deg) translate3d(-8px,-4px,0)}55%{transform:rotate(-19deg) rotateY(-38deg) translate3d(14vw,-23vh,0)}100%{opacity:0;transform:translate3d(72vw,-118vh,0) rotate(-32deg) rotateY(-84deg)}}@media(prefers-reduced-motion:reduce){.dz-cookie.is-leaving{animation:none;opacity:0}}@media(max-width:600px){.dz-cookie{right:-28px;bottom:6px;width:min(99vw,500px)}}';
+    document.head.appendChild(bannerStyle);
+
+    var banner = document.createElement('div');
+    banner.className = 'dz-cookie';
+    banner.id = 'dz-cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-live', 'polite');
+    banner.setAttribute('aria-label', 'Использование cookie');
+    banner.innerHTML = '<img class="dz-cookie__image" src="' + new URL('../../img/cookie-tag-v2.png', script.src).href + '" alt="Мы используем cookie, чтобы сайт работал для вас точнее."><button class="dz-cookie__close" type="button" aria-label="Закрыть"></button><button class="dz-cookie__accept" type="button" aria-label="Принять cookie"></button><button class="dz-cookie__settings" type="button" aria-label="Настройки cookie"></button>';
+    document.body.appendChild(banner);
+
+    var consentKey = 'dz_cookie_accepted_v2';
+    if (localStorage.getItem(consentKey) === '1') {
+      banner.setAttribute('hidden', '');
+      return;
+    }
+    function hide() { banner.setAttribute('hidden', ''); }
+    function dismiss(options) {
+      if (options.remember) localStorage.setItem(consentKey, '1');
+      banner.classList.add('is-leaving');
+      var finish = function () { hide(); if (options.href) location.href = options.href; };
+      banner.addEventListener('animationend', finish, { once: true });
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) setTimeout(finish, 0);
+    }
+    banner.querySelector('.dz-cookie__close').addEventListener('click', function () { dismiss({}); });
+    banner.querySelector('.dz-cookie__settings').addEventListener('click', function () { dismiss({ href: new URL('../../legal/index.html#cookies', script.src).href }); });
+    banner.querySelector('.dz-cookie__accept').addEventListener('click', function () { dismiss({ remember: true }); });
+  }
+
+  if (document.body) initCookieBanner();
+  else document.addEventListener('DOMContentLoaded', initCookieBanner, { once: true });
   var siteRoot = new URL('../../', script.src);
   var paths = {
     home: new URL('index.html', siteRoot).href,
@@ -368,6 +406,9 @@
   function normalizeHeader() {
     document.querySelectorAll('.site-header__logo,.header__logo,.header__mobile-logo,.dz-catalog-header__logo').forEach(function (link) { link.href = paths.home; });
     normalizeCatalogLinks();
+    document.querySelectorAll('a').forEach(function (link) {
+      if (labelOf(link) === 'сумки') link.href = paths.handbags;
+    });
     var selectors = '.dz-header-right > a,.dz-header-right > button,.dz-catalog-header__right > a,.dz-catalog-header__right > button,.site-header__right > a,.site-header__right > button,.header__tools > a,.header__tools > button,.header__mobile-search button,.dz-mobile-nav__services > a';
     document.querySelectorAll(selectors).forEach(function (element) {
       var kind = kindOf(element);
@@ -388,6 +429,13 @@
 
   function prepareFooterConsent() {
     document.querySelectorAll('.footer__form').forEach(function (form) {
+      var emailInput = form.querySelector('input[type="email"]');
+      if (emailInput) {
+        var syncEmailState = function () { form.classList.toggle('footer__has-email', Boolean(emailInput.value)); };
+        emailInput.addEventListener('input', syncEmailState);
+        emailInput.addEventListener('change', syncEmailState);
+        syncEmailState();
+      }
       if (form.querySelector('[name="marketingConsent"]')) return;
       var consents = document.createElement('div');
       consents.className = 'footer__consents';
@@ -406,7 +454,7 @@
     if (!document.getElementById('dz-footer-consent-styles')) {
       var style = document.createElement('style');
       style.id = 'dz-footer-consent-styles';
-      style.textContent = '.footer__consents{display:grid;gap:6px;width:min(100%,360px);margin-top:8px}.footer__consent{display:grid;grid-template-columns:auto 1fr;gap:7px;align-items:start;color:rgba(255,255,255,.78);font:400 8px/1.45 var(--danzla-sans,Arial,sans-serif);text-transform:none}.footer__consent input{width:12px;height:12px;margin:0;accent-color:#fff}.footer__consent a{color:inherit;text-decoration:underline;text-underline-offset:2px}@media(max-width:767px){.footer__consents{max-width:285px}.footer__consent{font-size:7px}}';
+      style.textContent = '.footer__label .input__label{transition:opacity .16s ease}.footer__label:focus-within .input__label,.footer__form.footer__has-email .footer__label .input__label{opacity:0;visibility:hidden}.footer__consents{display:grid;gap:8px;width:min(100%,360px);margin-top:9px}.footer__consent{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;color:rgba(255,255,255,.82);font:400 9px/1.45 var(--danzla-sans,Arial,sans-serif);text-transform:none}.footer__consent input{width:14px;height:14px;margin:0;accent-color:#fff}.footer__consent a{color:inherit;text-decoration:underline;text-underline-offset:2px}@media(max-width:767px){.footer__consents{max-width:285px}.footer__consent{font-size:8px}.footer__consent input{width:13px;height:13px}}';
       document.head.appendChild(style);
     }
   }
@@ -426,6 +474,15 @@
     details.appendChild(block);
   }
 
+  function loadBagCategorySelector() {
+    if (window.__dzBagsMenuInitialized || document.getElementById('dz-bags-menu-script')) return;
+    var categoryScript = document.createElement('script');
+    categoryScript.id = 'dz-bags-menu-script';
+    categoryScript.defer = true;
+    categoryScript.src = new URL('assets-materials/dz-bags-menu.js?v=5', siteRoot).href;
+    document.head.appendChild(categoryScript);
+  }
+
   function init() {
     var searchFrame = 0;
     var searchFollowUntil = 0;
@@ -437,6 +494,7 @@
     }
     injectStyles();
     normalizeHeader();
+    loadBagCategorySelector();
     prepareFooterConsent();
     prepareProductLegalDetails();
     document.addEventListener('danzla:category-menu-open', closeSearch);
