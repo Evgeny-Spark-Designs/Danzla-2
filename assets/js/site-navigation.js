@@ -607,6 +607,40 @@
     });
   }
 
+  function applyWomensCollectionMenuNames() {
+    var names = {
+      'danzla-01.png': 'A4',
+      'danzla-02.png': 'Luna',
+      'danzla-03.png': 'Asya',
+      'danzla-04.png': 'Lova',
+      'danzla-05.png': 'Vita',
+      'danzla-06.png': 'Side',
+      'danzla-07.png': 'Muna',
+      'danzla-08.png': 'Twist',
+      'danzla-09.png': 'Halo'
+    };
+    if (/\/collections\/(?:handbags|bestsellers)\//.test(location.pathname)) document.querySelectorAll('.collection-menu__list--link').forEach(function (link) {
+      var image = link.querySelector('img');
+      if (!image) return;
+      var name = names[(image.getAttribute('src') || '').split('/').pop()];
+      if (!name) return;
+      image.alt = 'DanZla ' + name;
+      var label = link.querySelector('span');
+      if (label) label.textContent = name;
+      var slide = link.closest('.component-carousel__slide');
+      if (slide) slide.setAttribute('aria-label', 'DanZla ' + name);
+    });
+    var oldNames = { Boky: 'A4', Cyme: 'Luna', 'Numéro Neuf': 'Asya', Mokki: 'Lova', 'Numéro Dix': 'Vita', 'Numéro Un': 'Side', Shuldo: 'Muna', Tonca: 'Twist', 'Béri': 'Halo' };
+    document.querySelectorAll('.header__menu-panel__link[data-sm-category="true"], [data-menu-collection="true"] .ts-font-primary').forEach(function (element) {
+      var oldName = element.textContent.trim();
+      if (oldNames[oldName]) element.textContent = oldNames[oldName];
+      if (oldName === 'Nodde' || oldName === 'Neyu') {
+        var item = element.closest('li');
+        if (item) item.remove();
+      }
+    });
+  }
+
   function prepareProductLegalDetails() {
     if (!/^\/products\//.test(location.pathname)) return;
     var details = document.querySelector('.product-info .details');
@@ -648,6 +682,7 @@
     prepareProductLegalDetails();
     applyWomensProductPresentation();
     applyWomensCatalogNames();
+    applyWomensCollectionMenuNames();
     document.addEventListener('danzla:category-menu-open', closeSearch);
     window.addEventListener('resize', function () {
       var search = document.querySelector('.dz-search:not([hidden])');
