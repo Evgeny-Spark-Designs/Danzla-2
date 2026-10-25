@@ -206,6 +206,8 @@ h1,h2,h3{font-family:Thunder,sans-serif}
 .product-card__media{position:relative;display:block;overflow:hidden;background:#f6f5f3;aspect-ratio:1920/2196}
 .product-card__media img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;transform:scale(.7);transition:opacity .35s ease,transform .6s cubic-bezier(.2,.65,.3,1)}
 .product-card__media img:last-child{opacity:0}.product-card:hover .product-card__media img:first-child{opacity:0}.product-card:hover .product-card__media img:last-child{opacity:1;transform:scale(.7105)}
+.product-card[href*="/products/monaco/"] .product-card__media img:last-child{transform:scale(.89)}
+.product-card[href*="/products/monaco/"]:hover .product-card__media img:last-child{transform:scale(.9)}
 .product-card__details{display:block;min-height:74px;padding:11px 0 0;font-family:var(--tertiary),Arial,sans-serif;text-transform:uppercase;letter-spacing:.025em;line-height:1.18}
 .product-card__title,.product-card__edition,.product-card__price{display:block}.product-card__title{font-size:10px;font-weight:500}.product-card__edition{margin:1px 0 10px;color:#666;font-size:10px}.product-card__price{font-size:10px;font-weight:500}
 @media(max-width:767px){.bestsellers{padding:24px 8px 0}.bestsellers__heading{margin-bottom:22px}.bestsellers__grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:8px;row-gap:24px}.product-card__details{min-height:70px;padding-top:9px}.product-card__title,.product-card__edition,.product-card__price{font-size:9px}.dz-catalog-page .footer{margin-top:32px}}
